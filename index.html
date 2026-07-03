@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheoryA.ai</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #fafafa;
+      --off-white: #f4f3f0;
+      --mid-gray: #6b6b6b;
+      --light-gray: #e2e0db;
+      --accent: #1a1a1a;
+      --link-color: #2d2d2d;
+      --font-serif: 'Georgia', 'Times New Roman', serif;
+      --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
+      --max-width: 900px;
+      --section-gap: 7rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--white);
+      color: var(--black);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--light-gray);
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .wordmark {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      font-size: 0.88rem;
+      color: var(--mid-gray);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    nav .nav-links a:hover { color: var(--black); }
+
+    /* Layout */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: var(--section-gap) 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--light-gray);
+    }
+
+    /* Hero */
+    #hero {
+      padding: 8rem 0 7rem;
+    }
+
+    #hero .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 2rem;
+    }
+
+    #hero h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 1.8rem;
+      max-width: 700px;
+    }
+
+    #hero .lead {
+      font-size: 1.15rem;
+      color: var(--mid-gray);
+      max-width: 620px;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    #hero .sub {
+      font-size: 1rem;
+      color: var(--mid-gray);
+      max-width: 620px;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 0.85rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border: 1px solid var(--black);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--black);
+      padding: 0.85rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border: 1px solid var(--light-gray);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--black);
+    }
+
+    /* Section headers */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-sans);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--mid-gray);
+      margin-bottom: 1.2rem;
+      max-width: 660px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s;
+    }
+
+    .text-link:hover { opacity: 0.6; }
+
+    /* Two-column layout for Theory A / AI Enterprise */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    @media (max-width: 680px) {
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+    }
+
+    /* People */
+    .people-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 680px) {
+      .people-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .person {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .person .name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.25rem;
+    }
+
+    .person .role {
+      font-size: 0.82rem;
+      color: var(--mid-gray);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .person p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* Work with us */
+    #work {
+      background: var(--off-white);
+    }
+
+    #work .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    #work .work-copy { flex: 1; min-width: 280px; }
+    #work .work-action { flex-shrink: 0; padding-top: 0.3rem; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--light-gray);
+      padding: 2.5rem 0;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer .wordmark {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--mid-gray);
+      margin: 0;
+      max-width: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#hero" class="wordmark">TheoryA.ai</a>
+    <ul class="nav-links">
+      <li><a href="#theory">Theory A</a></li>
+      <li><a href="#enterprise">The AI Enterprise</a></li>
+      <li><a href="#people">People</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work With Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container">
+      <p class="eyebrow">TheoryA.ai</p>
+      <h1>Advancing human agency in the age of AI.</h1>
+      <p class="lead">Organizations don't need more AI. They need better ways to apply human expertise alongside it.</p>
+      <p class="sub">TheoryA.ai is built around Theory A, a framework for navigating AI transformation through practical methods, experienced judgment, and continuously evolving Digital Intelligence. The AI Enterprise is its first application.</p>
+      <div class="btn-group">
+        <a href="#theory" class="btn-primary">Read the Theory A Manifesto</a>
+        <a href="#enterprise" class="btn-secondary">Launch Jim's Digital Intelligence</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theory A + AI Enterprise (two-column) -->
+  <section id="theory">
+    <div class="container">
+      <div class="two-col">
+
+        <div>
+          <p class="section-label">Theory A</p>
+          <h2>The philosophy behind the work.</h2>
+          <p>Theory A explores how organizations create value when human agency and artificial intelligence work together — not as competing forces, but as complementary capabilities.</p>
+          <p>The manifesto introduces the principles behind this thinking and the ideas shaping the future of work.</p>
+          <a href="#" class="text-link">Read the Theory A Manifesto &rarr;</a>
+        </div>
+
+        <div id="enterprise">
+          <p class="section-label">The AI Enterprise &mdash; Start Here</p>
+          <h2>Theory A in practice.</h2>
+          <p>The AI Enterprise is the first application of Theory A. Developed by Jim, it brings together practical methods, executive experience, and proven approaches for designing organizations that can thrive in the age of AI.</p>
+          <p>Jim's Digital Intelligence is the primary way to experience this work. It gives immediate access to the ideas, methods, and judgment behind The AI Enterprise, while leaving room to work directly with Jim when deeper collaboration is needed.</p>
+          <a href="#" class="text-link">Launch Jim's Digital Intelligence &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- People -->
+  <section id="people">
+    <div class="container">
+      <p class="section-label">People</p>
+      <h2>Theory A is bigger than any one person. Here's who's building it.</h2>
+
+      <div class="people-grid">
+
+        <div class="person">
+          <p class="name">Jim Scully</p>
+          <p class="role">Partner &mdash; The AI Enterprise</p>
+          <p>Jim's work centers on changefulness &mdash; the organizational capacity to keep adapting without losing coherence &mdash; drawn from decades of experience in enterprise AI strategy. He is the author of The AI Enterprise and the developer of Jim's Digital Intelligence.</p>
+          <p style="font-style:italic; font-size:0.82rem; color:#999; margin-top:0.75rem;">[Placeholder &mdash; replace with Jim's actual bio copy and credentials.]</p>
+        </div>
+
+        <div class="person">
+          <p class="name">Emily Liddle</p>
+          <p class="role">Founder &mdash; TheoryA.ai</p>
+          <p>Emily's background spans operations, sales, and practice leadership across organizations including Deloitte, LeapGen, and Mercer, with a consistent focus on the intersection of technology and human work.</p>
+          <p style="font-style:italic; font-size:0.82rem; color:#999; margin-top:0.75rem;">[Placeholder &mdash; replace with your own bio copy, written the way you want it to read.]</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">About TheoryA.ai</p>
+      <h2>Making expert knowledge more accessible, more practical, and more scalable.</h2>
+      <p>The AI Enterprise, built by Jim, is the first expression of that idea: human expertise paired with Digital Intelligence, so guidance is available whenever and wherever it's needed.</p>
+      <p>Rather than replacing human experts, Digital Intelligence extends their reach.</p>
+    </div>
+  </section>
+
+  <!-- Work With Us -->
+  <section id="work">
+    <div class="container">
+      <div class="work-copy">
+        <p class="section-label">Work With Us</p>
+        <h2>Multiple ways to access expert guidance.</h2>
+        <p>Organizations can engage with TheoryA.ai through Digital Intelligence, executive advisory, workshops, and strategic transformation engagements.</p>
+        <p>Whether you're exploring new ideas or redesigning how work gets done, we provide the right level of support.</p>
+      </div>
+      <div class="work-action">
+        <a href="#" class="btn-primary">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <a href="#hero" class="wordmark">TheoryA.ai</a>
+      <p>&copy; 2026 TheoryA.ai. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
