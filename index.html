@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TheoryA.ai</title>
+  <title>TheoryA.ai | Human Agency for the AI Enterprise</title>
+  <meta name="description" content="Theory A is a management philosophy built on the belief that human agency is the source of organizational value. Explore the framework, the manifesto, and The AI Enterprise." />
   <style>
-    /* Reset & base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -14,421 +14,534 @@
       --off-white: #f4f3f0;
       --mid-gray: #6b6b6b;
       --light-gray: #e2e0db;
-      --accent: #1a1a1a;
-      --link-color: #2d2d2d;
-      --font-serif: 'Georgia', 'Times New Roman', serif;
-      --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
-      --max-width: 900px;
-      --section-gap: 7rem;
+      --dark-bg: #1a1a1a;
+      --dark-text: #d4d4d0;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --max: 900px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--white);
+      background: var(--white);
       color: var(--black);
-      font-family: var(--font-sans);
+      font-family: var(--sans);
       font-size: 17px;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Nav */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    /* NAV */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
       background: var(--white);
       border-bottom: 1px solid var(--light-gray);
       padding: 1.1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
-    nav .wordmark {
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--black);
-      text-decoration: none;
+    .site-nav .wordmark {
+      font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
+      color: var(--black); text-decoration: none;
     }
-
-    nav .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a {
+      font-size: 0.88rem; color: var(--mid-gray); text-decoration: none;
+      letter-spacing: 0.02em; transition: color 0.2s;
     }
+    .site-nav ul a:hover { color: var(--black); }
 
-    nav .nav-links a {
-      font-size: 0.88rem;
-      color: var(--mid-gray);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
+    /* LAYOUT */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 7rem 0; }
+    section + section { border-top: 1px solid var(--light-gray); }
 
-    nav .nav-links a:hover { color: var(--black); }
-
-    /* Layout */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    section {
-      padding: var(--section-gap) 0;
-    }
-
-    section + section {
-      border-top: 1px solid var(--light-gray);
-    }
-
-    /* Hero */
-    #hero {
-      padding: 8rem 0 7rem;
-    }
-
-    #hero .eyebrow {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-      margin-bottom: 2rem;
-    }
-
-    #hero h1 {
-      font-family: var(--font-sans);
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 300;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--black);
-      margin-bottom: 1.8rem;
-      max-width: 700px;
-    }
-
-    #hero .lead {
-      font-size: 1.15rem;
-      color: var(--mid-gray);
-      max-width: 620px;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    #hero .sub {
-      font-size: 1rem;
-      color: var(--mid-gray);
-      max-width: 620px;
-      margin-bottom: 3rem;
-      line-height: 1.7;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--black);
-      color: var(--white);
-      padding: 0.85rem 1.8rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      border: 1px solid var(--black);
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--white);
-      color: var(--black);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      background: transparent;
-      color: var(--black);
-      padding: 0.85rem 1.8rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      border: 1px solid var(--light-gray);
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--black);
-    }
-
-    /* Section headers */
+    /* SHARED TYPOGRAPHY */
     .section-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-      margin-bottom: 2.5rem;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem;
     }
-
     h2 {
-      font-family: var(--font-sans);
       font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      line-height: 1.25;
+      font-weight: 300; letter-spacing: -0.01em; line-height: 1.25;
       margin-bottom: 1.5rem;
     }
-
-    h3 {
-      font-family: var(--font-sans);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      color: var(--mid-gray);
-      margin-bottom: 1.2rem;
-      max-width: 660px;
-    }
-
+    p { color: var(--mid-gray); margin-bottom: 1.2rem; max-width: 660px; }
     p:last-child { margin-bottom: 0; }
 
     .text-link {
-      display: inline-block;
-      margin-top: 1.8rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--black);
-      text-decoration: none;
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 2px;
-      letter-spacing: 0.01em;
-      transition: opacity 0.2s;
+      display: inline-block; margin-top: 1.8rem;
+      font-size: 0.9rem; font-weight: 500; color: var(--black);
+      text-decoration: none; border-bottom: 1px solid var(--black);
+      padding-bottom: 2px; transition: opacity 0.2s;
     }
-
     .text-link:hover { opacity: 0.6; }
 
-    /* Two-column layout for Theory A / AI Enterprise */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-block; background: var(--black); color: var(--white);
+      padding: 0.85rem 1.8rem; font-size: 0.9rem; font-weight: 500;
+      letter-spacing: 0.02em; text-decoration: none;
+      border: 1px solid var(--black); transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary:hover { background: var(--white); color: var(--black); }
+    .btn-secondary {
+      display: inline-block; background: transparent; color: var(--black);
+      padding: 0.85rem 1.8rem; font-size: 0.9rem; font-weight: 500;
+      letter-spacing: 0.02em; text-decoration: none;
+      border: 1px solid var(--light-gray); transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--black); }
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+    /* HERO */
+    #hero { padding: 8rem 0 7rem; }
+    #hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 300; line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 1.8rem; max-width: 700px; color: var(--black);
+    }
+    #hero .lead {
+      font-size: 1.1rem; color: var(--mid-gray);
+      max-width: 620px; margin-bottom: 1.2rem; line-height: 1.7;
+    }
+    #hero .sub {
+      font-size: 1rem; color: var(--mid-gray);
+      max-width: 620px; margin-bottom: 3rem; line-height: 1.7;
     }
 
-    @media (max-width: 680px) {
-      .two-col {
-        grid-template-columns: 1fr;
-        gap: 3.5rem;
+    /* PRINCIPLES DARK SECTION */
+    .principles-scroll-outer {
+      position: relative;
+      background: var(--dark-bg);
+    }
+
+    @media (min-width: 769px) {
+      .principles-scroll-outer { height: 420vh; }
+      .principles-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 3rem;
       }
     }
 
-    /* People */
-    .people-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      margin-top: 2.5rem;
+    @media (max-width: 768px) {
+      .principles-sticky { padding: 5rem 0; }
     }
 
-    @media (max-width: 680px) {
-      .people-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
+    #principles {
+      padding: 0;
+      border-top: none;
+      width: 100%;
     }
 
-    .person {
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--light-gray);
+    #enterprise { border-top: 1px solid var(--light-gray); }
+
+    #principles .section-label { color: #555; margin-bottom: 1rem; }
+    #principles h2 { color: var(--white); margin-bottom: 0.75rem; }
+    #principles .principles-subtitle {
+      font-size: 0.95rem; color: #777; max-width: 560px;
+      margin-bottom: 3.5rem; line-height: 1.65;
     }
 
-    .person .name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--black);
-      margin-bottom: 0.25rem;
+    /* Node diagram */
+    .nodes-diagram { position: relative; margin-bottom: 3rem; }
+
+    .nodes-track {
+      position: absolute;
+      top: 23px;
+      left: 24px; right: 24px;
+      height: 1px;
+      background: #333;
     }
 
-    .person .role {
-      font-size: 0.82rem;
-      color: var(--mid-gray);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .person p {
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-
-    /* Work with us */
-    #work {
-      background: var(--off-white);
-    }
-
-    #work .container {
+    .nodes-row {
       display: flex;
+      justify-content: space-between;
       align-items: flex-start;
-      justify-content: space-between;
-      gap: 4rem;
-      flex-wrap: wrap;
+      position: relative;
     }
 
-    #work .work-copy { flex: 1; min-width: 280px; }
-    #work .work-action { flex-shrink: 0; padding-top: 0.3rem; }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--light-gray);
-      padding: 2.5rem 0;
+    .p-node {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.75rem;
+      background: none; border: none; cursor: pointer; padding: 0;
+      position: relative; z-index: 2;
     }
 
-    footer .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+    .p-node-circle {
+      width: 46px; height: 46px; border-radius: 50%;
+      border: 1px solid #333;
+      background: var(--dark-bg);
+      transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
     }
 
-    footer .wordmark {
-      font-size: 0.9rem;
+    .p-node-label {
+      font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #555;
+      font-weight: 400; transition: color 0.3s ease, font-weight 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .p-node.active .p-node-circle {
+      border-color: #888;
+      background: rgba(212, 212, 208, 0.1);
+      box-shadow: 0 0 20px rgba(212, 212, 208, 0.12);
+    }
+    .p-node.active .p-node-label {
+      color: var(--white);
       font-weight: 600;
-      color: var(--black);
-      text-decoration: none;
     }
 
-    footer p {
-      font-size: 0.8rem;
-      color: var(--mid-gray);
-      margin: 0;
-      max-width: none;
+    /* Definition block */
+    .principle-def {
+      min-height: 130px;
+      padding-top: 2rem;
+      border-top: 1px solid #262626;
+    }
+    .def-label {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--white); margin-bottom: 1rem;
+    }
+    .def-text {
+      font-size: 0.96rem; color: var(--dark-text);
+      line-height: 1.75; max-width: 680px;
+    }
+
+    /* Mobile principles */
+    @media (min-width: 769px) { .mobile-principles { display: none; } }
+    @media (max-width: 768px) {
+      .nodes-diagram { display: none; }
+      .principle-def { display: none; }
+      .mobile-principles { display: block; }
+    }
+
+    .mobile-principle {
+      padding: 2rem 0;
+      border-bottom: 1px solid #262626;
+    }
+    .mobile-principle:first-child { border-top: 1px solid #262626; }
+    .mobile-principle-name {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--white); margin-bottom: 0.75rem;
+    }
+    .mobile-principle p {
+      font-size: 0.95rem; color: var(--dark-text);
+      max-width: none; margin: 0; line-height: 1.7;
+    }
+
+    /* PEOPLE */
+    .people-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3.5rem; margin-top: 2.5rem;
+    }
+    .person { padding-top: 1.5rem; border-top: 1px solid var(--light-gray); }
+    .person-name { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--black); }
+    .person-role {
+      font-size: 0.8rem; color: var(--mid-gray);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 1rem; font-weight: 500;
+    }
+    .person p { font-size: 0.92rem; line-height: 1.65; }
+
+    /* CONTACT */
+    #contact { background: var(--off-white); }
+    .contact-inner { display: flex; gap: 5rem; flex-wrap: wrap; align-items: flex-start; }
+    .contact-copy { flex: 1; min-width: 280px; }
+    .contact-form-col { flex: 1; min-width: 280px; padding-top: 0.3rem; }
+    .contact-note {
+      font-size: 0.88rem; color: var(--mid-gray);
+      margin-bottom: 1.5rem; font-style: italic; line-height: 1.6;
+    }
+    .email-form { display: flex; }
+    .email-form input[type="email"] {
+      flex: 1; padding: 0.85rem 1rem;
+      font-size: 0.9rem; font-family: var(--sans);
+      border: 1px solid var(--light-gray); border-right: none;
+      background: var(--white); color: var(--black); outline: none;
+    }
+    .email-form input[type="email"]::placeholder { color: #aaa; }
+    .email-form input[type="email"]:focus { border-color: var(--black); }
+    .email-form button {
+      padding: 0.85rem 1.5rem;
+      background: var(--black); color: var(--white);
+      font-size: 0.9rem; font-weight: 500; font-family: var(--sans);
+      border: 1px solid var(--black); cursor: pointer; white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .email-form button:hover { background: #333; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; }
+    footer .container {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    footer .wordmark {
+      font-size: 0.9rem; font-weight: 600;
+      color: var(--black); text-decoration: none;
+    }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); margin: 0; max-width: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      .site-nav ul { gap: 1.2rem; }
+      .site-nav ul a { font-size: 0.78rem; }
+      .people-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-inner { flex-direction: column; gap: 2.5rem; }
+      .email-form { flex-direction: column; }
+      .email-form input[type="email"] {
+        border-right: 1px solid var(--light-gray);
+        border-bottom: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <a href="#hero" class="wordmark">TheoryA.ai</a>
-    <ul class="nav-links">
-      <li><a href="#theory">Theory A</a></li>
-      <li><a href="#enterprise">The AI Enterprise</a></li>
-      <li><a href="#people">People</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work With Us</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul>
+    <li><a href="#theory">Theory A</a></li>
+    <li><a href="#people">People</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Work With Us</a></li>
+  </ul>
+</nav>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="container">
-      <p class="eyebrow">TheoryA.ai</p>
-      <h1>Advancing human agency in the age of AI.</h1>
-      <p class="lead">Organizations don't need more AI. They need better ways to apply human expertise alongside it.</p>
-      <p class="sub">TheoryA.ai is built around Theory A, a framework for navigating AI transformation through practical methods, experienced judgment, and continuously evolving Digital Intelligence. The AI Enterprise is its first application.</p>
-      <div class="btn-group">
-        <a href="#theory" class="btn-primary">Read the Theory A Manifesto</a>
-        <a href="#enterprise" class="btn-secondary">Launch Jim's Digital Intelligence</a>
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <h1>Advancing human agency in the age of AI.</h1>
+    <p class="lead">AI is changing what is abundant, what is scarce, and where value is created. Theory A is a management philosophy for designing organizations around what becomes possible next.</p>
+    <p class="sub">TheoryA.ai is where that philosophy is developed, applied, and brought to life.</p>
+    <div class="btn-group">
+      <a href="#theory" class="btn-primary">Explore Theory A</a>
+      <a href="/manifesto" class="btn-secondary">Read the Manifesto</a>
+    </div>
+  </div>
+</section>
+
+<!-- THEORY A -->
+<section id="theory">
+  <div class="container">
+    <p class="section-label">Theory A</p>
+    <h2>A new theory for a new mode of work.</h2>
+    <p>Every major shift in how value is created has required organizations to rethink how they are designed and managed. AI represents another such shift. Capabilities that were once scarce are becoming abundant. Expertise can scale differently. And the value of distinctly human capabilities -- judgment, imagination, discernment, and agency -- is changing.</p>
+    <p>Theory A begins with a question: how should we design organizations when both humans and machines can act?</p>
+    <p>The answer requires more than AI adoption. It requires a new theory of the organization.</p>
+    <a href="/manifesto" class="text-link">Read the Theory A Manifesto &rarr;</a>
+  </div>
+</section>
+
+<!-- PRINCIPLES (dark, sticky-scroll on desktop) -->
+<div class="principles-scroll-outer" id="principles-outer">
+  <div class="principles-sticky">
+    <section id="principles">
+      <div class="container">
+        <p class="section-label">The Principles of Theory A</p>
+        <h2>Five principles. One connected system.</h2>
+        <p class="principles-subtitle">How value, agency, and organizations change when intelligence and action can scale in new ways.</p>
+
+        <!-- Desktop node diagram -->
+        <div class="nodes-diagram">
+          <div class="nodes-track"></div>
+          <div class="nodes-row">
+            <button class="p-node active" data-index="0">
+              <div class="p-node-circle"></div>
+              <span class="p-node-label">Abundance</span>
+            </button>
+            <button class="p-node" data-index="1">
+              <div class="p-node-circle"></div>
+              <span class="p-node-label">Orchestration</span>
+            </button>
+            <button class="p-node" data-index="2">
+              <div class="p-node-circle"></div>
+              <span class="p-node-label">Outcome</span>
+            </button>
+            <button class="p-node" data-index="3">
+              <div class="p-node-circle"></div>
+              <span class="p-node-label">Architecture</span>
+            </button>
+            <button class="p-node" data-index="4">
+              <div class="p-node-circle"></div>
+              <span class="p-node-label">Compounding</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="principle-def">
+          <div class="def-label" id="def-label">Abundance</div>
+          <div class="def-text" id="def-text">When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</div>
+        </div>
+
+        <!-- Mobile stacked -->
+        <div class="mobile-principles">
+          <div class="mobile-principle">
+            <div class="mobile-principle-name">Abundance</div>
+            <p>When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</p>
+          </div>
+          <div class="mobile-principle">
+            <div class="mobile-principle-name">Orchestration</div>
+            <p>The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one.</p>
+          </div>
+          <div class="mobile-principle">
+            <div class="mobile-principle-name">Outcome</div>
+            <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
+          </div>
+          <div class="mobile-principle">
+            <div class="mobile-principle-name">Architecture</div>
+            <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
+          </div>
+          <div class="mobile-principle">
+            <div class="mobile-principle-name">Compounding</div>
+            <p>Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- AI ENTERPRISE -->
+<section id="enterprise">
+  <div class="container">
+    <p class="section-label">The AI Enterprise &mdash; Start Here</p>
+    <h2>Theory A in practice.</h2>
+    <p>The AI Enterprise is the first application of Theory A. Developed by Jim, it brings together practical methods, executive experience, and proven approaches for designing organizations that can thrive in the age of AI.</p>
+    <p>Jim's Digital Intelligence is the primary way to experience this work. It gives immediate access to the ideas, methods, and judgment behind The AI Enterprise, while leaving room to work directly with Jim when deeper collaboration is needed.</p>
+    <a href="#contact" class="text-link">Join the List &rarr;</a>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section id="people">
+  <div class="container">
+    <p class="section-label">People</p>
+    <h2>Theory A is bigger than any one person. Here's who's building it.</h2>
+    <div class="people-grid">
+      <div class="person">
+        <p class="person-name">Jim Scully</p>
+        <p class="person-role">Partner &mdash; The AI Enterprise</p>
+        <p>Jim Scully is the author of The AI Enterprise and an advisor to executives navigating AI strategy and organizational transformation. His work addresses the practical questions leaders face when building organizations capable of creating sustained value with AI.</p>
+      </div>
+      <div class="person">
+        <p class="person-name">Emily Liddle</p>
+        <p class="person-role">Founder &mdash; TheoryA.ai</p>
+        <p>Emily Liddle is the founder of TheoryA.ai. Her background spans consulting, practice leadership, and business development across technology and human capital, with a consistent focus on how organizations adapt to change.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Theory A + AI Enterprise (two-column) -->
-  <section id="theory">
-    <div class="container">
-      <div class="two-col">
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About TheoryA.ai</p>
+    <h2>Making expert knowledge more accessible, more practical, and more scalable.</h2>
+    <p>The AI Enterprise, built by Jim, is the first expression of that idea: human expertise paired with Digital Intelligence, so guidance is available whenever and wherever it's needed.</p>
+    <p>Rather than replacing human experts, Digital Intelligence extends their reach.</p>
+  </div>
+</section>
 
-        <div>
-          <p class="section-label">Theory A</p>
-          <h2>The philosophy behind the work.</h2>
-          <p>Theory A explores how organizations create value when human agency and artificial intelligence work together — not as competing forces, but as complementary capabilities.</p>
-          <p>The manifesto introduces the principles behind this thinking and the ideas shaping the future of work.</p>
-          <a href="#" class="text-link">Read the Theory A Manifesto &rarr;</a>
-        </div>
-
-        <div id="enterprise">
-          <p class="section-label">The AI Enterprise &mdash; Start Here</p>
-          <h2>Theory A in practice.</h2>
-          <p>The AI Enterprise is the first application of Theory A. Developed by Jim, it brings together practical methods, executive experience, and proven approaches for designing organizations that can thrive in the age of AI.</p>
-          <p>Jim's Digital Intelligence is the primary way to experience this work. It gives immediate access to the ideas, methods, and judgment behind The AI Enterprise, while leaving room to work directly with Jim when deeper collaboration is needed.</p>
-          <a href="#" class="text-link">Launch Jim's Digital Intelligence &rarr;</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- People -->
-  <section id="people">
-    <div class="container">
-      <p class="section-label">People</p>
-      <h2>Theory A is bigger than any one person. Here's who's building it.</h2>
-
-      <div class="people-grid">
-
-        <div class="person">
-          <p class="name">Jim Scully</p>
-          <p class="role">Partner &mdash; The AI Enterprise</p>
-          <p>Jim's work centers on changefulness &mdash; the organizational capacity to keep adapting without losing coherence &mdash; drawn from decades of experience in enterprise AI strategy. He is the author of The AI Enterprise and the developer of Jim's Digital Intelligence.</p>
-          <p style="font-style:italic; font-size:0.82rem; color:#999; margin-top:0.75rem;">[Placeholder &mdash; replace with Jim's actual bio copy and credentials.]</p>
-        </div>
-
-        <div class="person">
-          <p class="name">Emily Liddle</p>
-          <p class="role">Founder &mdash; TheoryA.ai</p>
-          <p>Emily's background spans operations, sales, and practice leadership across organizations including Deloitte, LeapGen, and Mercer, with a consistent focus on the intersection of technology and human work.</p>
-          <p style="font-style:italic; font-size:0.82rem; color:#999; margin-top:0.75rem;">[Placeholder &mdash; replace with your own bio copy, written the way you want it to read.]</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <p class="section-label">About TheoryA.ai</p>
-      <h2>Making expert knowledge more accessible, more practical, and more scalable.</h2>
-      <p>The AI Enterprise, built by Jim, is the first expression of that idea: human expertise paired with Digital Intelligence, so guidance is available whenever and wherever it's needed.</p>
-      <p>Rather than replacing human experts, Digital Intelligence extends their reach.</p>
-    </div>
-  </section>
-
-  <!-- Work With Us -->
-  <section id="work">
-    <div class="container">
-      <div class="work-copy">
+<!-- CONTACT / WORK WITH US -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-copy">
         <p class="section-label">Work With Us</p>
         <h2>Multiple ways to access expert guidance.</h2>
         <p>Organizations can engage with TheoryA.ai through Digital Intelligence, executive advisory, workshops, and strategic transformation engagements.</p>
         <p>Whether you're exploring new ideas or redesigning how work gets done, we provide the right level of support.</p>
       </div>
-      <div class="work-action">
-        <a href="#" class="btn-primary">Start a Conversation</a>
+      <div class="contact-form-col">
+        <p class="contact-note">We are taking a small number of advisory conversations while the platform is being built.</p>
+        <form class="email-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+          <input type="email" name="email" placeholder="Your email address" required />
+          <button type="submit">Start a Conversation</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <a href="#hero" class="wordmark">TheoryA.ai</a>
-      <p>&copy; 2026 TheoryA.ai. All rights reserved.</p>
-    </div>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <a href="/" class="wordmark">TheoryA.ai</a>
+    <p>&copy; 2026 TheoryA.ai. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const definitions = [
+    {
+      label: 'Abundance',
+      text: "When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint."
+    },
+    {
+      label: 'Orchestration',
+      text: "The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one."
+    },
+    {
+      label: 'Outcome',
+      text: "Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them."
+    },
+    {
+      label: 'Architecture',
+      text: "Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it."
+    },
+    {
+      label: 'Compounding',
+      text: "Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before."
+    }
+  ];
+
+  let currentIndex = -1;
+  const nodes = document.querySelectorAll('.p-node');
+  const defLabel = document.getElementById('def-label');
+  const defText = document.getElementById('def-text');
+  const outer = document.getElementById('principles-outer');
+
+  if (defText) defText.style.transition = 'opacity 0.3s ease';
+
+  function setActive(index) {
+    if (index === currentIndex) return;
+    currentIndex = index;
+    nodes.forEach((n, i) => n.classList.toggle('active', i === index));
+    if (defText) {
+      defText.style.opacity = '0';
+      setTimeout(() => {
+        if (defLabel) defLabel.textContent = definitions[index].label;
+        if (defText) { defText.textContent = definitions[index].text; defText.style.opacity = '1'; }
+      }, 220);
+    }
+  }
+
+  // Initialize first node
+  setActive(0);
+
+  // Click to change node
+  nodes.forEach(n => n.addEventListener('click', () => setActive(parseInt(n.dataset.index))));
+
+  // Scroll-based activation on desktop
+  function onScroll() {
+    if (!outer || window.innerWidth <= 768) return;
+    const rect = outer.getBoundingClientRect();
+    const scrollable = outer.offsetHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    const progress = Math.max(0, Math.min(0.999, -rect.top / scrollable));
+    setActive(Math.min(4, Math.floor(progress * 5)));
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
 
 </body>
 </html>
