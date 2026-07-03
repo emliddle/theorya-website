@@ -109,114 +109,108 @@
       max-width: 620px; margin-bottom: 3rem; line-height: 1.7;
     }
 
-    /* PRINCIPLES DARK SECTION */
-    .principles-scroll-outer {
-      position: relative;
+    /* ── PRINCIPLES SECTION ── */
+    .principles-section {
       background: var(--dark-bg);
-    }
-
-    @media (min-width: 769px) {
-      .principles-scroll-outer { height: 420vh; }
-      .principles-sticky {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        padding-top: 3rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .principles-sticky { padding: 5rem 0; }
-    }
-
-    #principles {
-      padding: 0;
+      padding: 6rem 0;
       border-top: none;
-      width: 100%;
     }
 
-    #enterprise { border-top: 1px solid var(--light-gray); }
-
-    #principles .section-label { color: #555; margin-bottom: 1rem; }
-    #principles h2 { color: var(--white); margin-bottom: 0.75rem; }
-    #principles .principles-subtitle {
-      font-size: 0.95rem; color: #777; max-width: 560px;
+    .principles-section .section-label { color: #555; margin-bottom: 1rem; }
+    .principles-section h2 { color: var(--white); margin-bottom: 0.6rem; }
+    .principles-intro-text {
+      font-size: 0.9rem; color: #666; max-width: 520px;
       margin-bottom: 3.5rem; line-height: 1.65;
     }
 
-    /* Node diagram */
-    .nodes-diagram { position: relative; margin-bottom: 3rem; }
-
-    .nodes-track {
-      position: absolute;
-      top: 23px;
-      left: 24px; right: 24px;
-      height: 1px;
-      background: #333;
+    /* Split layout: viz left, content right */
+    .principles-split {
+      display: grid;
+      grid-template-columns: 58% 42%;
+      gap: 3rem;
+      align-items: center;
+      min-height: 380px;
     }
 
-    .nodes-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+    /* Canvas viz */
+    .principles-viz-col { position: relative; }
+    .canvas-wrap {
       position: relative;
+      width: 100%;
+      padding-bottom: 88%;
+    }
+    #principles-canvas {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .node-labels {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+    .nlabel {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-family: var(--sans);
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #484844;
+      background: none; border: none; cursor: pointer;
+      white-space: nowrap; padding: 12px;
+      pointer-events: all;
+      transition: color 0.35s ease;
+      line-height: 1;
+    }
+    .nlabel:hover { color: #888; }
+    .nlabel.active { color: var(--white); font-weight: 600; }
+    .nlabel-outcome { color: #5a5a56; font-size: 0.66rem; }
+    .nlabel-outcome.active { color: var(--white); }
+
+    /* Right content panel */
+    .principles-content-col { padding-left: 0.5rem; }
+
+    #principle-overview .overview-heading {
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      font-weight: 300; color: var(--white);
+      line-height: 1.3; margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+    #principle-overview .overview-invite {
+      font-size: 0.85rem; color: #555;
+      font-style: italic; line-height: 1.65;
     }
 
-    .p-node {
-      display: flex; flex-direction: column;
-      align-items: center; gap: 0.75rem;
-      background: none; border: none; cursor: pointer; padding: 0;
-      position: relative; z-index: 2;
+    #principle-detail { display: none; }
+    .detail-name {
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: #555; margin-bottom: 0.9rem;
+    }
+    .detail-question {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 300; color: var(--white);
+      line-height: 1.35; margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .detail-def {
+      font-size: 0.88rem; color: var(--dark-text);
+      line-height: 1.8;
+      transition: opacity 0.25s ease;
     }
 
-    .p-node-circle {
-      width: 46px; height: 46px; border-radius: 50%;
-      border: 1px solid #333;
-      background: var(--dark-bg);
-      transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .p-node-label {
-      font-size: 0.68rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: #555;
-      font-weight: 400; transition: color 0.3s ease, font-weight 0.3s ease;
+    /* Crawlable definitions - visually hidden, present for SEO */
+    .principles-definitions {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden; clip: rect(0 0 0 0);
       white-space: nowrap;
     }
 
-    .p-node.active .p-node-circle {
-      border-color: #888;
-      background: rgba(212, 212, 208, 0.1);
-      box-shadow: 0 0 20px rgba(212, 212, 208, 0.12);
-    }
-    .p-node.active .p-node-label {
-      color: var(--white);
-      font-weight: 600;
-    }
+    /* Mobile stacked */
+    .mobile-principles { display: none; }
 
-    /* Definition block */
-    .principle-def {
-      min-height: 130px;
-      padding-top: 2rem;
-      border-top: 1px solid #262626;
-    }
-    .def-label {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--white); margin-bottom: 1rem;
-    }
-    .def-text {
-      font-size: 0.96rem; color: var(--dark-text);
-      line-height: 1.75; max-width: 680px;
-    }
-
-    /* Mobile principles */
-    @media (min-width: 769px) { .mobile-principles { display: none; } }
     @media (max-width: 768px) {
-      .nodes-diagram { display: none; }
-      .principle-def { display: none; }
-      .mobile-principles { display: block; }
+      .principles-split { display: none; }
+      .mobile-principles { display: block; margin-top: 2rem; }
     }
 
     .mobile-principle {
@@ -225,13 +219,17 @@
     }
     .mobile-principle:first-child { border-top: 1px solid #262626; }
     .mobile-principle-name {
-      font-size: 0.68rem; font-weight: 700;
+      font-size: 0.62rem; font-weight: 700;
       letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--white); margin-bottom: 0.75rem;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .mobile-principle-q {
+      font-size: 0.95rem; color: var(--white); font-weight: 300;
+      margin-bottom: 0.75rem; line-height: 1.4;
     }
     .mobile-principle p {
-      font-size: 0.95rem; color: var(--dark-text);
-      max-width: none; margin: 0; line-height: 1.7;
+      font-size: 0.88rem; color: var(--dark-text);
+      max-width: none; margin: 0; line-height: 1.75;
     }
 
     /* PEOPLE */
@@ -339,75 +337,91 @@
   </div>
 </section>
 
-<!-- PRINCIPLES (dark, sticky-scroll on desktop) -->
-<div class="principles-scroll-outer" id="principles-outer">
-  <div class="principles-sticky">
-    <section id="principles">
-      <div class="container">
-        <p class="section-label">The Principles of Theory A</p>
-        <h2>Five principles. One connected system.</h2>
-        <p class="principles-subtitle">How value, agency, and organizations change when intelligence and action can scale in new ways.</p>
+<!-- PRINCIPLES -->
+<section class="principles-section" id="principles">
+  <div class="container">
+    <p class="section-label">The Principles of Theory A</p>
+    <h2>Five principles. One connected system.</h2>
+    <p class="principles-intro-text">Explore the principles that shape how agency is organized.</p>
 
-        <!-- Desktop node diagram -->
-        <div class="nodes-diagram">
-          <div class="nodes-track"></div>
-          <div class="nodes-row">
-            <button class="p-node active" data-index="0">
-              <div class="p-node-circle"></div>
-              <span class="p-node-label">Abundance</span>
-            </button>
-            <button class="p-node" data-index="1">
-              <div class="p-node-circle"></div>
-              <span class="p-node-label">Orchestration</span>
-            </button>
-            <button class="p-node" data-index="2">
-              <div class="p-node-circle"></div>
-              <span class="p-node-label">Outcome</span>
-            </button>
-            <button class="p-node" data-index="3">
-              <div class="p-node-circle"></div>
-              <span class="p-node-label">Architecture</span>
-            </button>
-            <button class="p-node" data-index="4">
-              <div class="p-node-circle"></div>
-              <span class="p-node-label">Compounding</span>
-            </button>
+    <!-- Desktop split layout -->
+    <div class="principles-split">
+
+      <!-- Left: canvas viz -->
+      <div class="principles-viz-col">
+        <div class="canvas-wrap">
+          <canvas id="principles-canvas"></canvas>
+          <!-- Node labels: positions match canvas NODES array (nx%, ny%) -->
+          <div class="node-labels">
+            <button class="nlabel" data-index="0" style="left:65%;top:13%">Abundance</button>
+            <button class="nlabel" data-index="1" style="left:16%;top:49%">Orchestration</button>
+            <button class="nlabel nlabel-outcome" data-index="2" style="left:50%;top:63%">Outcome</button>
+            <button class="nlabel" data-index="3" style="left:84%;top:49%">Architecture</button>
+            <button class="nlabel" data-index="4" style="left:50%;top:87%">Compounding</button>
           </div>
         </div>
-
-        <div class="principle-def">
-          <div class="def-label" id="def-label">Abundance</div>
-          <div class="def-text" id="def-text">When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</div>
-        </div>
-
-        <!-- Mobile stacked -->
-        <div class="mobile-principles">
-          <div class="mobile-principle">
-            <div class="mobile-principle-name">Abundance</div>
-            <p>When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</p>
-          </div>
-          <div class="mobile-principle">
-            <div class="mobile-principle-name">Orchestration</div>
-            <p>The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one.</p>
-          </div>
-          <div class="mobile-principle">
-            <div class="mobile-principle-name">Outcome</div>
-            <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
-          </div>
-          <div class="mobile-principle">
-            <div class="mobile-principle-name">Architecture</div>
-            <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
-          </div>
-          <div class="mobile-principle">
-            <div class="mobile-principle-name">Compounding</div>
-            <p>Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before.</p>
-          </div>
-        </div>
-
       </div>
-    </section>
+
+      <!-- Right: principle content -->
+      <div class="principles-content-col">
+        <div id="principle-overview">
+          <p class="overview-heading">A change in one part of the system changes the behavior of the whole.</p>
+          <p class="overview-invite">Select a principle to explore it.</p>
+        </div>
+        <div id="principle-detail">
+          <div class="detail-name" id="detail-name"></div>
+          <div class="detail-question" id="detail-question"></div>
+          <div class="detail-def" id="detail-def"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO-crawlable definitions (visually hidden) -->
+    <div class="principles-definitions" aria-hidden="true">
+      <h3>Abundance</h3>
+      <p>When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</p>
+      <h3>Orchestration</h3>
+      <p>The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one.</p>
+      <h3>Outcome</h3>
+      <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
+      <h3>Architecture</h3>
+      <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
+      <h3>Compounding</h3>
+      <p>Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before.</p>
+    </div>
+
+    <!-- Mobile stacked -->
+    <div class="mobile-principles">
+      <div class="mobile-principle">
+        <div class="mobile-principle-name">Abundance</div>
+        <p class="mobile-principle-q">What economic reality are you designing for?</p>
+        <p>When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</p>
+      </div>
+      <div class="mobile-principle">
+        <div class="mobile-principle-name">Orchestration</div>
+        <p class="mobile-principle-q">How are different forms of agency designed to work together?</p>
+        <p>The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one.</p>
+      </div>
+      <div class="mobile-principle">
+        <div class="mobile-principle-name">Outcome</div>
+        <p class="mobile-principle-q">What is the organization fundamentally organizing around?</p>
+        <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
+      </div>
+      <div class="mobile-principle">
+        <div class="mobile-principle-name">Architecture</div>
+        <p class="mobile-principle-q">What structures create or constrain agency?</p>
+        <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
+      </div>
+      <div class="mobile-principle">
+        <div class="mobile-principle-name">Compounding</div>
+        <p class="mobile-principle-q">Does the system increase or dissipate organizational capability over time?</p>
+        <p>Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before.</p>
+      </div>
+    </div>
+
   </div>
-</div>
+</section>
 
 <!-- AI ENTERPRISE -->
 <section id="enterprise">
@@ -450,7 +464,7 @@
   </div>
 </section>
 
-<!-- CONTACT / WORK WITH US -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="contact-inner">
@@ -480,67 +494,332 @@
 </footer>
 
 <script>
-  const definitions = [
+(function() {
+  const canvas = document.getElementById('principles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  // Node positions as fractions (match label CSS positions)
+  // Outcome is the gravitational center
+  const NODES = [
+    { nx: 0.65, ny: 0.13 }, // 0: Abundance   — upper right
+    { nx: 0.16, ny: 0.49 }, // 1: Orchestration — left
+    { nx: 0.50, ny: 0.50 }, // 2: Outcome      — center
+    { nx: 0.84, ny: 0.49 }, // 3: Architecture — right
+    { nx: 0.50, ny: 0.87 }, // 4: Compounding  — bottom
+  ];
+
+  // Edges: Outcome is hub; secondary peripherals exist
+  const EDGES = [
+    { a: 0, b: 2, primary: true  }, // Abundance -> Outcome
+    { a: 1, b: 2, primary: true  }, // Orchestration -> Outcome
+    { a: 2, b: 3, primary: true  }, // Outcome -> Architecture
+    { a: 2, b: 4, primary: true  }, // Outcome -> Compounding
+    { a: 0, b: 1, primary: false }, // Abundance - Orchestration
+    { a: 0, b: 3, primary: false }, // Abundance - Architecture
+  ];
+
+  let W = 0, H = 0, dpr = 1;
+  let activeIndex = -1; // -1 = overview
+  let particles = [];
+  let frame = 0;
+  let rafId;
+
+  function npos(node) {
+    return { x: node.nx * W, y: node.ny * H };
+  }
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  // ── Particles ──
+  function createParticles() {
+    particles = [];
+    EDGES.forEach((edge, ei) => {
+      const count = edge.primary ? 4 : 2;
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          ei,
+          t: (i + Math.random() * 0.6) / count,
+          speed: 0.00022 + Math.random() * 0.00018,
+          dir: Math.random() > 0.5 ? 1 : -1,
+          alpha: 0.18 + Math.random() * 0.22,
+          size: 1.4,
+          trail: [],
+        });
+      }
+    });
+  }
+
+  function updateParticle(p) {
+    const edge = EDGES[p.ei];
+
+    if (activeIndex === 2) {
+      // Outcome: all flow toward center (node 2)
+      p.dir = (edge.b === 2) ? 1 : -1;
+      p.t += p.speed * 1.3 * p.dir;
+      if (p.t >= 1 && edge.b === 2) p.t = 0;
+      if (p.t <= 0 && edge.a === 2) p.t = 1;
+
+    } else if (activeIndex === 0) {
+      // Abundance: flow outward from node 0, multiply
+      if (edge.a === 0 || edge.b === 0) {
+        p.dir = (edge.a === 0) ? 1 : -1;
+        p.t += p.speed * 1.4 * p.dir;
+        if (p.t >= 1) p.t = 0;
+        if (p.t <= 0) p.t = 1;
+      } else {
+        p.t += p.speed * p.dir;
+        if (p.t >= 1) p.dir = -1;
+        if (p.t <= 0) p.dir = 1;
+        p.t = Math.max(0, Math.min(1, p.t));
+      }
+
+    } else if (activeIndex === 1) {
+      // Orchestration: coordinated bidirectional streams
+      p.t += p.speed * 1.1 * p.dir;
+      if (p.t >= 1) p.dir = -1;
+      if (p.t <= 0) p.dir = 1;
+      p.t = Math.max(0, Math.min(1, p.t));
+
+    } else if (activeIndex === 4) {
+      // Compounding: slightly looping feel, add trace
+      p.t += p.speed * p.dir;
+      if (p.t >= 1) p.dir = -1;
+      if (p.t <= 0) p.dir = 1;
+      p.t = Math.max(0, Math.min(1, p.t));
+
+    } else {
+      // Default / Architecture / overview
+      p.t += p.speed * p.dir;
+      if (p.t >= 1) p.dir = -1;
+      if (p.t <= 0) p.dir = 1;
+      p.t = Math.max(0, Math.min(1, p.t));
+    }
+  }
+
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    frame++;
+
+    // Architecture state: faint structural grid
+    if (activeIndex === 3) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(140, 140, 135, 0.045)';
+      ctx.lineWidth = 0.5;
+      const step = Math.min(W, H) / 7;
+      for (let x = 0; x < W; x += step) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+      }
+      for (let y = 0; y < H; y += step) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // Draw edges
+    EDGES.forEach((edge, ei) => {
+      const pa = npos(NODES[edge.a]);
+      const pb = npos(NODES[edge.b]);
+
+      let alpha = edge.primary ? 0.10 : 0.05;
+
+      // Brighten edges connected to active node
+      if (activeIndex === edge.a || activeIndex === edge.b) alpha *= 2.2;
+      if (activeIndex === 3) alpha = edge.primary ? 0.25 : 0.12; // Architecture: structural reveal
+      if (activeIndex === -1) alpha = edge.primary ? 0.08 : 0.04;
+
+      ctx.beginPath();
+      ctx.moveTo(pa.x, pa.y);
+      ctx.lineTo(pb.x, pb.y);
+      ctx.strokeStyle = `rgba(155, 155, 150, ${Math.min(alpha, 0.35)})`;
+      ctx.lineWidth = edge.primary ? 0.8 : 0.5;
+      ctx.stroke();
+    });
+
+    // Draw particles
+    particles.forEach(p => {
+      updateParticle(p);
+
+      const edge = EDGES[p.ei];
+      const pa = npos(NODES[edge.a]);
+      const pb = npos(NODES[edge.b]);
+      const x = lerp(pa.x, pb.x, p.t);
+      const y = lerp(pa.y, pb.y, p.t);
+
+      // Compounding: draw trail
+      if (activeIndex === 4) {
+        p.trail.push({ x, y });
+        if (p.trail.length > 18) p.trail.shift();
+        p.trail.forEach((pt, ti) => {
+          const ta = (ti / p.trail.length) * p.alpha * 0.35;
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, p.size * 0.7, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(155, 155, 150, ${ta})`;
+          ctx.fill();
+        });
+      } else {
+        p.trail = [];
+      }
+
+      let a = p.alpha;
+      if (activeIndex === -1) a *= 0.55;
+      if (activeIndex === 0) a *= 1.4; // abundance: more visible
+      if (activeIndex === 3) a *= 0.7; // architecture: let the lines speak
+
+      ctx.beginPath();
+      ctx.arc(x, y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(155, 155, 150, ${Math.min(a, 0.6)})`;
+      ctx.fill();
+    });
+
+    // Abundance: expanding ring from node 0
+    if (activeIndex === 0) {
+      const n0 = npos(NODES[0]);
+      const cycleLen = 90;
+      const r = ((frame % cycleLen) / cycleLen);
+      ctx.beginPath();
+      ctx.arc(n0.x, n0.y, 22 + 28 * r, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(155, 155, 150, ${0.18 * (1 - r)})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    }
+
+    // Compounding: gentle return loop arc near node 4
+    if (activeIndex === 4) {
+      const n4 = npos(NODES[4]);
+      const progress = (frame % 180) / 180;
+      ctx.beginPath();
+      ctx.arc(n4.x, n4.y, 20, -Math.PI / 2, -Math.PI / 2 + progress * Math.PI * 2);
+      ctx.strokeStyle = `rgba(155, 155, 150, 0.2)`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Draw nodes
+    NODES.forEach((node, i) => {
+      const pos = npos(node);
+      const isActive = i === activeIndex;
+      const isCenter = i === 2;
+      const r = isCenter ? 9 : 6;
+
+      // Outer ring on center node (Outcome) — always visible
+      if (isCenter) {
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, r + 7, 0, Math.PI * 2);
+        ctx.strokeStyle = isActive
+          ? 'rgba(155, 155, 150, 0.18)'
+          : 'rgba(80, 80, 75, 0.10)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      // Node circle
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, r, 0, Math.PI * 2);
+
+      if (isActive) {
+        ctx.fillStyle = 'rgba(155, 155, 150, 0.12)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(155, 155, 150, 0.75)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      } else {
+        ctx.strokeStyle = activeIndex === -1
+          ? 'rgba(100, 100, 95, 0.38)'
+          : 'rgba(70, 70, 65, 0.28)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+    });
+
+    rafId = requestAnimationFrame(draw);
+  }
+
+  function resize() {
+    const wrap = canvas.parentElement;
+    const rect = wrap.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = rect.width;
+    H = rect.height;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+  }
+
+  // ── Interaction ──
+  const principleData = [
     {
-      label: 'Abundance',
-      text: "When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint."
+      name: 'Abundance',
+      question: 'What economic reality are you designing for?',
+      def: "When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint."
     },
     {
-      label: 'Orchestration',
-      text: "The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one."
+      name: 'Orchestration',
+      question: 'How are different forms of agency designed to work together?',
+      def: "The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one."
     },
     {
-      label: 'Outcome',
-      text: "Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them."
+      name: 'Outcome',
+      question: 'What is the organization fundamentally organizing around?',
+      def: "Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them."
     },
     {
-      label: 'Architecture',
-      text: "Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it."
+      name: 'Architecture',
+      question: 'What structures create or constrain agency?',
+      def: "Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it."
     },
     {
-      label: 'Compounding',
-      text: "Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before."
+      name: 'Compounding',
+      question: 'Does the system increase or dissipate organizational capability over time?',
+      def: "Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before."
     }
   ];
 
-  let currentIndex = -1;
-  const nodes = document.querySelectorAll('.p-node');
-  const defLabel = document.getElementById('def-label');
-  const defText = document.getElementById('def-text');
-  const outer = document.getElementById('principles-outer');
-
-  if (defText) defText.style.transition = 'opacity 0.3s ease';
+  const overviewPanel = document.getElementById('principle-overview');
+  const detailPanel = document.getElementById('principle-detail');
+  const detailName = document.getElementById('detail-name');
+  const detailQuestion = document.getElementById('detail-question');
+  const detailDef = document.getElementById('detail-def');
+  const nlabels = document.querySelectorAll('.nlabel');
 
   function setActive(index) {
-    if (index === currentIndex) return;
-    currentIndex = index;
-    nodes.forEach((n, i) => n.classList.toggle('active', i === index));
-    if (defText) {
-      defText.style.opacity = '0';
-      setTimeout(() => {
-        if (defLabel) defLabel.textContent = definitions[index].label;
-        if (defText) { defText.textContent = definitions[index].text; defText.style.opacity = '1'; }
-      }, 220);
+    if (index === activeIndex) return;
+    activeIndex = index;
+
+    nlabels.forEach((l, i) => l.classList.toggle('active', i === index));
+
+    if (index === -1) {
+      overviewPanel.style.display = '';
+      detailPanel.style.display = 'none';
+      return;
     }
+
+    overviewPanel.style.display = 'none';
+    detailPanel.style.display = '';
+    detailName.textContent = principleData[index].name;
+    detailQuestion.textContent = principleData[index].question;
+    detailDef.style.opacity = '0';
+    setTimeout(() => {
+      detailDef.textContent = principleData[index].def;
+      detailDef.style.opacity = '1';
+    }, 220);
   }
 
-  // Initialize first node
-  setActive(0);
+  nlabels.forEach((label, i) => {
+    label.addEventListener('click', () => setActive(i));
+  });
 
-  // Click to change node
-  nodes.forEach(n => n.addEventListener('click', () => setActive(parseInt(n.dataset.index))));
+  // Start
+  resize();
+  createParticles();
+  draw();
 
-  // Scroll-based activation on desktop
-  function onScroll() {
-    if (!outer || window.innerWidth <= 768) return;
-    const rect = outer.getBoundingClientRect();
-    const scrollable = outer.offsetHeight - window.innerHeight;
-    if (scrollable <= 0) return;
-    const progress = Math.max(0, Math.min(0.999, -rect.top / scrollable));
-    setActive(Math.min(4, Math.floor(progress * 5)));
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    resize();
+  });
+})();
 </script>
 
 </body>
