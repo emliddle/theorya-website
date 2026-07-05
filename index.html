@@ -137,11 +137,13 @@
     .canvas-wrap {
       position: relative;
       width: 100%;
-      padding-bottom: 88%;
+      aspect-ratio: 1 / 0.88;
+      min-height: 300px;
     }
     #principles-canvas {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
     .node-labels {
       position: absolute; top: 0; left: 0;
@@ -356,7 +358,7 @@
             <button class="nlabel" data-index="0" style="left:65%;top:13%">Abundance</button>
             <button class="nlabel" data-index="1" style="left:16%;top:49%">Orchestration</button>
             <button class="nlabel nlabel-outcome" data-index="2" style="left:50%;top:63%">Outcome</button>
-            <button class="nlabel" data-index="3" style="left:84%;top:49%">Architecture</button>
+            <button class="nlabel" data-index="3" style="left:84%;top:49%">Form</button>
             <button class="nlabel" data-index="4" style="left:50%;top:87%">Compounding</button>
           </div>
         </div>
@@ -385,7 +387,7 @@
       <p>The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one.</p>
       <h3>Outcome</h3>
       <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
-      <h3>Architecture</h3>
+      <h3>Form</h3>
       <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
       <h3>Compounding</h3>
       <p>Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before.</p>
@@ -409,7 +411,7 @@
         <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
       </div>
       <div class="mobile-principle">
-        <div class="mobile-principle-name">Architecture</div>
+        <div class="mobile-principle-name">Form</div>
         <p class="mobile-principle-q">What structures create or constrain agency?</p>
         <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
       </div>
@@ -442,7 +444,7 @@
     <div class="people-grid">
       <div class="person">
         <p class="person-name">Jim Scully</p>
-        <p class="person-role">Partner &mdash; The AI Enterprise</p>
+        <p class="person-role">Co-founder &mdash; The AI Enterprise</p>
         <p>Jim Scully is the author of The AI Enterprise and an advisor to executives navigating AI strategy and organizational transformation. His work addresses the practical questions leaders face when building organizations capable of creating sustained value with AI.</p>
       </div>
       <div class="person">
@@ -737,15 +739,12 @@
   }
 
   function resize() {
-    const wrap = canvas.parentElement;
-    const rect = wrap.getBoundingClientRect();
     dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = rect.width;
-    H = rect.height;
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    if (!W || !H) { W = 400; H = 352; } // fallback
     canvas.width = Math.round(W * dpr);
     canvas.height = Math.round(H * dpr);
-    canvas.style.width = W + 'px';
-    canvas.style.height = H + 'px';
   }
 
   // ── Interaction ──
@@ -766,7 +765,7 @@
       def: "Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them."
     },
     {
-      name: 'Architecture',
+      name: 'Form',
       question: 'What structures create or constrain agency?',
       def: "Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it."
     },
