@@ -617,7 +617,7 @@
   }
 
   function setActive(index) {
-    if (index === activeIndex) return;
+    if (index === activeIndex) index = -1; // click active principle again to return to overview
     activeIndex = index;
 
     // Update SVG state via data attribute (CSS handles visuals)
