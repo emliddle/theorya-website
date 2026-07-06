@@ -251,6 +251,8 @@
     .email-form input[type="email"]:focus { border-color: var(--black); }
     .email-form button { padding: 0.85rem 1.5rem; background: var(--black); color: var(--white); font-size: 0.9rem; font-weight: 500; font-family: var(--sans); border: 1px solid var(--black); cursor: pointer; white-space: nowrap; transition: background 0.2s; }
     .email-form button:hover { background: #333; }
+    .waitlist-label { font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; font-style: italic; }
+    .waitlist-form { margin-top: 0; }
 
     /* FOOTER */
     footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; }
@@ -278,10 +280,7 @@
     <h1>Advancing human agency in the age of AI.</h1>
     <p class="lead">AI is changing what is abundant, what is scarce, and where value is created. Theory A is a management philosophy for designing organizations around what becomes possible next.</p>
     <p class="sub">TheoryA.ai is the working expression of Theory A: a place to explore its ideas, apply its principles, and build new models for organizing agency.</p>
-    <div class="btn-group">
-      <a href="#theory" class="btn-primary">Explore Theory A</a>
-      <a href="/manifesto" class="btn-secondary">Read the Manifesto</a>
-    </div>
+    <a href="/manifesto" class="btn-primary">Read the Manifesto</a>
   </div>
 </section>
 
@@ -507,7 +506,11 @@
     <h2>Theory A in practice.</h2>
     <p>The AI Enterprise is the first application of Theory A. Developed by Jim, it brings together practical methods, executive experience, and proven approaches for designing organizations that can thrive in the age of AI.</p>
     <p>Jim's Digital Intelligence is the primary way to experience this work. It gives immediate access to the ideas, methods, and judgment behind The AI Enterprise, while leaving room to work directly with Jim when deeper collaboration is needed.</p>
-    <a href="#contact" class="text-link">Join the List &rarr;</a>
+    <p class="waitlist-label">Be the first to know when Digital Intelligence is live.</p>
+    <form class="email-form waitlist-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+      <input type="email" name="email" placeholder="Your email address" required />
+      <button type="submit">Join the List</button>
+    </form>
   </div>
 </section>
 
@@ -552,11 +555,8 @@
         <p>Whether you're exploring new ideas or redesigning how work gets done, we provide the right level of support.</p>
       </div>
       <div class="contact-form-col">
-        <p class="contact-note">We are taking a small number of advisory conversations while the platform is being built.</p>
-        <form class="email-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
-          <input type="email" name="email" placeholder="Your email address" required />
-          <button type="submit">Start a Conversation</button>
-        </form>
+        <p class="contact-note">We are taking a small number of advisory conversations while the platform is being built. Use the link below to find a time that works.</p>
+        <a href="https://calendar.app.google/pd5wYiNNdfzvs7iEA" class="btn-primary" target="_blank" rel="noopener">Book a Conversation</a>
       </div>
     </div>
   </div>
