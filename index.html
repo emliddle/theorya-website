@@ -7,7 +7,6 @@
   <meta name="description" content="Theory A is a management philosophy built on the belief that human agency is the source of organizational value. Explore the framework, the manifesto, and The AI Enterprise." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --black: #0a0a0a;
       --white: #fafafa;
@@ -19,233 +18,225 @@
       --sans: 'Helvetica Neue', Arial, sans-serif;
       --max: 900px;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
-      background: var(--white);
-      color: var(--black);
-      font-family: var(--sans);
-      font-size: 17px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
+      background: var(--white); color: var(--black);
+      font-family: var(--sans); font-size: 17px;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
     }
 
     /* NAV */
     .site-nav {
       position: sticky; top: 0; z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--light-gray);
-      padding: 1.1rem 2rem;
-      display: flex; align-items: center; justify-content: space-between;
+      background: var(--white); border-bottom: 1px solid var(--light-gray);
+      padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between;
     }
-    .site-nav .wordmark {
-      font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-      color: var(--black); text-decoration: none;
-    }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
     .site-nav ul { display: flex; gap: 2rem; list-style: none; }
-    .site-nav ul a {
-      font-size: 0.88rem; color: var(--mid-gray); text-decoration: none;
-      letter-spacing: 0.02em; transition: color 0.2s;
-    }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
     .site-nav ul a:hover { color: var(--black); }
 
     /* LAYOUT */
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
     section { padding: 7rem 0; }
     section + section { border-top: 1px solid var(--light-gray); }
-
-    /* SHARED TYPOGRAPHY */
-    .section-label {
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem;
-    }
-    h2 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 300; letter-spacing: -0.01em; line-height: 1.25;
-      margin-bottom: 1.5rem;
-    }
+    .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 300; letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 1.5rem; }
     p { color: var(--mid-gray); margin-bottom: 1.2rem; max-width: 660px; }
     p:last-child { margin-bottom: 0; }
-
-    .text-link {
-      display: inline-block; margin-top: 1.8rem;
-      font-size: 0.9rem; font-weight: 500; color: var(--black);
-      text-decoration: none; border-bottom: 1px solid var(--black);
-      padding-bottom: 2px; transition: opacity 0.2s;
-    }
+    .text-link { display: inline-block; margin-top: 1.8rem; font-size: 0.9rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 2px; transition: opacity 0.2s; }
     .text-link:hover { opacity: 0.6; }
-
-    /* BUTTONS */
-    .btn-primary {
-      display: inline-block; background: var(--black); color: var(--white);
-      padding: 0.85rem 1.8rem; font-size: 0.9rem; font-weight: 500;
-      letter-spacing: 0.02em; text-decoration: none;
-      border: 1px solid var(--black); transition: background 0.2s, color 0.2s;
-    }
+    .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 0.85rem 1.8rem; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; border: 1px solid var(--black); transition: background 0.2s, color 0.2s; }
     .btn-primary:hover { background: var(--white); color: var(--black); }
-    .btn-secondary {
-      display: inline-block; background: transparent; color: var(--black);
-      padding: 0.85rem 1.8rem; font-size: 0.9rem; font-weight: 500;
-      letter-spacing: 0.02em; text-decoration: none;
-      border: 1px solid var(--light-gray); transition: border-color 0.2s;
-    }
+    .btn-secondary { display: inline-block; background: transparent; color: var(--black); padding: 0.85rem 1.8rem; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; border: 1px solid var(--light-gray); transition: border-color 0.2s; }
     .btn-secondary:hover { border-color: var(--black); }
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 
     /* HERO */
     #hero { padding: 8rem 0 7rem; }
-    #hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 300; line-height: 1.15; letter-spacing: -0.02em;
-      margin-bottom: 1.8rem; max-width: 700px; color: var(--black);
-    }
-    #hero .lead {
-      font-size: 1.1rem; color: var(--mid-gray);
-      max-width: 620px; margin-bottom: 1.2rem; line-height: 1.7;
-    }
-    #hero .sub {
-      font-size: 1rem; color: var(--mid-gray);
-      max-width: 620px; margin-bottom: 3rem; line-height: 1.7;
-    }
+    #hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.8rem; max-width: 700px; color: var(--black); }
+    #hero .lead { font-size: 1.1rem; color: var(--mid-gray); max-width: 620px; margin-bottom: 1.2rem; line-height: 1.7; }
+    #hero .sub { font-size: 1rem; color: var(--mid-gray); max-width: 620px; margin-bottom: 3rem; line-height: 1.7; }
 
-    /* ── PRINCIPLES SECTION ── */
+    /* ── PRINCIPLES ── */
     .principles-section {
       background: var(--dark-bg);
       padding: 6rem 0;
       border-top: none;
     }
-
+    #enterprise { border-top: 1px solid var(--light-gray); }
     .principles-section .section-label { color: #555; margin-bottom: 1rem; }
-    .principles-section h2 { color: var(--white); margin-bottom: 0.6rem; }
-    .principles-intro-text {
-      font-size: 0.9rem; color: #666; max-width: 520px;
-      margin-bottom: 3.5rem; line-height: 1.65;
-    }
+    .principles-section > .container > h2 { color: var(--white); margin-bottom: 0.6rem; }
+    .principles-intro { font-size: 0.9rem; color: #666; max-width: 500px; margin-bottom: 3rem; line-height: 1.65; }
 
-    /* Split layout: viz left, content right */
-    .principles-split {
+    /* Desktop split */
+    .p-split {
       display: grid;
       grid-template-columns: 58% 42%;
       gap: 3rem;
       align-items: center;
-      min-height: 380px;
+      min-height: 360px;
     }
 
-    /* Canvas viz */
-    .principles-viz-col { position: relative; }
-    .canvas-wrap {
+    /* SVG wrap */
+    .psvg-wrap {
       position: relative;
       width: 100%;
-      aspect-ratio: 1 / 0.88;
-      min-height: 300px;
+      aspect-ratio: 500 / 390;
     }
-    #principles-canvas {
+    .psvg {
       display: block;
       width: 100%;
       height: 100%;
+      overflow: visible;
     }
-    .node-labels {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
+
+    /* SVG connections */
+    .psvg .conn {
+      fill: none;
+      transition: stroke 0.5s ease, stroke-width 0.4s ease, stroke-opacity 0.4s ease;
     }
+    .psvg .p-conn { stroke: #505050; stroke-width: 1.5; stroke-opacity: 0.75; }
+    .psvg .s-conn { stroke: #363634; stroke-width: 1; stroke-opacity: 0.5; }
+
+    /* Background structure (Form state) */
+    .bg-grid line { fill: none; stroke: #2a2a28; stroke-width: 0.5; opacity: 0; transition: opacity 0.9s ease; }
+    [data-state="3"] .bg-grid line { opacity: 1; }
+
+    /* SVG nodes */
+    .psvg .node-body { fill: #1a1a1a; stroke: #585852; stroke-width: 1; transition: stroke 0.4s, fill 0.4s, stroke-width 0.4s; }
+    .psvg .node-halo { fill: none; stroke: #2e2e2c; stroke-width: 0.75; transition: stroke 0.4s; }
+    .psvg .node-outer { fill: none; stroke: #242422; stroke-width: 0.5; }
+    .psvg .pnode-center .node-body { stroke: #686862; stroke-width: 1.2; }
+    .psvg .pnode-center .node-halo { stroke: #404040; }
+
+    /* Flow particle groups */
+    .psvg .fgroup { display: none; }
+    .psvg .fgroup circle { fill: rgba(155,155,150,0.7); }
+
+    /* Overview: show ambient flow */
+    [data-state="-1"] .fg-ambient { display: block; }
+    [data-state="-1"] .fg-ambient circle { fill: rgba(80,80,75,0.65); }
+
+    /* Abundance (0) */
+    [data-state="0"] .fg-abundance { display: block; }
+    [data-state="0"] .c-ab-oc { stroke: #848478; stroke-width: 2.5; stroke-opacity: 1; }
+    [data-state="0"] .c-ab-or { stroke: #686862; stroke-width: 2; stroke-opacity: 0.9; }
+    [data-state="0"] .c-ab-fo { stroke: #686862; stroke-width: 2; stroke-opacity: 0.9; }
+    [data-state="0"] #pn0 .node-body { stroke: #c0c0ba; stroke-width: 1.5; fill: rgba(160,160,155,0.09); }
+    [data-state="0"] #pn0 .node-halo { stroke: #707068; }
+
+    /* Orchestration (1) */
+    [data-state="1"] .fg-orchestration { display: block; }
+    [data-state="1"] .c-or-oc { stroke: #848478; stroke-width: 2.5; stroke-opacity: 1; }
+    [data-state="1"] .c-ab-or { stroke: #686862; stroke-width: 2; stroke-opacity: 0.85; }
+    [data-state="1"] .c-or-co { stroke: #606058; stroke-width: 1.5; stroke-opacity: 0.8; }
+    [data-state="1"] .c-ab-oc { stroke: #585852; stroke-opacity: 0.7; }
+    [data-state="1"] #pn1 .node-body { stroke: #c0c0ba; stroke-width: 1.5; fill: rgba(160,160,155,0.09); }
+    [data-state="1"] #pn1 .node-halo { stroke: #707068; }
+
+    /* Outcome (2) */
+    [data-state="2"] .fg-outcome { display: block; }
+    [data-state="2"] .p-conn { stroke: #787870; stroke-width: 2.5; stroke-opacity: 1; }
+    [data-state="2"] .s-conn { stroke: #504e4a; stroke-opacity: 0.65; }
+    [data-state="2"] #pn2 .node-body { stroke: #c0c0ba; stroke-width: 1.5; fill: rgba(160,160,155,0.12); }
+    [data-state="2"] #pn2 .node-halo { stroke: #787870; }
+    [data-state="2"] #pn2 .node-outer { stroke: #404040; }
+
+    /* Form (3) */
+    [data-state="3"] .fg-form { display: block; }
+    [data-state="3"] .p-conn { stroke: #787870; stroke-width: 2.5; stroke-opacity: 1; }
+    [data-state="3"] .s-conn { stroke: #585852; stroke-width: 1.5; stroke-opacity: 0.8; }
+    [data-state="3"] #pn3 .node-body { stroke: #c0c0ba; stroke-width: 1.5; fill: rgba(160,160,155,0.09); }
+    [data-state="3"] #pn3 .node-halo { stroke: #707068; }
+
+    /* Compounding (4) */
+    [data-state="4"] .fg-compounding { display: block; }
+    [data-state="4"] .c-oc-co { stroke: #848478; stroke-width: 2.5; stroke-opacity: 1; }
+    [data-state="4"] .c-or-co { stroke: #686862; stroke-width: 2; stroke-opacity: 0.85; }
+    [data-state="4"] .c-fo-co { stroke: #686862; stroke-width: 2; stroke-opacity: 0.85; }
+    [data-state="4"] .c-ab-oc { stroke: #585852; stroke-opacity: 0.7; }
+    [data-state="4"] #pn4 .node-body { stroke: #c0c0ba; stroke-width: 1.5; fill: rgba(160,160,155,0.09); }
+    [data-state="4"] #pn4 .node-halo { stroke: #707068; }
+
+    /* Node labels (HTML over SVG) */
+    .node-labels { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
     .nlabel {
       position: absolute;
       transform: translate(-50%, -50%);
-      font-family: var(--sans);
-      font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: #a0a09a;
-      background: none; border: none; cursor: pointer;
-      white-space: nowrap; padding: 12px;
-      pointer-events: all;
-      transition: color 0.35s ease;
-      line-height: 1;
+      font-family: var(--sans); font-size: 0.8rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: #808078; background: none; border: none;
+      cursor: pointer; white-space: nowrap;
+      padding: 14px 10px; pointer-events: all;
+      transition: color 0.3s ease; line-height: 1;
+      border-radius: 2px;
     }
-    .nlabel:hover { color: #d0d0ca; }
+    .nlabel:hover { color: #c8c8c0; }
+    .nlabel:focus-visible { outline: 1px solid #888; outline-offset: 3px; }
     .nlabel.active { color: var(--white); font-weight: 600; }
-    .nlabel-outcome { color: #b0b0aa; font-size: 0.85rem; }
-    .nlabel-outcome.active { color: var(--white); }
+    .nlabel-center { font-size: 0.84rem; }
 
-    /* Right content panel */
-    .principles-content-col { padding-left: 0.5rem; }
-
-    #principle-overview .overview-heading {
-      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+    /* Content panel (right side) */
+    .p-content { padding-left: 0.5rem; }
+    .p-overview .ov-heading {
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
       font-weight: 300; color: var(--white);
-      line-height: 1.3; margin-bottom: 1.2rem;
-      letter-spacing: -0.01em;
+      line-height: 1.35; margin-bottom: 1.2rem; letter-spacing: -0.01em;
     }
-    #principle-overview .overview-invite {
-      font-size: 0.85rem; color: #555;
-      font-style: italic; line-height: 1.65;
-    }
+    .p-overview .ov-sub { font-size: 0.85rem; color: #555; font-style: italic; line-height: 1.65; }
+    .p-detail { display: none; }
+    .pd-name { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin-bottom: 0.9rem; }
+    .pd-question { font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 300; color: var(--white); line-height: 1.35; margin-bottom: 1.5rem; letter-spacing: -0.01em; max-width: none; }
+    .pd-def { font-size: 0.88rem; color: var(--dark-text); line-height: 1.8; transition: opacity 0.25s ease; max-width: none; }
 
-    #principle-detail { display: none; }
-    .detail-name {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: #555; margin-bottom: 0.9rem;
-    }
-    .detail-question {
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      font-weight: 300; color: var(--white);
-      line-height: 1.35; margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
-    }
-    .detail-def {
-      font-size: 0.88rem; color: var(--dark-text);
-      line-height: 1.8;
-      transition: opacity 0.25s ease;
-    }
+    /* SEO / screen reader content */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-    /* Crawlable definitions - visually hidden, present for SEO */
-    .principles-definitions {
-      position: absolute;
-      width: 1px; height: 1px;
-      overflow: hidden; clip: rect(0 0 0 0);
-      white-space: nowrap;
+    /* Mobile principles */
+    .p-mobile { display: none; padding-top: 2.5rem; }
+    .p-mobile-buttons { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+    .pm-btn {
+      padding: 0.65rem 1.1rem;
+      font-family: var(--sans); font-size: 0.72rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: transparent; border: 1px solid #2e2e2c;
+      color: #888; cursor: pointer; transition: all 0.25s ease; border-radius: 1px;
     }
+    .pm-btn:hover { color: #bbb; border-color: #555; }
+    .pm-btn:focus-visible { outline: 1px solid #888; }
+    .pm-btn.active { color: var(--white); border-color: #888; font-weight: 600; }
+    .p-mobile-content .m-name { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin-bottom: 0.75rem; }
+    .p-mobile-content .m-question { font-size: 1.05rem; font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 1.25rem; max-width: none; }
+    .p-mobile-content .m-def { font-size: 0.88rem; color: var(--dark-text); line-height: 1.75; max-width: none; }
+    .p-mobile-content p { max-width: none; }
 
-    /* Mobile stacked */
-    .mobile-principles { display: none; }
-
+    /* ── Responsive ── */
     @media (max-width: 768px) {
-      .principles-split { display: none; }
-      .mobile-principles { display: block; margin-top: 2rem; }
+      .p-split { display: none; }
+      .p-mobile { display: block; }
+    }
+    @media (max-width: 680px) {
+      .site-nav ul { gap: 1.2rem; }
+      .site-nav ul a { font-size: 0.78rem; }
+      .people-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-inner { flex-direction: column; gap: 2.5rem; }
+      .email-form { flex-direction: column; }
+      .email-form input[type="email"] { border-right: 1px solid var(--light-gray); border-bottom: none; }
     }
 
-    .mobile-principle {
-      padding: 2rem 0;
-      border-bottom: 1px solid #262626;
-    }
-    .mobile-principle:first-child { border-top: 1px solid #262626; }
-    .mobile-principle-name {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--white); margin-bottom: 0.5rem;
-    }
-    .mobile-principle-q {
-      font-size: 0.95rem; color: var(--white); font-weight: 300;
-      margin-bottom: 0.75rem; line-height: 1.4;
-    }
-    .mobile-principle p {
-      font-size: 0.88rem; color: var(--dark-text);
-      max-width: none; margin: 0; line-height: 1.75;
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .psvg .fgroup { display: none !important; }
+      [data-state="-1"] .p-conn { stroke-opacity: 0.85; }
+      .nlabel, .pd-def { transition: none; }
     }
 
     /* PEOPLE */
-    .people-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3.5rem; margin-top: 2.5rem;
-    }
+    .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.5rem; }
     .person { padding-top: 1.5rem; border-top: 1px solid var(--light-gray); }
     .person-name { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--black); }
-    .person-role {
-      font-size: 0.8rem; color: var(--mid-gray);
-      letter-spacing: 0.04em; text-transform: uppercase;
-      margin-bottom: 1rem; font-weight: 500;
-    }
+    .person-role { font-size: 0.8rem; color: var(--mid-gray); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 500; }
     .person p { font-size: 0.92rem; line-height: 1.65; }
 
     /* CONTACT */
@@ -253,52 +244,19 @@
     .contact-inner { display: flex; gap: 5rem; flex-wrap: wrap; align-items: flex-start; }
     .contact-copy { flex: 1; min-width: 280px; }
     .contact-form-col { flex: 1; min-width: 280px; padding-top: 0.3rem; }
-    .contact-note {
-      font-size: 0.88rem; color: var(--mid-gray);
-      margin-bottom: 1.5rem; font-style: italic; line-height: 1.6;
-    }
+    .contact-note { font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1.5rem; font-style: italic; line-height: 1.6; }
     .email-form { display: flex; }
-    .email-form input[type="email"] {
-      flex: 1; padding: 0.85rem 1rem;
-      font-size: 0.9rem; font-family: var(--sans);
-      border: 1px solid var(--light-gray); border-right: none;
-      background: var(--white); color: var(--black); outline: none;
-    }
+    .email-form input[type="email"] { flex: 1; padding: 0.85rem 1rem; font-size: 0.9rem; font-family: var(--sans); border: 1px solid var(--light-gray); border-right: none; background: var(--white); color: var(--black); outline: none; }
     .email-form input[type="email"]::placeholder { color: #aaa; }
     .email-form input[type="email"]:focus { border-color: var(--black); }
-    .email-form button {
-      padding: 0.85rem 1.5rem;
-      background: var(--black); color: var(--white);
-      font-size: 0.9rem; font-weight: 500; font-family: var(--sans);
-      border: 1px solid var(--black); cursor: pointer; white-space: nowrap;
-      transition: background 0.2s;
-    }
+    .email-form button { padding: 0.85rem 1.5rem; background: var(--black); color: var(--white); font-size: 0.9rem; font-weight: 500; font-family: var(--sans); border: 1px solid var(--black); cursor: pointer; white-space: nowrap; transition: background 0.2s; }
     .email-form button:hover { background: #333; }
 
     /* FOOTER */
     footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; }
-    footer .container {
-      display: flex; align-items: center;
-      justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-    }
-    footer .wordmark {
-      font-size: 0.9rem; font-weight: 600;
-      color: var(--black); text-decoration: none;
-    }
+    footer .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
     footer p { font-size: 0.8rem; color: var(--mid-gray); margin: 0; max-width: none; }
-
-    /* RESPONSIVE */
-    @media (max-width: 680px) {
-      .site-nav ul { gap: 1.2rem; }
-      .site-nav ul a { font-size: 0.78rem; }
-      .people-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .contact-inner { flex-direction: column; gap: 2.5rem; }
-      .email-form { flex-direction: column; }
-      .email-form input[type="email"] {
-        border-right: 1px solid var(--light-gray);
-        border-bottom: none;
-      }
-    }
   </style>
 </head>
 <body>
@@ -340,86 +298,203 @@
 </section>
 
 <!-- PRINCIPLES -->
-<section class="principles-section" id="principles">
+<section class="principles-section" id="principles" aria-label="The Principles of Theory A">
   <div class="container">
     <p class="section-label">The Principles of Theory A</p>
     <h2>Five principles. One connected system.</h2>
-    <p class="principles-intro-text">Explore the principles that shape how agency is organized.</p>
+    <p class="principles-intro">Explore the principles that shape how agency is organized.</p>
 
-    <!-- Desktop split layout -->
-    <div class="principles-split">
+    <!-- Desktop: split viz + content -->
+    <div class="p-split">
 
-      <!-- Left: canvas viz -->
-      <div class="principles-viz-col">
-        <div class="canvas-wrap">
-          <canvas id="principles-canvas"></canvas>
-          <!-- Node labels: positions match canvas NODES array (nx%, ny%) -->
-          <div class="node-labels">
-            <button class="nlabel" data-index="0" style="left:65%;top:13%">Abundance</button>
-            <button class="nlabel" data-index="1" style="left:16%;top:49%">Orchestration</button>
-            <button class="nlabel nlabel-outcome" data-index="2" style="left:50%;top:63%">Outcome</button>
-            <button class="nlabel" data-index="3" style="left:84%;top:49%">Form</button>
-            <button class="nlabel" data-index="4" style="left:50%;top:87%">Compounding</button>
+      <!-- Left: SVG system visualization -->
+      <div class="p-viz-col">
+        <div class="psvg-wrap" id="psvg-wrap" data-state="-1">
+
+          <!-- SVG network. viewBox 500x390. Nodes: Abundance(370,65), Orchestration(75,185), Outcome(250,205), Form(425,185), Compounding(250,345) -->
+          <svg class="psvg" viewBox="0 0 500 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+
+            <!-- Background structural grid (Form state only) -->
+            <g class="bg-grid">
+              <line x1="0" y1="125" x2="500" y2="125"/>
+              <line x1="0" y1="250" x2="500" y2="250"/>
+              <line x1="0" y1="375" x2="500" y2="375"/>
+              <line x1="100" y1="0" x2="100" y2="390"/>
+              <line x1="200" y1="0" x2="200" y2="390"/>
+              <line x1="300" y1="0" x2="300" y2="390"/>
+              <line x1="400" y1="0" x2="400" y2="390"/>
+            </g>
+
+            <!-- ── Connections ── -->
+            <!-- Primary: to/from Outcome (hub) -->
+            <!-- Abundance → Outcome -->
+            <path class="conn p-conn c-ab-oc" d="M370,65 Q310,110 250,205"/>
+            <!-- Orchestration → Outcome -->
+            <path class="conn p-conn c-or-oc" d="M75,185 Q163,190 250,205"/>
+            <!-- Outcome → Form -->
+            <path class="conn p-conn c-oc-fo" d="M250,205 Q338,190 425,185"/>
+            <!-- Outcome → Compounding -->
+            <path class="conn p-conn c-oc-co" d="M250,205 Q250,275 250,345"/>
+
+            <!-- Secondary: peripheral connections -->
+            <!-- Abundance → Orchestration (long arc) -->
+            <path class="conn s-conn c-ab-or" d="M370,65 Q190,45 75,185"/>
+            <!-- Abundance → Form (short arc) -->
+            <path class="conn s-conn c-ab-fo" d="M370,65 Q415,110 425,185"/>
+            <!-- Orchestration → Compounding -->
+            <path class="conn s-conn c-or-co" d="M75,185 Q95,295 250,345"/>
+            <!-- Form → Compounding -->
+            <path class="conn s-conn c-fo-co" d="M425,185 Q405,295 250,345"/>
+
+            <!-- ── Flow particle groups ── -->
+            <!-- Ambient (overview, -1) -->
+            <g class="fgroup fg-ambient">
+              <circle r="2">
+                <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M370,65 Q310,110 250,205"/>
+              </circle>
+              <circle r="1.5">
+                <animateMotion dur="5s" repeatCount="indefinite" begin="2.1s" path="M75,185 Q163,190 250,205"/>
+              </circle>
+              <circle r="1.5">
+                <animateMotion dur="4.5s" repeatCount="indefinite" begin="1s" path="M250,205 Q250,275 250,345"/>
+              </circle>
+            </g>
+
+            <!-- Abundance (0): signals multiply, spread outward from abundance -->
+            <g class="fgroup fg-abundance">
+              <circle r="2.2"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M370,65 Q310,110 250,205"/></circle>
+              <circle r="2"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0.6s" path="M370,65 Q310,110 250,205"/></circle>
+              <circle r="1.8"><animateMotion dur="3s" repeatCount="indefinite" begin="0s" path="M370,65 Q190,45 75,185"/></circle>
+              <circle r="1.8"><animateMotion dur="3.5s" repeatCount="indefinite" begin="0.4s" path="M370,65 Q415,110 425,185"/></circle>
+              <circle r="1.5"><animateMotion dur="4s" repeatCount="indefinite" begin="1.2s" path="M370,65 Q310,110 250,205 Q250,275 250,345"/></circle>
+            </g>
+
+            <!-- Orchestration (1): coordinated flows, distinct streams -->
+            <g class="fgroup fg-orchestration">
+              <circle r="2"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0s" path="M75,185 Q163,190 250,205"/></circle>
+              <circle r="2"><animateMotion dur="3s" repeatCount="indefinite" begin="1.4s" path="M370,65 Q310,110 250,205"/></circle>
+              <circle r="1.8"><animateMotion dur="3.5s" repeatCount="indefinite" begin="0.5s" path="M250,205 Q338,190 425,185"/></circle>
+              <circle r="1.5"><animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M75,185 Q95,295 250,345"/></circle>
+              <circle r="1.5"><animateMotion dur="3.8s" repeatCount="indefinite" begin="0.9s" path="M370,65 Q190,45 75,185"/></circle>
+            </g>
+
+            <!-- Outcome (2): all flows converge toward center -->
+            <g class="fgroup fg-outcome">
+              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0s" path="M370,65 Q310,110 250,205"/></circle>
+              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.7s" path="M75,185 Q163,190 250,205"/></circle>
+              <circle r="2"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0.3s" path="M425,185 Q338,190 250,205"/></circle>
+              <circle r="2"><animateMotion dur="3s" repeatCount="indefinite" begin="1s" path="M250,345 Q250,275 250,205"/></circle>
+              <circle r="1.8"><animateMotion dur="3.5s" repeatCount="indefinite" begin="1.8s" path="M370,65 Q190,45 75,185 Q163,190 250,205"/></circle>
+            </g>
+
+            <!-- Form (3): slower, structural reveal -->
+            <g class="fgroup fg-form">
+              <circle r="1.8"><animateMotion dur="5.5s" repeatCount="indefinite" begin="0s" path="M250,205 Q338,190 425,185 Q405,295 250,345 Q95,295 75,185 Q163,190 250,205"/></circle>
+              <circle r="1.5"><animateMotion dur="4.5s" repeatCount="indefinite" begin="2s" path="M370,65 Q310,110 250,205 Q338,190 425,185"/></circle>
+              <circle r="1.5"><animateMotion dur="5s" repeatCount="indefinite" begin="1s" path="M75,185 Q163,190 250,205 Q250,275 250,345"/></circle>
+            </g>
+
+            <!-- Compounding (4): traces, loops, strengthening -->
+            <g class="fgroup fg-compounding">
+              <circle r="2"><animateMotion dur="5s" repeatCount="indefinite" begin="0s" path="M250,205 Q250,275 250,345 Q95,295 75,185 Q163,190 250,205"/></circle>
+              <circle r="2"><animateMotion dur="5.5s" repeatCount="indefinite" begin="2.5s" path="M250,205 Q250,275 250,345 Q405,295 425,185 Q338,190 250,205"/></circle>
+              <circle r="1.5"><animateMotion dur="3.5s" repeatCount="indefinite" begin="1s" path="M250,345 Q250,275 250,205"/></circle>
+              <circle r="1.5"><animateMotion dur="4s" repeatCount="indefinite" begin="0.5s" path="M75,185 Q95,295 250,345"/></circle>
+            </g>
+
+            <!-- ── Nodes ── -->
+            <!-- Abundance (0) at 370,65 -->
+            <g class="pnode" id="pn0">
+              <circle class="node-halo" cx="370" cy="65" r="18"/>
+              <circle class="node-body" cx="370" cy="65" r="10"/>
+            </g>
+            <!-- Orchestration (1) at 75,185 -->
+            <g class="pnode" id="pn1">
+              <circle class="node-halo" cx="75" cy="185" r="18"/>
+              <circle class="node-body" cx="75" cy="185" r="10"/>
+            </g>
+            <!-- Outcome (2) at 250,205 — center, larger -->
+            <g class="pnode pnode-center" id="pn2">
+              <circle class="node-outer" cx="250" cy="205" r="34"/>
+              <circle class="node-halo" cx="250" cy="205" r="23"/>
+              <circle class="node-body" cx="250" cy="205" r="13"/>
+            </g>
+            <!-- Form (3) at 425,185 -->
+            <g class="pnode" id="pn3">
+              <circle class="node-halo" cx="425" cy="185" r="18"/>
+              <circle class="node-body" cx="425" cy="185" r="10"/>
+            </g>
+            <!-- Compounding (4) at 250,345 -->
+            <g class="pnode" id="pn4">
+              <circle class="node-halo" cx="250" cy="345" r="18"/>
+              <circle class="node-body" cx="250" cy="345" r="10"/>
+            </g>
+          </svg>
+
+          <!-- Clickable labels (HTML over SVG).
+               Positions as % of viewBox: node x/500, node y/390.
+               Abundance(370/500=74%, 65/390=17%), Orchestration(75/500=15%, 185/390=47%),
+               Outcome(250/500=50%, 205/390=53%), Form(425/500=85%, 185/390=47%),
+               Compounding(250/500=50%, 345/390=88%).
+               Labels offset from node circles so text doesn't overlap. -->
+          <div class="node-labels" role="group" aria-label="Select a principle">
+            <button class="nlabel" data-index="0" style="left:74%;top:7%" aria-pressed="false">Abundance</button>
+            <button class="nlabel" data-index="1" style="left:15%;top:47%" aria-pressed="false">Orchestration</button>
+            <button class="nlabel nlabel-center" data-index="2" style="left:50%;top:67%" aria-pressed="false">Outcome</button>
+            <button class="nlabel" data-index="3" style="left:85%;top:47%" aria-pressed="false">Form</button>
+            <button class="nlabel" data-index="4" style="left:50%;top:97%" aria-pressed="false">Compounding</button>
           </div>
         </div>
       </div>
 
       <!-- Right: principle content -->
-      <div class="principles-content-col">
-        <div id="principle-overview">
-          <p class="overview-heading">A change in one part of the system changes the behavior of the whole.</p>
-          <p class="overview-invite">Select a principle to explore it.</p>
+      <div class="p-content" aria-live="polite" aria-atomic="true">
+        <div class="p-overview">
+          <p class="ov-heading">A change in one part of the system changes the behavior of the whole.</p>
+          <p class="ov-sub">Select a principle to explore it.</p>
         </div>
-        <div id="principle-detail">
-          <div class="detail-name" id="detail-name"></div>
-          <div class="detail-question" id="detail-question"></div>
-          <div class="detail-def" id="detail-def"></div>
+        <div class="p-detail" id="p-detail" role="region">
+          <p class="pd-name" id="pd-name"></p>
+          <p class="pd-question" id="pd-question"></p>
+          <p class="pd-def" id="pd-def"></p>
         </div>
       </div>
-
     </div>
 
-    <!-- SEO-crawlable definitions (visually hidden) -->
-    <div class="principles-definitions" aria-hidden="true">
-      <h3>Abundance</h3>
+    <!-- Mobile: simplified buttons + content -->
+    <div class="p-mobile">
+      <div class="p-mobile-buttons" role="group" aria-label="Principles">
+        <button class="pm-btn" data-index="0" aria-pressed="false">Abundance</button>
+        <button class="pm-btn" data-index="1" aria-pressed="false">Orchestration</button>
+        <button class="pm-btn" data-index="2" aria-pressed="false">Outcome</button>
+        <button class="pm-btn" data-index="3" aria-pressed="false">Form</button>
+        <button class="pm-btn" data-index="4" aria-pressed="false">Compounding</button>
+      </div>
+      <div class="p-mobile-content" aria-live="polite">
+        <p class="m-name" id="m-name"></p>
+        <p class="m-question" id="m-question" style="font-size:1.05rem;font-weight:300;color:var(--white);line-height:1.4;margin-bottom:1.25rem;max-width:none;"></p>
+        <p class="m-def" id="m-def" style="font-size:0.88rem;color:var(--dark-text);line-height:1.75;max-width:none;"></p>
+      </div>
+    </div>
+
+    <!-- Semantic content for crawlers and screen readers -->
+    <div class="sr-only">
+      <h3>The Principles of Theory A</h3>
+      <h4>Abundance</h4>
+      <p>What economic reality are you designing for?</p>
       <p>When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</p>
-      <h3>Orchestration</h3>
+      <h4>Orchestration</h4>
+      <p>How are different forms of agency designed to work together?</p>
       <p>The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one.</p>
-      <h3>Outcome</h3>
+      <h4>Outcome</h4>
+      <p>What is the organization fundamentally organizing around?</p>
       <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
-      <h3>Form</h3>
+      <h4>Form</h4>
+      <p>What structures create or constrain agency?</p>
       <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
-      <h3>Compounding</h3>
+      <h4>Compounding</h4>
+      <p>Does the system increase or dissipate organizational capability over time?</p>
       <p>Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before.</p>
-    </div>
-
-    <!-- Mobile stacked -->
-    <div class="mobile-principles">
-      <div class="mobile-principle">
-        <div class="mobile-principle-name">Abundance</div>
-        <p class="mobile-principle-q">What economic reality are you designing for?</p>
-        <p>When previously scarce capabilities become abundant, economic value shifts. Every mode of production changes which constraints matter. Organizations designed around yesterday's scarcity will optimize the wrong things. The first design question is not what AI can do. It is what has now become the real constraint.</p>
-      </div>
-      <div class="mobile-principle">
-        <div class="mobile-principle-name">Orchestration</div>
-        <p class="mobile-principle-q">How are different forms of agency designed to work together?</p>
-        <p>The challenge is no longer human adoption of technology. Organizations must deliberately orchestrate human and artificial agency: determining where each acts independently, where they collaborate, where judgment must remain human, and how action stays aligned to shared purpose. Substitution is the wrong frame. Orchestration is the right one.</p>
-      </div>
-      <div class="mobile-principle">
-        <div class="mobile-principle-name">Outcome</div>
-        <p class="mobile-principle-q">What is the organization fundamentally organizing around?</p>
-        <p>Agency creates value when it is directed toward meaningful outcomes. Organizations designed around roles, functions, and inherited boundaries can fragment action. Theory A organizes capability around outcomes and gives people and systems the context and authority to act toward them.</p>
-      </div>
-      <div class="mobile-principle">
-        <div class="mobile-principle-name">Form</div>
-        <p class="mobile-principle-q">What structures create or constrain agency?</p>
-        <p>Structure is not neutral. Decision rights, information flows, incentives, technology, governance, and boundaries determine where agency can emerge and whether distributed action becomes coordinated capability. Their architecture either serves that purpose or quietly works against it.</p>
-      </div>
-      <div class="mobile-principle">
-        <div class="mobile-principle-name">Compounding</div>
-        <p class="mobile-principle-q">Does the system increase or dissipate organizational capability over time?</p>
-        <p>Organizations either compound agency or dissipate it. Every structural decision does one or the other. A Theory A organization learns through action: experience strengthens judgment, knowledge becomes reusable, digital capability improves, and each cycle leaves the organization more capable than the one before.</p>
-      </div>
     </div>
 
   </div>
@@ -496,259 +571,10 @@
 </footer>
 
 <script>
-(function() {
-  const canvas = document.getElementById('principles-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+(function () {
+  'use strict';
 
-  // Node positions as fractions (match label CSS positions)
-  // Outcome is the gravitational center
-  const NODES = [
-    { nx: 0.65, ny: 0.13 }, // 0: Abundance   — upper right
-    { nx: 0.16, ny: 0.49 }, // 1: Orchestration — left
-    { nx: 0.50, ny: 0.50 }, // 2: Outcome      — center
-    { nx: 0.84, ny: 0.49 }, // 3: Architecture — right
-    { nx: 0.50, ny: 0.87 }, // 4: Compounding  — bottom
-  ];
-
-  // Edges: Outcome is hub; secondary peripherals exist
-  const EDGES = [
-    { a: 0, b: 2, primary: true  }, // Abundance -> Outcome
-    { a: 1, b: 2, primary: true  }, // Orchestration -> Outcome
-    { a: 2, b: 3, primary: true  }, // Outcome -> Architecture
-    { a: 2, b: 4, primary: true  }, // Outcome -> Compounding
-    { a: 0, b: 1, primary: false }, // Abundance - Orchestration
-    { a: 0, b: 3, primary: false }, // Abundance - Architecture
-  ];
-
-  let W = 0, H = 0, dpr = 1;
-  let activeIndex = -1; // -1 = overview
-  let particles = [];
-  let frame = 0;
-  let rafId;
-
-  function npos(node) {
-    return { x: node.nx * W, y: node.ny * H };
-  }
-
-  function lerp(a, b, t) { return a + (b - a) * t; }
-
-  // ── Particles ──
-  function createParticles() {
-    particles = [];
-    EDGES.forEach((edge, ei) => {
-      const count = edge.primary ? 4 : 2;
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          ei,
-          t: (i + Math.random() * 0.6) / count,
-          speed: 0.00022 + Math.random() * 0.00018,
-          dir: Math.random() > 0.5 ? 1 : -1,
-          alpha: 0.18 + Math.random() * 0.22,
-          size: 1.4,
-          trail: [],
-        });
-      }
-    });
-  }
-
-  function updateParticle(p) {
-    const edge = EDGES[p.ei];
-
-    if (activeIndex === 2) {
-      // Outcome: all flow toward center (node 2)
-      p.dir = (edge.b === 2) ? 1 : -1;
-      p.t += p.speed * 1.3 * p.dir;
-      if (p.t >= 1 && edge.b === 2) p.t = 0;
-      if (p.t <= 0 && edge.a === 2) p.t = 1;
-
-    } else if (activeIndex === 0) {
-      // Abundance: flow outward from node 0, multiply
-      if (edge.a === 0 || edge.b === 0) {
-        p.dir = (edge.a === 0) ? 1 : -1;
-        p.t += p.speed * 1.4 * p.dir;
-        if (p.t >= 1) p.t = 0;
-        if (p.t <= 0) p.t = 1;
-      } else {
-        p.t += p.speed * p.dir;
-        if (p.t >= 1) p.dir = -1;
-        if (p.t <= 0) p.dir = 1;
-        p.t = Math.max(0, Math.min(1, p.t));
-      }
-
-    } else if (activeIndex === 1) {
-      // Orchestration: coordinated bidirectional streams
-      p.t += p.speed * 1.1 * p.dir;
-      if (p.t >= 1) p.dir = -1;
-      if (p.t <= 0) p.dir = 1;
-      p.t = Math.max(0, Math.min(1, p.t));
-
-    } else if (activeIndex === 4) {
-      // Compounding: slightly looping feel, add trace
-      p.t += p.speed * p.dir;
-      if (p.t >= 1) p.dir = -1;
-      if (p.t <= 0) p.dir = 1;
-      p.t = Math.max(0, Math.min(1, p.t));
-
-    } else {
-      // Default / Architecture / overview
-      p.t += p.speed * p.dir;
-      if (p.t >= 1) p.dir = -1;
-      if (p.t <= 0) p.dir = 1;
-      p.t = Math.max(0, Math.min(1, p.t));
-    }
-  }
-
-  function draw() {
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, W, H);
-    frame++;
-
-    // Architecture state: faint structural grid
-    if (activeIndex === 3) {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(140, 140, 135, 0.045)';
-      ctx.lineWidth = 0.5;
-      const step = Math.min(W, H) / 7;
-      for (let x = 0; x < W; x += step) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
-      }
-      for (let y = 0; y < H; y += step) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-      }
-      ctx.restore();
-    }
-
-    // Draw edges
-    EDGES.forEach((edge, ei) => {
-      const pa = npos(NODES[edge.a]);
-      const pb = npos(NODES[edge.b]);
-
-      let alpha = edge.primary ? 0.10 : 0.05;
-
-      // Brighten edges connected to active node
-      if (activeIndex === edge.a || activeIndex === edge.b) alpha *= 2.2;
-      if (activeIndex === 3) alpha = edge.primary ? 0.25 : 0.12; // Architecture: structural reveal
-      if (activeIndex === -1) alpha = edge.primary ? 0.08 : 0.04;
-
-      ctx.beginPath();
-      ctx.moveTo(pa.x, pa.y);
-      ctx.lineTo(pb.x, pb.y);
-      ctx.strokeStyle = `rgba(155, 155, 150, ${Math.min(alpha, 0.35)})`;
-      ctx.lineWidth = edge.primary ? 0.8 : 0.5;
-      ctx.stroke();
-    });
-
-    // Draw particles
-    particles.forEach(p => {
-      updateParticle(p);
-
-      const edge = EDGES[p.ei];
-      const pa = npos(NODES[edge.a]);
-      const pb = npos(NODES[edge.b]);
-      const x = lerp(pa.x, pb.x, p.t);
-      const y = lerp(pa.y, pb.y, p.t);
-
-      // Compounding: draw trail
-      if (activeIndex === 4) {
-        p.trail.push({ x, y });
-        if (p.trail.length > 18) p.trail.shift();
-        p.trail.forEach((pt, ti) => {
-          const ta = (ti / p.trail.length) * p.alpha * 0.35;
-          ctx.beginPath();
-          ctx.arc(pt.x, pt.y, p.size * 0.7, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(155, 155, 150, ${ta})`;
-          ctx.fill();
-        });
-      } else {
-        p.trail = [];
-      }
-
-      let a = p.alpha;
-      if (activeIndex === -1) a *= 0.55;
-      if (activeIndex === 0) a *= 1.4; // abundance: more visible
-      if (activeIndex === 3) a *= 0.7; // architecture: let the lines speak
-
-      ctx.beginPath();
-      ctx.arc(x, y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(155, 155, 150, ${Math.min(a, 0.6)})`;
-      ctx.fill();
-    });
-
-    // Abundance: expanding ring from node 0
-    if (activeIndex === 0) {
-      const n0 = npos(NODES[0]);
-      const cycleLen = 90;
-      const r = ((frame % cycleLen) / cycleLen);
-      ctx.beginPath();
-      ctx.arc(n0.x, n0.y, 22 + 28 * r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(155, 155, 150, ${0.18 * (1 - r)})`;
-      ctx.lineWidth = 0.8;
-      ctx.stroke();
-    }
-
-    // Compounding: gentle return loop arc near node 4
-    if (activeIndex === 4) {
-      const n4 = npos(NODES[4]);
-      const progress = (frame % 180) / 180;
-      ctx.beginPath();
-      ctx.arc(n4.x, n4.y, 20, -Math.PI / 2, -Math.PI / 2 + progress * Math.PI * 2);
-      ctx.strokeStyle = `rgba(155, 155, 150, 0.2)`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
-
-    // Draw nodes
-    NODES.forEach((node, i) => {
-      const pos = npos(node);
-      const isActive = i === activeIndex;
-      const isCenter = i === 2;
-      const r = isCenter ? 9 : 6;
-
-      // Outer ring on center node (Outcome) — always visible
-      if (isCenter) {
-        ctx.beginPath();
-        ctx.arc(pos.x, pos.y, r + 7, 0, Math.PI * 2);
-        ctx.strokeStyle = isActive
-          ? 'rgba(155, 155, 150, 0.18)'
-          : 'rgba(80, 80, 75, 0.10)';
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
-      }
-
-      // Node circle
-      ctx.beginPath();
-      ctx.arc(pos.x, pos.y, r, 0, Math.PI * 2);
-
-      if (isActive) {
-        ctx.fillStyle = 'rgba(155, 155, 150, 0.12)';
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(155, 155, 150, 0.75)';
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      } else {
-        ctx.strokeStyle = activeIndex === -1
-          ? 'rgba(100, 100, 95, 0.38)'
-          : 'rgba(70, 70, 65, 0.28)';
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
-      }
-    });
-
-    rafId = requestAnimationFrame(draw);
-  }
-
-  function resize() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = canvas.offsetWidth;
-    H = canvas.offsetHeight;
-    if (!W || !H) { W = 400; H = 352; } // fallback
-    canvas.width = Math.round(W * dpr);
-    canvas.height = Math.round(H * dpr);
-  }
-
-  // ── Interaction ──
-  const principleData = [
+  var data = [
     {
       name: 'Abundance',
       question: 'What economic reality are you designing for?',
@@ -776,49 +602,104 @@
     }
   ];
 
-  const overviewPanel = document.getElementById('principle-overview');
-  const detailPanel = document.getElementById('principle-detail');
-  const detailName = document.getElementById('detail-name');
-  const detailQuestion = document.getElementById('detail-question');
-  const detailDef = document.getElementById('detail-def');
-  const nlabels = document.querySelectorAll('.nlabel');
+  var activeIndex = -1;
+
+  var wrap      = document.getElementById('psvg-wrap');
+  var overview  = document.querySelector('.p-overview');
+  var detail    = document.getElementById('p-detail');
+  var pdName    = document.getElementById('pd-name');
+  var pdQ       = document.getElementById('pd-question');
+  var pdDef     = document.getElementById('pd-def');
+  var nlabels   = document.querySelectorAll('.nlabel');
+  var mBtns     = document.querySelectorAll('.pm-btn');
+  var mName     = document.getElementById('m-name');
+  var mQ        = document.getElementById('m-question');
+  var mDef      = document.getElementById('m-def');
+
+  // Pause SVG animations if user prefers reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var svg = document.querySelector('.psvg');
+    if (svg && svg.pauseAnimations) svg.pauseAnimations();
+  }
 
   function setActive(index) {
     if (index === activeIndex) return;
     activeIndex = index;
 
-    nlabels.forEach((l, i) => l.classList.toggle('active', i === index));
+    // Update SVG state via data attribute (CSS handles visuals)
+    if (wrap) wrap.setAttribute('data-state', index);
+
+    // Update desktop labels
+    nlabels.forEach(function (l, i) {
+      var on = (i === index);
+      l.classList.toggle('active', on);
+      l.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+
+    // Update mobile buttons
+    mBtns.forEach(function (b, i) {
+      var on = (i === index);
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
 
     if (index === -1) {
-      overviewPanel.style.display = '';
-      detailPanel.style.display = 'none';
+      if (overview) overview.style.display = '';
+      if (detail)   detail.style.display   = 'none';
+      if (mName)    mName.textContent       = '';
+      if (mQ)       mQ.textContent          = '';
+      if (mDef)     mDef.textContent        = '';
       return;
     }
 
-    overviewPanel.style.display = 'none';
-    detailPanel.style.display = '';
-    detailName.textContent = principleData[index].name;
-    detailQuestion.textContent = principleData[index].question;
-    detailDef.style.opacity = '0';
-    setTimeout(() => {
-      detailDef.textContent = principleData[index].def;
-      detailDef.style.opacity = '1';
-    }, 220);
+    var d = data[index];
+
+    // Desktop content
+    if (overview) overview.style.display = 'none';
+    if (detail)   detail.style.display   = '';
+    if (pdName)   pdName.textContent     = d.name;
+    if (pdQ)      pdQ.textContent        = d.question;
+    if (pdDef) {
+      pdDef.style.opacity = '0';
+      // Two rAF frames ensures the transition runs
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          pdDef.textContent    = d.def;
+          pdDef.style.opacity  = '1';
+        });
+      });
+    }
+
+    // Mobile content
+    if (mName) mName.textContent = d.name;
+    if (mQ)    mQ.textContent    = d.question;
+    if (mDef)  mDef.textContent  = d.def;
   }
 
-  nlabels.forEach((label, i) => {
-    label.addEventListener('click', () => setActive(i));
+  // Desktop label clicks
+  nlabels.forEach(function (label, i) {
+    label.addEventListener('click', function () { setActive(i); });
   });
 
-  // Start
-  resize();
-  createParticles();
-  draw();
-
-  window.addEventListener('resize', () => {
-    resize();
+  // Mobile button clicks
+  mBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { setActive(i); });
   });
-})();
+
+  // Keyboard: arrow keys cycle through principles when focused inside the viz
+  document.addEventListener('keydown', function (e) {
+    var focused = document.activeElement;
+    if (!focused || !focused.classList.contains('nlabel')) return;
+    var dir = 0;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  { dir =  1; e.preventDefault(); }
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    { dir = -1; e.preventDefault(); }
+    if (!dir) return;
+    var next = (activeIndex + dir + 5) % 5;
+    setActive(next);
+    if (nlabels[next]) nlabels[next].focus();
+  });
+
+}());
 </script>
 
 </body>
