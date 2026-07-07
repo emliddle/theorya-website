@@ -179,9 +179,11 @@
 
     /* Content panel (right side) */
     .p-content { padding-left: 0.5rem; }
-    .p-overview .ov-body { font-size: 0.88rem; color: var(--dark-text); line-height: 1.8; margin-bottom: 1.1rem; max-width: none; }
+    .p-overview .ov-heading { font-size: clamp(0.95rem, 1.6vw, 1.1rem); font-weight: 400; color: var(--white); line-height: 1.4; margin-bottom: 1.2rem; }
+    .p-overview .ov-body { font-size: 0.86rem; color: var(--dark-text); line-height: 1.8; margin-bottom: 1rem; max-width: none; }
     .p-overview .ov-body strong { color: var(--white); font-weight: 600; }
-    .p-overview .ov-sub { font-size: 0.82rem; color: #666; font-style: italic; line-height: 1.65; margin-top: 1.4rem; }
+    .p-overview .ov-sub { font-size: 0.82rem; color: #666; font-style: italic; line-height: 1.65; margin-top: 1.2rem; }
+    .psvg .pnode { cursor: pointer; }
     .p-detail { display: none; }
     .pd-name { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin-bottom: 0.9rem; }
     .pd-question { font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 300; color: var(--white); line-height: 1.35; margin-bottom: 1.5rem; letter-spacing: -0.01em; max-width: none; }
@@ -298,7 +300,7 @@
   <div class="container">
     <p class="section-label">The Principles of Theory A</p>
     <h2>Five principles. One connected system.</h2>
-    <p class="principles-intro">Explore the principles that shape how agency is organized.</p>
+    <p class="principles-intro">The enduring questions at the center of Theory A.</p>
 
     <!-- Desktop: split viz + content -->
     <div class="p-split">
@@ -446,8 +448,10 @@
       <!-- Right: principle content -->
       <div class="p-content" aria-live="polite" aria-atomic="true">
         <div class="p-overview">
-          <p class="ov-body"><strong>Five principles. One connected system.</strong> As conditions of value creation change, organizations must redesign around new constraints. Different forms of agency must be orchestrated toward meaningful outcomes. Form must enable rather than constrain. And the system must allow agency to <strong>compound over time.</strong></p>
-          <p class="ov-body">These principles are the foundation beneath every Theory A collection&mdash;translated into frameworks, methods, and action. Practice produces evidence that continually refines them.</p>
+          <p class="ov-heading">Theory A begins with a different set of questions.</p>
+          <p class="ov-body">Most management practices were built for a world of scarcity: limited intelligence, limited expertise, limited capacity, and high coordination costs. As those conditions change, the assumptions beneath the organization must be questioned too.</p>
+          <p class="ov-body">These five principles are the lenses through which we do that work. They help us examine what has become abundant, how agency should be orchestrated, what outcomes the organization exists to produce, what form enables people and AI to act, and whether the system becomes more capable through use.</p>
+          <p class="ov-body">They are not a methodology or a sequence to follow. They are a connected system for questioning, designing, and continually improving how organizations work.</p>
           <p class="ov-sub">Select a principle to explore it.</p>
         </div>
         <div class="p-detail" id="p-detail" role="region">
@@ -502,8 +506,8 @@
   <div class="container">
     <p class="section-label">The AI Enterprise &mdash; Start Here</p>
     <h2>Theory A in practice.</h2>
-    <p>The AI Enterprise is the first application of Theory A. Developed by Jim, it brings together practical methods, executive experience, and proven approaches for designing organizations that can thrive in the age of AI.</p>
-    <p>Jim's Digital Intelligence is the primary way to experience this work. It gives immediate access to the ideas, methods, and judgment behind The AI Enterprise, while leaving room to work directly with Jim when deeper collaboration is needed.</p>
+    <p>The AI Enterprise is the first application of Theory A. Developed by Jim Scully, it brings together practical methods, executive experience, and proven approaches for designing organizations that can thrive in the age of AI.</p>
+    <p>Jim Scully's Digital Intelligence is the primary way to experience this work. It gives immediate access to the ideas, methods, and judgment behind The AI Enterprise, while leaving room to work directly with Jim Scully when deeper collaboration is needed.</p>
     <p class="waitlist-label">Be the first to know when Digital Intelligence is live.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcL-eozmYKbVKi2dyESaYjxnQYnHp44luVLxJ7CSKPLzmCyw/viewform" class="btn-secondary" target="_blank" rel="noopener">Join the List</a>
   </div>
@@ -674,6 +678,11 @@
   // Desktop label clicks
   nlabels.forEach(function (label, i) {
     label.addEventListener('click', function () { setActive(i); });
+  });
+
+  // SVG node circle clicks (same index order as data array)
+  document.querySelectorAll('.pnode').forEach(function (node, i) {
+    node.addEventListener('click', function () { setActive(i); });
   });
 
   // Mobile button clicks
