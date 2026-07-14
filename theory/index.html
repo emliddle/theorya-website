@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Theory A Exists | TheoryA.ai</title>
+  <meta name="description" content="Theory A is not simply the next management theory. It addresses a fundamentally different question: how should organizations be designed so agency creates value? Learn why Theory A exists." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --white: #fafafa;
+      --off-white: #f4f3f0;
+      --mid-gray: #6b6b6b;
+      --light-gray: #e2e0db;
+      --rule: #d8d6d1;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --max: 900px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white); color: var(--black);
+      font-family: var(--sans); font-size: 17px;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--light-gray);
+      padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .site-nav ul a:hover { color: var(--black); }
+    .site-nav ul a.active { color: var(--black); }
+
+    /* LAYOUT */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 6rem 0; }
+    section + section { border-top: 1px solid var(--light-gray); }
+    .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2rem; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 300; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 1.5rem; }
+    p { color: var(--mid-gray); line-height: 1.7; margin-bottom: 1.1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* HERO */
+    .t-hero { padding: 7rem 0 6rem; border-bottom: 1px solid var(--light-gray); }
+    .t-hero .eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.8rem;
+    }
+    .t-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 300;
+      letter-spacing: -0.02em; line-height: 1.1;
+      color: var(--black); margin-bottom: 2.5rem; max-width: 680px;
+    }
+    .t-hero .hero-lines { border-left: 2px solid var(--rule); padding-left: 1.5rem; }
+    .t-hero .hero-line {
+      font-size: clamp(1rem, 1.8vw, 1.15rem); font-weight: 300;
+      color: var(--mid-gray); line-height: 1.5;
+      margin-bottom: 0.6rem;
+    }
+    .t-hero .hero-line:last-child { margin-bottom: 0; color: var(--black); }
+
+    /* OPENING */
+    .t-opening .container { max-width: 700px; }
+    .t-opening h2 { max-width: 580px; }
+    .t-opening p { font-size: 1.05rem; max-width: 620px; }
+
+    /* COMPARISON */
+    .t-comparison { background: var(--off-white); }
+    .theory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .theory-col {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      padding: 2rem 1.75rem 2rem;
+      cursor: pointer;
+      transition: border-color 0.3s ease, opacity 0.4s ease;
+      position: relative;
+    }
+    .theory-col:hover { border-color: #aaa; }
+    .theory-col.selected { border-color: var(--black); }
+    .theory-col.dimmed { opacity: 0.3; }
+    .theory-col.selected .theory-icon svg { animation: icon-settle 0.4s ease forwards; }
+    @keyframes icon-settle { 0% { transform: scale(1); } 50% { transform: scale(1.06); } 100% { transform: scale(1.03); } }
+
+    .theory-icon { margin-bottom: 1.5rem; height: 56px; display: flex; align-items: flex-end; }
+    .theory-icon svg { display: block; }
+
+    .theory-name {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--black); margin-bottom: 1.4rem;
+    }
+    .theory-q-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.4rem;
+    }
+    .theory-question {
+      font-size: 0.94rem; font-weight: 400; color: var(--black);
+      line-height: 1.4; margin-bottom: 1.4rem; font-style: italic;
+    }
+    .chars-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.6rem;
+    }
+    .theory-col ul { list-style: none; padding: 0; }
+    .theory-col ul li {
+      font-size: 0.86rem; color: var(--mid-gray);
+      padding: 0.3rem 0; border-bottom: 1px solid #f0eeea;
+      line-height: 1.3;
+    }
+    .theory-col ul li:last-child { border-bottom: none; }
+
+    .theory-detail {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--light-gray);
+    }
+    .theory-detail p {
+      font-size: 0.84rem; color: var(--mid-gray);
+      line-height: 1.75; margin-bottom: 0;
+    }
+    .theory-col .select-hint {
+      font-size: 0.72rem; color: #bbb; letter-spacing: 0.06em;
+      margin-top: 1.2rem; display: block;
+      transition: color 0.3s;
+    }
+    .theory-col:hover .select-hint { color: var(--mid-gray); }
+    .theory-col.selected .select-hint { display: none; }
+
+    /* Key Distinction */
+    .distinction-wrap {
+      margin-top: 4rem;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+    }
+    .distinction-wrap p {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300; color: var(--black);
+      line-height: 1.4; margin-bottom: 0.5rem;
+    }
+    .distinction-wrap p:last-child { margin-bottom: 0; }
+    .distinction-wrap em { font-style: normal; font-weight: 600; }
+
+    /* ENDURING PRINCIPLE */
+    .t-enduring .container { max-width: 700px; }
+    .t-enduring h2 { max-width: 560px; color: var(--black); }
+    .principle-lines { margin-top: 2rem; }
+    .principle-lines p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.1rem; }
+    .principle-lines .change-list {
+      font-size: 1.05rem; color: var(--mid-gray);
+      line-height: 2; margin-bottom: 1.1rem;
+      padding-left: 0; list-style: none;
+    }
+    .principle-lines .change-list li::before { content: none; }
+
+    /* PRINCIPLES SECTION */
+    .t-principles { background: var(--off-white); }
+    .t-principles .container { max-width: 700px; }
+    .t-principles h2 { color: var(--black); }
+    .t-principles p { margin-bottom: 1.1rem; }
+    .principle-list {
+      list-style: none; padding: 0;
+      margin: 1.5rem 0 2rem;
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+    }
+    .principle-list li {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--mid-gray);
+      padding: 0.4rem 0.9rem; border: 1px solid var(--light-gray);
+      background: var(--white);
+    }
+    .btn-primary {
+      display: inline-block; background: var(--black); color: var(--white);
+      padding: 0.85rem 1.8rem; font-size: 0.9rem; font-weight: 500;
+      letter-spacing: 0.02em; text-decoration: none;
+      border: 1px solid var(--black); transition: background 0.2s, color 0.2s;
+      margin-top: 0.5rem;
+    }
+    .btn-primary:hover { background: var(--white); color: var(--black); }
+
+    /* CLOSING CARDS */
+    .t-closing h2 { color: var(--black); margin-bottom: 2.5rem; font-weight: 300; }
+    .closing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .closing-card {
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--light-gray);
+      display: flex; flex-direction: column;
+    }
+    .card-title {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--black); margin-bottom: 0.75rem;
+    }
+    .card-desc {
+      font-size: 0.9rem; color: var(--mid-gray);
+      line-height: 1.6; margin-bottom: 1.5rem; flex: 1;
+    }
+    .card-link {
+      font-size: 0.85rem; color: var(--black); text-decoration: none;
+      font-weight: 500; border-bottom: 1px solid var(--black);
+      padding-bottom: 2px; display: inline-block;
+      transition: opacity 0.2s; align-self: flex-start;
+    }
+    .card-link:hover { opacity: 0.5; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; }
+    footer .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); margin: 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 760px) {
+      .theory-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .closing-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .site-nav ul { gap: 1.2rem; }
+      .site-nav ul a { font-size: 0.78rem; }
+    }
+    @media (max-width: 500px) {
+      .site-nav ul li:not(:last-child):not(:first-child) { display: none; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .theory-col.selected .theory-icon svg { animation: none; }
+      .theory-col, .theory-col * { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul>
+    <li><a href="/theory" class="active">Why Theory A Exists</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="t-hero">
+  <div class="container">
+    <p class="eyebrow">Philosophy</p>
+    <h1>Why Theory A Exists</h1>
+    <div class="hero-lines">
+      <p class="hero-line">Organizations have always reflected the assumptions they were designed around.</p>
+      <p class="hero-line">As those assumptions change, so must the way organizations create value.</p>
+      <p class="hero-line">Theory A begins with a different question.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPENING -->
+<section class="t-opening">
+  <div class="container">
+    <h2>Every management philosophy reflects the assumptions of its time.</h2>
+    <p>Theory X and Theory Y fundamentally changed how leaders thought about managing people. They emerged from different assumptions about work, motivation, and organizational life.</p>
+    <p>Theory A builds on that history, but it addresses a different challenge. Rather than asking how people should be managed, it asks how organizations themselves should be designed.</p>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="t-comparison">
+  <div class="container">
+    <p class="section-label">Three questions. Three eras. Three philosophies.</p>
+
+    <div class="theory-grid" id="theory-grid" role="group" aria-label="Compare Theory X, Theory Y, and Theory A">
+
+      <!-- Theory X -->
+      <div class="theory-col" id="tc-0" role="button" tabindex="0" aria-expanded="false" aria-label="Theory X — click to expand">
+
+        <!-- Fine line hierarchy illustration -->
+        <div class="theory-icon" aria-hidden="true">
+          <svg viewBox="0 0 80 56" width="80" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="7" r="5" stroke="#888" stroke-width="1"/>
+            <line x1="40" y1="12" x2="22" y2="26" stroke="#888" stroke-width="0.75"/>
+            <line x1="40" y1="12" x2="58" y2="26" stroke="#888" stroke-width="0.75"/>
+            <circle cx="22" cy="30" r="4" stroke="#888" stroke-width="0.75"/>
+            <circle cx="58" cy="30" r="4" stroke="#888" stroke-width="0.75"/>
+            <line x1="22" y1="34" x2="11" y2="47" stroke="#888" stroke-width="0.6"/>
+            <line x1="22" y1="34" x2="33" y2="47" stroke="#888" stroke-width="0.6"/>
+            <line x1="58" y1="34" x2="47" y2="47" stroke="#888" stroke-width="0.6"/>
+            <line x1="58" y1="34" x2="69" y2="47" stroke="#888" stroke-width="0.6"/>
+            <circle cx="11" cy="50" r="3" stroke="#888" stroke-width="0.6"/>
+            <circle cx="33" cy="50" r="3" stroke="#888" stroke-width="0.6"/>
+            <circle cx="47" cy="50" r="3" stroke="#888" stroke-width="0.6"/>
+            <circle cx="69" cy="50" r="3" stroke="#888" stroke-width="0.6"/>
+          </svg>
+        </div>
+
+        <p class="theory-name">Theory X</p>
+        <p class="theory-q-label">Question</p>
+        <p class="theory-question">How do we motivate people to work?</p>
+        <p class="chars-label">Characteristics</p>
+        <ul>
+          <li>Control</li>
+          <li>Compliance</li>
+          <li>Standardization</li>
+          <li>Hierarchy</li>
+          <li>Efficiency</li>
+        </ul>
+        <span class="select-hint">Select to expand</span>
+        <div class="theory-detail" id="td-0" hidden>
+          <p>Douglas McGregor introduced Theory X in 1960 to describe the dominant assumptions of industrial-era management. In that context, control was the central design problem: how to direct the effort of people who required close supervision, standardized processes, and external rewards to perform. The organization was designed to extract labor under conditions of scarcity and limited information.</p>
+        </div>
+      </div>
+
+      <!-- Theory Y -->
+      <div class="theory-col" id="tc-1" role="button" tabindex="0" aria-expanded="false" aria-label="Theory Y — click to expand">
+
+        <!-- Fine line lateral network illustration -->
+        <div class="theory-icon" aria-hidden="true">
+          <svg viewBox="0 0 80 56" width="80" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Center -->
+            <circle cx="40" cy="28" r="5" stroke="#888" stroke-width="1"/>
+            <!-- Surrounding nodes -->
+            <circle cx="40" cy="5" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <circle cx="63" cy="16" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <circle cx="63" cy="40" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <circle cx="40" cy="51" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <circle cx="17" cy="40" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <circle cx="17" cy="16" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <!-- Spokes from center -->
+            <line x1="40" y1="23" x2="40" y2="8.5" stroke="#888" stroke-width="0.6"/>
+            <line x1="44.3" y1="25.5" x2="59.7" y2="18.3" stroke="#888" stroke-width="0.6"/>
+            <line x1="44.3" y1="30.5" x2="59.7" y2="37.7" stroke="#888" stroke-width="0.6"/>
+            <line x1="40" y1="33" x2="40" y2="47.5" stroke="#888" stroke-width="0.6"/>
+            <line x1="35.7" y1="30.5" x2="20.3" y2="37.7" stroke="#888" stroke-width="0.6"/>
+            <line x1="35.7" y1="25.5" x2="20.3" y2="18.3" stroke="#888" stroke-width="0.6"/>
+            <!-- Lateral connections (dashed) -->
+            <line x1="40" y1="8.5" x2="59.7" y2="18.3" stroke="#888" stroke-width="0.4" stroke-dasharray="2,2"/>
+            <line x1="59.7" y1="18.3" x2="59.7" y2="37.7" stroke="#888" stroke-width="0.4" stroke-dasharray="2,2"/>
+            <line x1="20.3" y1="18.3" x2="20.3" y2="37.7" stroke="#888" stroke-width="0.4" stroke-dasharray="2,2"/>
+            <line x1="20.3" y1="37.7" x2="40" y2="47.5" stroke="#888" stroke-width="0.4" stroke-dasharray="2,2"/>
+          </svg>
+        </div>
+
+        <p class="theory-name">Theory Y</p>
+        <p class="theory-q-label">Question</p>
+        <p class="theory-question">How do we enable people to contribute?</p>
+        <p class="chars-label">Characteristics</p>
+        <ul>
+          <li>Participation</li>
+          <li>Knowledge</li>
+          <li>Engagement</li>
+          <li>Teams</li>
+          <li>Empowerment</li>
+        </ul>
+        <span class="select-hint">Select to expand</span>
+        <div class="theory-detail" id="td-1" hidden>
+          <p>McGregor's Theory Y proposed that people are intrinsically motivated and capable of self-direction. It emerged as knowledge work grew in importance and organizations recognized that engagement and participation produced better outcomes than compliance. The design problem shifted from control to enablement — and the organization was redesigned around human potential rather than human compliance.</p>
+        </div>
+      </div>
+
+      <!-- Theory A -->
+      <div class="theory-col" id="tc-2" role="button" tabindex="0" aria-expanded="false" aria-label="Theory A — click to expand">
+
+        <!-- Fine line dynamic system illustration (echoes Principles visualization) -->
+        <div class="theory-icon" aria-hidden="true">
+          <svg viewBox="0 0 80 56" width="80" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 5-node system, same topology as Principles viz -->
+            <circle cx="58" cy="8" r="4" stroke="#888" stroke-width="0.75"/>
+            <circle cx="12" cy="26" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <circle cx="38" cy="28" r="5.5" stroke="#888" stroke-width="1"/>
+            <circle cx="64" cy="26" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <circle cx="38" cy="48" r="3.5" stroke="#888" stroke-width="0.75"/>
+            <!-- Primary connections (to center) -->
+            <path d="M55,11 Q48,18 42,25" stroke="#888" stroke-width="0.9"/>
+            <path d="M15,27 Q26,27 33,28" stroke="#888" stroke-width="0.9"/>
+            <path d="M43,28 Q54,27 61,26" stroke="#888" stroke-width="0.9"/>
+            <path d="M38,33.5 Q38,40 38,44.5" stroke="#888" stroke-width="0.9"/>
+            <!-- Secondary connections -->
+            <path d="M58,12 Q34,8 14,23" stroke="#888" stroke-width="0.4" stroke-opacity="0.6"/>
+            <path d="M58,12 Q66,18 65,23" stroke="#888" stroke-width="0.4" stroke-opacity="0.6"/>
+            <path d="M14,29 Q24,40 35,46" stroke="#888" stroke-width="0.4" stroke-opacity="0.6"/>
+            <path d="M65,29 Q54,40 41,46" stroke="#888" stroke-width="0.4" stroke-opacity="0.6"/>
+            <!-- Outer halo on center -->
+            <circle cx="38" cy="28" r="10" stroke="#888" stroke-width="0.4" stroke-opacity="0.4"/>
+          </svg>
+        </div>
+
+        <p class="theory-name">Theory A</p>
+        <p class="theory-q-label">Question</p>
+        <p class="theory-question">How should organizations be designed so agency creates value?</p>
+        <p class="chars-label">Characteristics</p>
+        <ul>
+          <li>Agency</li>
+          <li>Orchestration</li>
+          <li>Outcomes</li>
+          <li>Form</li>
+          <li>Compounding</li>
+        </ul>
+        <span class="select-hint">Select to expand</span>
+        <div class="theory-detail" id="td-2" hidden>
+          <p>Theory A addresses a different question for a different era. AI is making previously scarce capabilities abundant. Organizations designed around the constraints of the past — limited intelligence, limited expertise, high coordination costs — must now be redesigned around new ones. The challenge is not how to control or enable people. It is how to design organizations so that human and artificial agency, acting together, can continue to create value as conditions change.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Distinction -->
+    <div class="distinction-wrap">
+      <p>Theory X and Theory Y are <em>theories of motivation.</em></p>
+      <p>Theory A is a <em>philosophy of organizational design.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ENDURING PRINCIPLE -->
+<section class="t-enduring">
+  <div class="container">
+    <p class="section-label">The central idea</p>
+    <h2>Agency is the enduring source of organizational value.</h2>
+    <div class="principle-lines">
+      <p>Organizations have never created value simply because they possessed intelligence.</p>
+      <p>They create value by organizing agency toward meaningful outcomes.</p>
+      <ul class="change-list" aria-label="What changes over time">
+        <li>Technology changes.</li>
+        <li>Markets change.</li>
+        <li>Capabilities change.</li>
+        <li>Economic conditions change.</li>
+      </ul>
+      <p>But organizations continue to create value through the ability of people — and increasingly intelligent systems — to act together toward shared outcomes.</p>
+      <p>The question is not whether conditions will change. The question is whether organizational design evolves so agency can continue to flourish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGNING FOR AGENCY -->
+<section class="t-principles">
+  <div class="container">
+    <p class="section-label">From philosophy to practice</p>
+    <h2>Designing for agency</h2>
+    <p>Theory A does not prescribe a single organizational model. Instead, it offers five enduring design principles that help leaders rethink organizations as conditions evolve.</p>
+    <p>These principles examine:</p>
+    <ul class="principle-list" aria-label="The five principles">
+      <li>Abundance</li>
+      <li>Orchestration</li>
+      <li>Outcome</li>
+      <li>Form</li>
+      <li>Compounding</li>
+    </ul>
+    <p>Each principle asks a different design question. Together, they form a connected system for designing organizations capable of organizing agency under changing conditions.</p>
+    <a href="/#principles" class="btn-primary">Explore the Principles</a>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="t-closing">
+  <div class="container">
+    <h2>Continue exploring Theory A</h2>
+    <div class="closing-grid">
+      <div class="closing-card">
+        <p class="card-title">The Manifesto</p>
+        <p class="card-desc">The foundational philosophy behind Theory A.</p>
+        <a href="/manifesto" class="card-link">Read the Manifesto &rarr;</a>
+      </div>
+      <div class="closing-card">
+        <p class="card-title">The Principles</p>
+        <p class="card-desc">The five enduring questions for organizational design.</p>
+        <a href="/#principles" class="card-link">Explore the Principles &rarr;</a>
+      </div>
+      <div class="closing-card">
+        <p class="card-title">Collections</p>
+        <p class="card-desc">Bodies of work developed through Theory A, applied to distinct challenges.</p>
+        <a href="/#contact" class="card-link">Learn More &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="/" class="wordmark">TheoryA.ai</a>
+    <p>&copy; 2026 TheoryA.ai. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var cols    = document.querySelectorAll('.theory-col');
+  var details = document.querySelectorAll('.theory-detail');
+  var active  = -1;
+
+  function select(i) {
+    // Toggle off if already active
+    if (i === active) {
+      active = -1;
+      cols.forEach(function (c) { c.classList.remove('selected', 'dimmed'); c.setAttribute('aria-expanded', 'false'); });
+      details.forEach(function (d) { d.hidden = true; });
+      return;
+    }
+
+    active = i;
+
+    cols.forEach(function (c, j) {
+      if (j === i) {
+        c.classList.add('selected');
+        c.classList.remove('dimmed');
+        c.setAttribute('aria-expanded', 'true');
+      } else {
+        c.classList.remove('selected');
+        c.classList.add('dimmed');
+        c.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    details.forEach(function (d, j) {
+      d.hidden = (j !== i);
+    });
+  }
+
+  cols.forEach(function (col, i) {
+    col.addEventListener('click', function () { select(i); });
+    col.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(i); }
+    });
+  });
+
+}());
+</script>
+
+</body>
+</html>
