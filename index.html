@@ -212,18 +212,37 @@
     .p-mobile-content p { max-width: none; }
 
     /* ── Responsive ── */
+    /* Hamburger button — hidden on desktop */
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); transition: transform 0.25s ease, opacity 0.2s ease; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+
     @media (max-width: 768px) {
       .p-split { display: none; }
       .p-mobile { display: block; }
       .people-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .site-nav { padding: 1rem 1.25rem; }
-      .site-nav ul { gap: 1.2rem; }
-      .site-nav ul a { font-size: 0.78rem; }
       .contact-inner { flex-direction: column; gap: 2.5rem; }
+
+      /* Mobile nav */
+      .nav-toggle { display: flex; }
+      #nav-links {
+        display: none;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--light-gray);
+        flex-direction: column; gap: 0;
+        padding: 0.5rem 0;
+        z-index: 99;
+      }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links li:first-child { border-top: none; }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; color: var(--mid-gray); }
+      #nav-links a:hover { color: var(--black); }
     }
     @media (max-width: 480px) {
-      .site-nav ul { gap: 0.9rem; }
-      .site-nav ul a { font-size: 0.72rem; }
       .email-form { flex-direction: column; }
       .email-form input[type="email"] { border-right: 1px solid var(--light-gray); border-bottom: none; }
     }
@@ -269,12 +288,15 @@
 <!-- NAV -->
 <nav class="site-nav">
   <a href="/" class="wordmark">TheoryA.ai</a>
-  <ul>
+  <ul id="nav-links">
     <li><a href="/theory">Why Theory A Exists</a></li>
     <li><a href="#principles">Principles</a></li>
     <li><a href="#people">People</a></li>
     <li><a href="#contact">Work With Us</a></li>
   </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -712,5 +734,25 @@
 }());
 </script>
 
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var links  = document.getElementById('nav-links');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Close when a link is tapped
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+}());
+</script>
 </body>
 </html>
