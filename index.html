@@ -215,12 +215,15 @@
     @media (max-width: 768px) {
       .p-split { display: none; }
       .p-mobile { display: block; }
-    }
-    @media (max-width: 680px) {
+      .people-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .site-nav { padding: 1rem 1.25rem; }
       .site-nav ul { gap: 1.2rem; }
       .site-nav ul a { font-size: 0.78rem; }
-      .people-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-inner { flex-direction: column; gap: 2.5rem; }
+    }
+    @media (max-width: 480px) {
+      .site-nav ul { gap: 0.9rem; }
+      .site-nav ul a { font-size: 0.72rem; }
       .email-form { flex-direction: column; }
       .email-form input[type="email"] { border-right: 1px solid var(--light-gray); border-bottom: none; }
     }
