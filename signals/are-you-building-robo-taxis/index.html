@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Are You Building Robo-taxis? | Signals | TheoryA.ai</title>
+  <meta name="description" content="When organizations deploy AI to replicate human tasks at scale, they are building robotaxis — systems that perform brilliantly within their training and freeze the moment conditions change." />
+  <meta property="og:title" content="Are You Building Robo-taxis? — TheoryA.ai" />
+  <meta property="og:description" content="When organizations deploy AI to replicate human tasks at scale, they are building robotaxis — systems that perform brilliantly within their training and freeze the moment conditions change." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    .dropcap::first-letter { font-family: var(--serif); font-weight: 400; font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); line-height: 1.6; margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; transition: opacity 0.2s; }
+    .signal-footer a:hover { opacity: 0.5; }
+    .provocation-link { display: none; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; gap: 0; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links li:first-child { border-top: none; }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/signals" class="active">Signals</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="signal-intro">
+  <p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p>
+</div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>Are You Building Robo-taxis?</h1>
+  <div class="byline">Jim Scully &middot; July 2026 &middot; Public</div>
+  <p class="dropcap">Imagine a Waymo robotaxi encountering a broken traffic light and doing what any well-trained automation would do.</p>
+  <p>It stops. And stays stopped.</p>
+  <p>You don&#8217;t need to imagine this because it happened throughout the city of San Francisco in December of 2025 and no doubt continues to happen elsewhere.</p>
+  <p>Autonomous cars are taught every rule of the road &#8212; thousands of scenarios, millions of miles of training data. But nobody can train them for the absence of a signal. The light wasn&#8217;t red. It wasn&#8217;t green. It wasn&#8217;t anything. And the car had no framework for &#8220;figure it out.&#8221;</p>
+  <p>A human driver might not even slow down. She&#8217;d glance at the intersection, read the other drivers&#8217; behavior, assess the risk, and proceed. Not because she&#8217;d been trained on that specific scenario, but because she has something the machine doesn&#8217;t: the capacity to exercise judgment when the rules stop working.</p>
+  <p>The fundamental problem is that self-driving cars are required to operate in a system designed for human drivers, and humans are better at being humans in this system.</p>
+  <p>This is the problem with treating AI as an automation tool.</p>
+  <blockquote>&#8220;The real promise of AI is not automation. It is amplification.&#8221;</blockquote>
+  <p>When organizations deploy AI to replicate human tasks &#8212; faster, cheaper, at scale &#8212; they are building robotaxis. Systems that perform brilliantly within the boundaries of their training and freeze the moment the situation falls outside the specification. The light goes dark, and the system has no idea what to do. This is the number one reason organizations pull the plug on AI deployments.</p>
+  <p>Most organizations are building robotaxis right now. They&#8217;re automating existing processes, measuring success in tasks eliminated and headcount reduced, and calling it transformation. It isn&#8217;t. It&#8217;s the same work, performed by a different actor, with the same structural vulnerability: the moment conditions change in ways the system wasn&#8217;t designed for, it stops. Or, worse, makes a mistake.</p>
+  <p>The real promise of AI is not automation. It is amplification &#8212; extending human judgment, not replacing it. A human-AI partnership where the machine handles the pattern recognition, the data synthesis, the scenario modeling at scale, and the human brings what the machine cannot: the ability to look at a dark traffic light and decide what to do.</p>
+  <p>The organizations that will thrive are not the ones that build the most sophisticated robotaxis. They are the ones that design systems where human agency and artificial intelligence work together &#8212; where the machine extends what people can see and the people provide the judgment that no amount of training data can replicate.</p>
+  <p>The question every leader should be asking is not &#8220;which tasks can AI do for us?&#8221;</p>
+  <p>It&#8217;s &#8220;what can our people accomplish when AI amplifies their judgment instead of replacing it?&#8221;</p>
+  <p>One question builds robotaxis. The other builds organizations that don&#8217;t freeze when the light goes dark.</p>
+  <p>The secret to avoiding the robotaxi problem is to design AI solutions around outcomes, not activities. Because activities are natively human, like the roads in San Francisco.</p>
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals">More Signals &rarr;</a>
+    <span class="provocation-link"></span>
+  </div>
+</article>
+<footer>
+  <div class="inner">
+    <a href="/" class="wordmark">TheoryA.ai</a>
+    <p>&copy; 2026 TheoryA.ai. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var t = document.getElementById('nav-toggle'), l = document.getElementById('nav-links');
+  if (!t || !l) return;
+  t.addEventListener('click', function () { var o = l.classList.toggle('open'); t.setAttribute('aria-expanded', o ? 'true' : 'false'); t.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); });
+  l.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { l.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); t.setAttribute('aria-label', 'Open menu'); }); });
+}());
+</script>
+</body>
+</html>

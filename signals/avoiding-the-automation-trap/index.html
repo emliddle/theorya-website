@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avoiding the Automation Trap | Signals | TheoryA.ai</title>
+  <meta name="description" content="The most natural thing is to ask whether AI can do your people's work faster. It's also a trap — automating existing tasks assumes those tasks should exist at all." />
+  <meta property="og:title" content="Avoiding the Automation Trap — TheoryA.ai" /><meta property="og:description" content="The most natural thing is to ask whether AI can do your people's work faster. It's also a trap — automating existing tasks assumes those tasks should exist at all." /><meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .provocation-link { display: none; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li><li><a href="/signals" class="active">Signals</a></li>
+    <li><a href="/#principles">Principles</a></li><li><a href="/#people">People</a></li><li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>Avoiding the Automation Trap</h1>
+  <div class="byline">Jim Scully &middot; July 2026 &middot; Public</div>
+  <p class="dropcap">The most natural thing in the world is to look at what your people do and ask, &#8220;Can AI do that faster?&#8221;</p>
+  <p>It&#8217;s also a trap.</p>
+  <p>When you automate existing tasks, you&#8217;re assuming those tasks should exist in the first place. Most of them shouldn&#8217;t. They&#8217;re artifacts of an operating model designed around human limitations &#8212; and the limitations have changed.</p>
+  <p>Consider the typical approval chain. A recommendation moves through five reviewers over three days. Each reviewer checks for a slightly different risk. Each signature exists so that if something goes wrong, responsibility is shared broadly enough that no single person takes the blame.</p>
+  <p>Now add AI. The recommendation is generated in seconds instead of hours. The analysis is more comprehensive. The data is better.</p>
+  <p>And then it sits in the same approval queue for three days.</p>
+  <p>The instinct is to automate the approval steps &#8212; AI-assisted review, automated compliance checking, faster routing. Make the queue move faster. But the queue is the wrong thing to optimize. The queue exists because the organization doesn&#8217;t trust its own decisions. Automating the queue makes distrust more efficient. It doesn&#8217;t make it unnecessary.</p>
+  <p>This is the automation trap: using AI to do the wrong work faster.</p>
+  <blockquote>&#8220;Automation makes the wrong work faster. Redesign asks whether the work should exist.&#8221;</blockquote>
+  <p>Manufacturing learned this decades ago. Toyota didn&#8217;t automate the inspection step &#8212; they redesigned the process so defects couldn&#8217;t occur. They didn&#8217;t make waste faster. They eliminated the conditions that produced waste. The principle translates directly: don&#8217;t automate the report that exists because information doesn&#8217;t flow. Fix the information flow. Don&#8217;t automate the review that exists because the system can&#8217;t trust itself. Build a system that earns trust through transparency.</p>
+  <p>The deeper issue is what I call &#8220;the work is not the work.&#8221; The tasks people perform in most organizations are not immutable requirements of the business. They&#8217;re symptoms of the operating model. Change the model, and the work changes &#8212; not incrementally, but fundamentally. Some tasks vanish entirely. Others emerge that nobody imagined. The work that remains is the work that actually requires human judgment, not the work that was designed to compensate for the absence of it.</p>
+  <p>Every organization right now is making a choice, whether they realize it or not. One path leads to automated bureaucracy &#8212; the same structure, the same logic, the same dysfunction, just faster. The other leads to redesign &#8212; asking not &#8220;how do we do this faster?&#8221; but &#8220;why do we do this at all?&#8221;</p>
+  <p>This is what&#8217;s wrong with conventional work redesign methods in an AI environment. The process starts with decomposing work into discrete tasks and then deciding which of those tasks can be automated with AI. That&#8217;s the wrong way. The right way is to distill work into the outcomes, truth states, that are needed, then asking AI how it would team with humans to accomplish those states. The work that&#8217;s left for humans will likely not resemble the work they&#8217;re doing today.</p>
+  <p>Automation makes the wrong work faster. Redesign asks whether the work should exist.</p>
+  <p>The trap isn&#8217;t using AI. The trap is using it to perfect a model that should be replaced.</p>
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals">More Signals &rarr;</a><span class="provocation-link"></span>
+  </div>
+</article>
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+<script>
+(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());
+</script>
+</body></html>

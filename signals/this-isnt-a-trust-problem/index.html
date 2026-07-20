@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This Isn&#8217;t a Trust Problem | Signals | TheoryA.ai</title>
+  <meta name="description" content="People are spending more time checking AI outputs and applying judgment. The reaction is frustration. That interpretation gets the design exactly backwards." />
+  <meta property="og:title" content="This Isn&#8217;t a Trust Problem — TheoryA.ai" />
+  <meta property="og:description" content="People are spending more time checking AI outputs and applying judgment. The reaction is frustration. That interpretation gets the design exactly backwards." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); transition: transform 0.25s ease, opacity 0.2s ease; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    .dropcap::first-letter { font-family: var(--serif); font-weight: 400; font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); line-height: 1.6; margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; transition: opacity 0.2s; }
+    .signal-footer a:hover { opacity: 0.5; }
+    .provocation-link { display: none; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; gap: 0; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links li:first-child { border-top: none; }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/signals" class="active">Signals</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="signal-intro">
+  <p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p>
+</div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>This Isn&#8217;t a Trust Problem</h1>
+  <div class="byline">Emily Liddle &middot; July 2026 &middot; Public</div>
+  <p class="dropcap">There is a pattern emerging in organizations that are serious about AI. People are spending more time checking outputs, validating recommendations, and applying judgment to what the system produces. The reaction, in many places, is frustration. AI was supposed to eliminate work. Instead, it seems to be creating more of it.</p>
+  <p>That interpretation gets the design exactly backwards.</p>
+  <p>We&#8217;ve been here before. There was a time when organizations viewed software implementations the same way. If a system required ongoing updates after launch, it was often seen as evidence that something had gone wrong. Success meant reaching the finish line. Continuous improvement felt like fixing mistakes rather than improving capability.</p>
+  <p>Over time, we learned the opposite. The organizations that consistently outperformed weren&#8217;t the ones that treated technology as complete once it was deployed. They treated it as something that evolved continuously. The updating wasn&#8217;t evidence of failure; it was evidence that the system was doing exactly what it was supposed to do.</p>
+  <p>AI requires a similar shift in thinking.</p>
+  <p>When people apply judgment to AI-generated outputs, they are not compensating for the technology&#8217;s shortcomings. They are contributing something fundamentally different. AI can generate, synthesize, recognize patterns, and execute at extraordinary scale. Humans determine relevance. They weigh context, navigate ambiguity, recognize consequences, and decide what action should follow.</p>
+  <p>Organizations often describe this effort as rework. It isn&#8217;t. Rework implies correcting a mistake. What&#8217;s happening instead is something quite different.</p>
+  <p>That isn&#8217;t rework.</p>
+  <p>It&#8217;s judgment work.</p>
+  <p>The irony is that this is precisely the kind of contribution organizations spent the last century trying to minimize.</p>
+  <p>For decades, work was designed around consistency, repeatability, and control. Standardization, approval chains, and hierarchical decision-making weren&#8217;t accidental &#8212; they were mechanisms for reducing variation so organizations could scale predictably. Human judgment was often treated as the exception rather than the objective.</p>
+  <p>AI changes that equation.</p>
+  <p>As more structured and repeatable work shifts to intelligent systems, the uniquely human contribution becomes increasingly centered on judgment, discernment, and deciding what matters. Yet most organizations continue to evaluate these activities as though they are overhead rather than value creation. Time spent validating outputs is viewed as inefficiency. Questions are seen as hesitation. Deliberation is interpreted as slowing the process down.</p>
+  <blockquote>&#8220;What many leaders describe as a trust problem is, in reality, a design problem.&#8221;</blockquote>
+  <p>Closing that gap will require more than better AI. It will require redesigning organizations around the work that humans are now uniquely positioned to do.</p>
+  <p>The question isn&#8217;t whether your people trust AI.</p>
+  <p>It&#8217;s whether your organization recognizes judgment as work, and whether it has been designed to make that work valuable.</p>
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals">More Signals &rarr;</a>
+    <span class="provocation-link"></span>
+  </div>
+</article>
+<footer>
+  <div class="inner">
+    <a href="/" class="wordmark">TheoryA.ai</a>
+    <p>&copy; 2026 TheoryA.ai. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var links  = document.getElementById('nav-links');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Compounds | Signals | TheoryA.ai</title>
+  <meta name="description" content="Two organizations can begin with the same access to intelligence. Within a year, one is measurably ahead. The gap compounds." />
+  <meta property="og:title" content="What Compounds — TheoryA.ai" />
+  <meta property="og:description" content="Two organizations can begin with the same access to intelligence. Within a year, one is measurably ahead. The gap compounds." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --white: #fafafa;
+      --mid-gray: #525252;
+      --light-gray: #e2e0db;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --serif: Georgia, 'Times New Roman', serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); transition: transform 0.25s ease, opacity 0.2s ease; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+
+    /* SIGNAL HEADER */
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+
+    /* ARTICLE */
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    .dropcap::first-letter { font-family: var(--serif); font-weight: 400; font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+
+    /* SIGNAL FOOTER */
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); line-height: 1.6; margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; transition: opacity 0.2s; }
+    .signal-footer a:hover { opacity: 0.5; }
+    /* Placeholder for future provocation link */
+    .provocation-link { display: none; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; gap: 0; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links li:first-child { border-top: none; }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/signals" class="active">Signals</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="signal-intro">
+  <p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p>
+</div>
+
+<article>
+  <div class="signal-kicker">
+    <span>TheoryA.ai</span>
+    <span>Signal</span>
+  </div>
+  <h1>What Compounds</h1>
+  <div class="byline">Emily Liddle &middot; July 2026 &middot; Public</div>
+
+  <p class="dropcap">Two organizations can begin with the same access to intelligence. Within a year, one is measurably ahead. Not because the technology changed, but because of what happened every time someone had to exercise judgment, bring imagination to a problem, or make a decision without a clear precedent. One organization designed work that strengthened those capabilities. The other quietly designed them away.</p>
+  <p>That gap is not linear. It compounds.</p>
+  <p>Compounding is not automatically good. It compounds toward something. An organization that consistently routes moments requiring judgment, imagination, creativity, and ingenuity to its people is strengthening those capabilities every time they are exercised. An organization that systematically routes those same moments away from people — back into approval chains, automated defaults, or rigid processes — is strengthening something else entirely. Capability compounds in both directions.</p>
+  <blockquote>&#8220;Capability compounds in both directions.&#8221;</blockquote>
+  <p>It grows through repetition, and it erodes through repetition.</p>
+  <p>This is where I think many organizations are looking in the wrong place for return. AI can help complete work faster, reduce the cost of routine tasks, and improve operational efficiency. Those benefits are real, but they are unlikely to remain a lasting competitive advantage as access to AI becomes increasingly universal. The more enduring return is found somewhere else entirely. It is found in whether an organization is intentionally compounding the capabilities that remain uniquely human.</p>
+  <p>Judgment. Imagination. Creativity. Ingenuity.</p>
+  <p>These are not simply traits reserved for a select few. They are organizational capabilities that strengthen when work is designed to exercise them. Every ambiguous decision, every unexpected problem, every opportunity to imagine a different approach becomes more than a moment of execution. It becomes an investment in what the organization will be capable of tomorrow.</p>
+  <p>The instinct to optimize for efficiency comes from an assumption organizations have carried for decades — that intelligence should behave like deterministic software. We provide an input, expect the correct output, and treat anything beyond that as deviation. That assumption made sense when software was designed to execute predefined logic. It makes far less sense when organizations increasingly rely on human judgment, creativity, imagination, and generative AI. None of these forms of intelligence create value through perfect compliance. Their value lies in contribution.</p>
+  <p>Yet compliance is easier to measure.</p>
+  <p>Organizations count tasks completed, approvals processed, response times reduced, and costs removed. Those measures remain useful, but they tell us very little about whether people are becoming better at exercising judgment, generating original ideas, navigating ambiguity, or solving problems that have never existed before. The capabilities that will increasingly differentiate organizations are often the ones least visible on a dashboard.</p>
+  <p>This is not a future design challenge. It is a present one. Every decision about how work is designed is reinforcing something. Every approval chain that replaces judgment, every process that discourages imagination, every opportunity for creativity that is standardized away is quietly shaping what the organization becomes capable of over time. The effects are rarely visible in a day, a quarter, or even a year. But over time, they become impossible to ignore.</p>
+  <p>The organizations that create the greatest return from AI will not necessarily be those with the most advanced technology. They will be the ones that intentionally compound the uniquely human capabilities AI cannot develop on their behalf. Access to intelligence is becoming increasingly universal. What will separate organizations is what their people are getting better at every day because of how the work is designed.</p>
+  <p>Perhaps that is where the most important return is found.</p>
+  <p>Not in what AI allows organizations to automate.</p>
+  <p>But in what it enables people — and ultimately the organization itself — to become.</p>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals">More Signals &rarr;</a>
+    <span class="provocation-link"></span>
+  </div>
+</article>
+
+<footer>
+  <div class="inner">
+    <a href="/" class="wordmark">TheoryA.ai</a>
+    <p>&copy; 2026 TheoryA.ai. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var links  = document.getElementById('nav-links');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+}());
+</script>
+
+</body>
+</html>

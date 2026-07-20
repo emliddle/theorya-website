@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reversing the Industrial Bargain | Signals | TheoryA.ai</title>
+  <meta name="description" content="The industrial era struck a deal with workers: give us your craft and we'll break it into tasks anyone can do. AI reverses that bargain. Most organizations are still optimizing the old deal." />
+  <meta property="og:title" content="Reversing the Industrial Bargain — TheoryA.ai" />
+  <meta property="og:description" content="AI reverses the industrial bargain. Most organizations are still optimizing the old deal." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .provocation-link { display: none; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/signals" class="active">Signals</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>Reversing the Industrial Bargain</h1>
+  <div class="byline">Jim Scully &middot; July 2026 &middot; Public</div>
+
+  <p class="dropcap">The industrial era struck a deal with workers, and most of us have forgotten it was ever negotiated.</p>
+  <p>The bargain was this: give us your craft, and we&#8217;ll break it into simple, repeatable tasks anyone can do. You don&#8217;t need to understand the whole &#8212; just execute your piece. In return, you get wages, stability, and a clear place in the machine.</p>
+  <p>Workers traded autonomy for predictability. Organizations traded human judgment for controllable output. And for a century, it worked. Resistance was significant &#8212; craftsmen understood exactly what they were losing &#8212; but the economics were overwhelming. Frederick Taylor&#8217;s scientific management didn&#8217;t just reorganize work. It reorganized what it meant to be a worker. The craftsperson became the position holder. The bundle of judgment became a bundle of tasks.</p>
+  <p>This is still how most organizations operate. Job descriptions list tasks. Performance reviews measure task completion. Career ladders reward task mastery. The entire architecture assumes that work is something you break into pieces and assign to people in predefined roles.</p>
+  <p>AI reverses the bargain.</p>
+  <p>Not because anyone planned it that way, but because the economics have flipped. The machine now handles the fragmented, repetitive, rules-based work &#8212; faster and more reliably than any human. The tasks that the industrial model created specifically to replace craft judgment are exactly the tasks AI absorbs first. Data gathering. Report assembly. Compliance checking. Scheduling. Routine analysis. The work that was designed to not require human judgment is the work that no longer requires humans at all.</p>
+  <blockquote>&#8220;Let the machine handle the fragments, and let the humans be whole again.&#8221;</blockquote>
+  <p>What&#8217;s left is the judgment. The discernment. The ability to look at what the machine produced and know whether it&#8217;s right &#8212; not mathematically right, but right for this situation, this customer, this moment. The ability to see what&#8217;s missing from the data. The ability to make a call when the rules don&#8217;t apply.</p>
+  <p>The human contribution becomes whole again. Not a bundle of tasks, but a bundle of judgment &#8212; closer to the craftsperson than to the position holder.</p>
+  <p>This is the shift most organizations are missing. They&#8217;re using AI to make the industrial bargain more efficient &#8212; automating tasks, speeding up processes, reducing the cost per unit of fragmented work. They&#8217;re perfecting the old deal instead of recognizing that AI makes a different deal possible.</p>
+  <p>The organizations that understand this will design around human agency &#8212; the capacity for judgment, direction, and discernment. They&#8217;ll stop breaking work into tasks and start organizing around outcomes that require human and AI capabilities working together.</p>
+  <p>The organizations that don&#8217;t will automate the tasks and wonder why their best people feel expendable.</p>
+  <p>The industrial bargain was a trade: craft for wages. AI offers a different trade: let the machine handle the fragments, and let the humans be whole again. The question is whether your organization is ready to take that deal &#8212; or whether it&#8217;s still optimizing a bargain that no longer makes sense.</p>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals">More Signals &rarr;</a>
+    <span class="provocation-link"></span>
+  </div>
+</article>
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body></html>
