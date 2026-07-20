@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TheoryA.ai | Human Agency for the AI Enterprise</title>
   <meta name="description" content="Theory A is a management philosophy built on the belief that human agency is the source of organizational value. Explore the framework, the manifesto, and The AI Enterprise." />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -41,7 +42,7 @@
     section { padding: 7rem 0; }
     section + section { border-top: 1px solid var(--light-gray); }
     .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; }
-    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 300; letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 1.5rem; }
+    h2 { font-family: 'Newsreader', Georgia, serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1.5rem; }
     p { color: var(--mid-gray); margin-bottom: 1.2rem; max-width: 660px; font-weight: 400; }
     p:last-child { margin-bottom: 0; }
     .text-link { display: inline-block; margin-top: 1.8rem; font-size: 0.9rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 2px; transition: opacity 0.2s; }
@@ -54,7 +55,7 @@
 
     /* HERO */
     #hero { padding: 8rem 0 7rem; }
-    #hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.8rem; max-width: 700px; color: var(--black); }
+    #hero h1 { font-family: 'Newsreader', Georgia, serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.8rem; max-width: 700px; color: var(--black); }
     #hero .lead { font-size: 1.1rem; color: var(--mid-gray); max-width: 620px; margin-bottom: 1.2rem; line-height: 1.7; }
     #hero .sub { font-size: 1.1rem; color: var(--mid-gray); max-width: 620px; margin-bottom: 1.2rem; line-height: 1.7; }
     #hero .sub-rule { border-left: 2px solid var(--black); padding: 0.2rem 0 0.2rem 1.25rem; margin: 2rem 0 3rem; font-size: 1.05rem; font-style: italic; color: var(--black) !important; line-height: 1.6; max-width: 560px; }
@@ -67,7 +68,7 @@
     }
     #enterprise { border-top: 1px solid var(--light-gray); }
     .principles-section .section-label { color: #888882; margin-bottom: 1rem; }
-    .principles-section > .container > h2 { color: var(--white); margin-bottom: 0.6rem; }
+    .principles-section > .container > h2 { color: var(--white); margin-bottom: 0.6rem; font-weight: 400; }
     .principles-intro { font-size: 0.9rem; color: #888882; max-width: 500px; margin-bottom: 3rem; line-height: 1.65; }
 
     /* Desktop split */
@@ -187,7 +188,7 @@
     .psvg .pnode { cursor: pointer; }
     .p-detail { display: none; }
     .pd-name { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin-bottom: 0.9rem; }
-    .pd-question { font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 300; color: var(--white); line-height: 1.35; margin-bottom: 1.5rem; letter-spacing: -0.01em; max-width: none; }
+    .pd-question { font-family: 'Newsreader', Georgia, serif; font-size: clamp(1.1rem, 2vw, 1.45rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.4; margin-bottom: 1.5rem; letter-spacing: -0.01em; max-width: none; border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem; }
     .pd-def { font-size: 0.88rem; color: var(--dark-text); line-height: 1.8; transition: opacity 0.25s ease; max-width: none; }
 
     /* SEO / screen reader content */
@@ -257,8 +258,8 @@
     /* PEOPLE */
     .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.5rem; }
     .person { padding-top: 1.5rem; border-top: 1px solid var(--light-gray); }
-    .person-name { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--black); }
-    .person-role { font-size: 0.8rem; color: var(--mid-gray); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 500; }
+    .person-name { font-family: 'Newsreader', Georgia, serif; font-size: 1.7rem; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0.25rem; color: var(--black); }
+    .person-role { font-size: 0.75rem; color: var(--mid-gray); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.2rem; font-weight: 500; }
     .person p { font-size: 0.92rem; line-height: 1.65; }
 
     /* CONTACT */
@@ -500,7 +501,7 @@
       </div>
       <div class="p-mobile-content" aria-live="polite">
         <p class="m-name" id="m-name"></p>
-        <p class="m-question" id="m-question" style="font-size:1.05rem;font-weight:300;color:var(--white);line-height:1.4;margin-bottom:1.25rem;max-width:none;"></p>
+        <p class="m-question" id="m-question" style="font-family:'Newsreader',Georgia,serif;font-size:1.05rem;font-weight:400;font-style:italic;color:var(--white);line-height:1.4;margin-bottom:1.25rem;max-width:none;border-left:2px solid rgba(255,255,255,0.2);padding-left:1rem;"></p>
         <p class="m-def" id="m-def" style="font-size:0.88rem;color:var(--dark-text);line-height:1.75;max-width:none;"></p>
       </div>
     </div>
