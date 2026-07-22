@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signals | TheoryA.ai</title>
-  <meta name="description" content="Signals are short essays that examine organizations through the lens of Theory A. Each explores one observation within a broader body of thinking about intelligence, human agency, and organizational design." />
+  <meta name="description" content="Signals are short essays that examine organizations through the lens of Theory A. Each explores one observation, implication, or emerging pattern within a broader body of thinking." />
   <meta property="og:title" content="Signals | TheoryA.ai" />
   <meta property="og:description" content="Short essays examining organizations through the lens of Theory A — intelligence, human agency, and organizational design." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Newsreader:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Newsreader:wght@600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -18,6 +18,7 @@
       --white: #fbfaf8;
       --inter: 'Inter', 'Helvetica Neue', Arial, sans-serif;
       --newsreader: 'Newsreader', Georgia, serif;
+      --max: 900px;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--white); font-family: var(--inter); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
@@ -34,96 +35,49 @@
     .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
 
-    /* PAGE */
-    .signals-page { max-width: 720px; margin: 0 auto; padding: 5rem 2rem 7rem; }
+    /* PAGE SHELL */
+    .signals-page { max-width: var(--max); margin: 0 auto; padding: 5rem 2rem 7rem; }
 
-    /* HEADER */
-    .page-kicker { font-family: var(--inter); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-bottom: 1.5rem; }
-    .page-title { font-family: var(--newsreader); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; color: var(--white); margin-bottom: 1.8rem; }
-    .page-desc { font-family: var(--inter); font-size: 1rem; color: rgba(255,255,255,0.44); line-height: 1.75; max-width: 580px; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 3rem; margin-bottom: 0; }
+    /* PAGE HEADER */
+    .page-kicker { font-family: var(--inter); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 1.2rem; }
+    .page-title { font-family: var(--newsreader); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; color: var(--white); margin-bottom: 1.4rem; }
+    .page-desc { font-family: var(--inter); font-size: 0.95rem; color: rgba(255,255,255,0.44); line-height: 1.75; max-width: 600px; padding-bottom: 4rem; }
 
-    /* SIGNAL LIST */
-    .signal-list { list-style: none; }
+    /* CONTENT BLOCKS */
+    .content-block { padding: 0 0 4rem; }
+    .block-header { margin-bottom: 2.5rem; }
+    .block-label { font-family: var(--inter); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 1rem; }
+    .block-desc { font-family: var(--inter); font-size: 0.92rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 600px; }
 
-    .signal-entry { padding: 32px 0 0; border-top: 1px solid rgba(255,255,255,0.12); }
-    .signal-entry:first-child { border-top: none; }
-    .signal-entry + .signal-entry { margin-top: 0; }
+    /* PROVOCATION CARDS */
+    .provocation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+    .provocation-card { background: var(--black); padding: 2.2rem 2rem 2rem; }
+    .provocation-title { font-family: var(--newsreader); font-size: clamp(1.3rem, 2.5vw, 1.65rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--white); margin-bottom: 0.85rem; }
+    .provocation-desc { font-family: var(--inter); font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 1.8rem; }
+    .provocation-links { display: flex; flex-direction: column; gap: 0.55rem; }
+    .prov-link { font-family: var(--inter); font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; transition: opacity 0.2s; }
+    .prov-link:hover { opacity: 0.6; }
+    .prov-link--dl { color: rgba(255,255,255,0.44); }
 
-    /* Byline row */
-    .signal-entry-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 12px;
-    }
-    .signal-entry-author {
-      font-family: var(--inter);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--white);
-    }
-    .signal-entry-label {
-      font-family: var(--inter);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.34);
-    }
+    /* PAGE DIVIDER */
+    .page-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0; }
 
-    /* Title */
-    .signal-entry-title {
-      font-family: var(--newsreader);
-      font-size: 36px;
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--white);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    /* Title/excerpt divider */
-    .signal-title-rule {
-      width: 32px;
-      height: 1px;
-      background: rgba(255,255,255,0.3);
-      margin: 14px 0 16px;
-    }
-
-    /* Excerpt */
-    .signal-entry-preview {
-      font-family: var(--inter);
-      font-size: 14.5px;
-      font-weight: 400;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.44);
-      max-width: 440px;
-      margin-bottom: 18px;
-    }
-
-    /* Read link */
-    .signal-read-link {
-      display: inline-block;
-      font-family: var(--inter);
-      font-size: 14.5px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      margin-bottom: 32px;
-      transition: opacity 0.2s;
-    }
-    .signal-read-link:hover { opacity: 0.75; }
-    .signal-read-link:focus-visible { outline: 2px solid rgba(255,255,255,0.5); outline-offset: 2px; }
-    .signal-read-link .arrow { display: inline-block; transform: translateX(2px); }
+    /* SIGNAL GRID */
+    .signal-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .signal-card { padding: 1.8rem 1.5rem 1.8rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+    .signal-card:nth-child(3n) { padding-right: 0; }
+    .signal-card-author { font-family: var(--inter); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 0.7rem; display: block; }
+    .signal-card-title { font-family: var(--newsreader); font-size: 1.25rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--white); text-decoration: none; display: block; margin-bottom: 0.6rem; transition: opacity 0.2s; }
+    .signal-card-title:hover { opacity: 0.7; }
+    .signal-card-preview { font-family: var(--inter); font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .signal-card-link { font-family: var(--inter); font-size: 13px; color: rgba(255,255,255,0.65); text-decoration: none; transition: opacity 0.2s; }
+    .signal-card-link:hover { opacity: 0.7; }
 
     /* FOOTER */
     footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 2.5rem 0; }
-    footer .container { max-width: 720px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     footer .wordmark { font-family: var(--inter); font-size: 0.9rem; font-weight: 600; color: var(--white); text-decoration: none; }
-    footer p { font-family: var(--inter); font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+    footer p { font-family: var(--inter); font-size: 0.8rem; color: rgba(255,255,255,0.25); }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -134,7 +88,14 @@
       #nav-links li:first-child { border-top: none; }
       #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
       .signals-page { padding: 3rem 1.5rem 5rem; }
-      .signal-entry-title { font-size: 28px; }
+      .provocation-grid { grid-template-columns: 1fr; }
+      .signal-grid { grid-template-columns: repeat(2, 1fr); }
+      .signal-card { padding-right: 1rem; }
+      .signal-card:nth-child(2n) { padding-right: 0; }
+    }
+    @media (max-width: 480px) {
+      .signal-grid { grid-template-columns: 1fr; }
+      .signal-card { padding-right: 0; }
     }
   </style>
 </head>
@@ -155,112 +116,114 @@
 </nav>
 
 <main class="signals-page">
+
+  <!-- PAGE HEADER -->
   <p class="page-kicker">TheoryA.ai</p>
   <h1 class="page-title">Signals</h1>
-  <p class="page-desc">Signals are short essays that examine organizations through the lens of Theory A. Each explores one observation within a broader body of thinking about intelligence, human agency, and organizational design. Together, they form an evolving institutional perspective rather than a collection of standalone articles.</p>
+  <p class="page-desc">Signals are short essays that examine organizations through the lens of Theory A. Each explores one observation, implication, or emerging pattern within a broader body of thinking. Individually they stand on their own. Together, they form an evolving library of ideas.</p>
 
-  <ul class="signal-list">
-
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Jim Scully</span>
-        <span class="signal-entry-label">Signal</span>
+  <!-- PROVOCATIONS -->
+  <section class="content-block">
+    <div class="block-header">
+      <h2 class="block-label">Provocations</h2>
+      <p class="block-desc">Provocations articulate our major bodies of thinking. Each explores a significant organizational challenge and introduces the ideas that underpin our advisory work. Signals build upon, challenge, and extend those ideas over time, creating an evolving body of thought rather than a collection of disconnected articles.</p>
+    </div>
+    <div class="provocation-grid">
+      <div class="provocation-card">
+        <h3 class="provocation-title">The AI Enterprise</h3>
+        <p class="provocation-desc">A new operating model for organizations built for an age of abundant intelligence.</p>
+        <div class="provocation-links">
+          <a href="/provocations/ai-enterprise" class="prov-link">Read the Provocation &rarr;</a>
+          <a href="/provocations/ai-enterprise.pdf" class="prov-link prov-link--dl">Download PDF &rarr;</a>
+        </div>
       </div>
-      <a href="/signals/what-comes-after-bureaucracy" class="signal-entry-title">What Comes After Bureaucracy?</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">Bureaucracy gets a bad name, but it solved a real problem. AI changes the underlying economics — the new constraint is human agency, and bureaucracy was never designed to maximize it.</p>
-      <a href="/signals/what-comes-after-bureaucracy" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
-
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Emily Liddle</span>
-        <span class="signal-entry-label">Signal</span>
+      <div class="provocation-card">
+        <h3 class="provocation-title">Design for Agency</h3>
+        <p class="provocation-desc">Designing organizations that expand&#8212;not constrain&#8212;human agency.</p>
+        <div class="provocation-links">
+          <a href="/provocations/design-for-agency" class="prov-link">Read the Provocation &rarr;</a>
+          <a href="/provocations/design-for-agency.pdf" class="prov-link prov-link--dl">Download PDF &rarr;</a>
+        </div>
       </div>
-      <a href="/signals/what-compounds" class="signal-entry-title">What Compounds</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">Two organizations can begin with the same access to intelligence. Within a year, one is measurably ahead — not because the technology changed, but because of what happened every time someone had to exercise judgment.</p>
-      <a href="/signals/what-compounds" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+    </div>
+  </section>
 
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Jim Scully</span>
-        <span class="signal-entry-label">Signal</span>
-      </div>
-      <a href="/signals/reversing-the-industrial-bargain" class="signal-entry-title">Reversing the Industrial Bargain</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">The industrial era struck a deal with workers: give us your craft, and we'll break it into tasks anyone can do. AI reverses that bargain — and most organizations are still optimizing the old deal.</p>
-      <a href="/signals/reversing-the-industrial-bargain" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+  <hr class="page-divider" />
 
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Emily Liddle</span>
-        <span class="signal-entry-label">Signal</span>
-      </div>
-      <a href="/signals/this-isnt-a-trust-problem" class="signal-entry-title">This Isn&#8217;t a Trust Problem</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">There is a pattern emerging in organizations serious about AI: people are spending more time checking outputs, validating recommendations, applying judgment. The reaction in many places is frustration. That interpretation gets the design exactly backwards.</p>
-      <a href="/signals/this-isnt-a-trust-problem" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+  <!-- SIGNAL LIBRARY -->
+  <section class="content-block">
+    <div class="block-header">
+      <h2 class="block-label">Signal Library</h2>
+      <p class="block-desc">A curated library of observations that continue to explore and expand the ideas introduced in our Provocations.</p>
+    </div>
+    <ul class="signal-grid">
 
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Jim Scully</span>
-        <span class="signal-entry-label">Signal</span>
-      </div>
-      <a href="/signals/is-your-roai-self-sabotaging" class="signal-entry-title">Is Your ROAI Self-Sabotaging?</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">Most organizations measure return on AI the same way they measure every other investment: cost reduction, headcount eliminated, tasks automated. This is scarcity logic applied to an amplification technology.</p>
-      <a href="/signals/is-your-roai-self-sabotaging" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/what-comes-after-bureaucracy" class="signal-card-title">What Comes After Bureaucracy?</a>
+        <p class="signal-card-preview">Bureaucracy gets a bad name, but it solved a real problem. AI changes the underlying economics — the new constraint is human agency, and bureaucracy was never designed to maximize it.</p>
+        <a href="/signals/what-comes-after-bureaucracy" class="signal-card-link">Read &rarr;</a>
+      </li>
 
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Jim Scully</span>
-        <span class="signal-entry-label">Signal</span>
-      </div>
-      <a href="/signals/dont-repeat-mcgregors-mistake" class="signal-entry-title">Don&#8217;t Repeat McGregor&#8217;s Mistake</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">In 1960, McGregor changed how the world thinks about management. Then he tried to apply Theory Y inside an architecture that was still fundamentally Theory X. The structure won. It always does.</p>
-      <a href="/signals/dont-repeat-mcgregors-mistake" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+      <li class="signal-card">
+        <span class="signal-card-author">Emily Liddle</span>
+        <a href="/signals/what-compounds" class="signal-card-title">What Compounds</a>
+        <p class="signal-card-preview">Two organizations can begin with the same access to intelligence. Within a year, one is measurably ahead — not because the technology changed, but because of what happened every time someone had to exercise judgment.</p>
+        <a href="/signals/what-compounds" class="signal-card-link">Read &rarr;</a>
+      </li>
 
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Jim Scully</span>
-        <span class="signal-entry-label">Signal</span>
-      </div>
-      <a href="/signals/can-your-company-survive-ai-transformation" class="signal-entry-title">Can Your Company Survive AI Transformation?</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">Not every company can transform in place. That&#8217;s the honest answer nobody puts in the consulting brochure. Most approaches stall at exactly the same point.</p>
-      <a href="/signals/can-your-company-survive-ai-transformation" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/reversing-the-industrial-bargain" class="signal-card-title">Reversing the Industrial Bargain</a>
+        <p class="signal-card-preview">The industrial era struck a deal with workers: give us your craft, and we'll break it into tasks anyone can do. AI reverses that bargain — and most organizations are still optimizing the old deal.</p>
+        <a href="/signals/reversing-the-industrial-bargain" class="signal-card-link">Read &rarr;</a>
+      </li>
 
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Jim Scully</span>
-        <span class="signal-entry-label">Signal</span>
-      </div>
-      <a href="/signals/avoiding-the-automation-trap" class="signal-entry-title">Avoiding the Automation Trap</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">The most natural thing in the world is to look at what your people do and ask, &#8220;Can AI do that faster?&#8221; It&#8217;s also a trap — when you automate existing tasks, you&#8217;re assuming those tasks should exist.</p>
-      <a href="/signals/avoiding-the-automation-trap" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+      <li class="signal-card">
+        <span class="signal-card-author">Emily Liddle</span>
+        <a href="/signals/this-isnt-a-trust-problem" class="signal-card-title">This Isn&#8217;t a Trust Problem</a>
+        <p class="signal-card-preview">There is a pattern emerging in organizations serious about AI: people are spending more time checking outputs, validating recommendations, applying judgment. That interpretation gets the design exactly backwards.</p>
+        <a href="/signals/this-isnt-a-trust-problem" class="signal-card-link">Read &rarr;</a>
+      </li>
 
-    <li class="signal-entry">
-      <div class="signal-entry-meta">
-        <span class="signal-entry-author">By Jim Scully</span>
-        <span class="signal-entry-label">Signal</span>
-      </div>
-      <a href="/signals/are-you-building-robo-taxis" class="signal-entry-title">Are You Building Robo-taxis?</a>
-      <div class="signal-title-rule"></div>
-      <p class="signal-entry-preview">When organizations deploy AI to replicate human tasks — faster, cheaper, at scale — they are building robotaxis. Systems that perform brilliantly within their training and freeze the moment conditions change.</p>
-      <a href="/signals/are-you-building-robo-taxis" class="signal-read-link">Read this Signal <span class="arrow">&rarr;</span></a>
-    </li>
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/is-your-roai-self-sabotaging" class="signal-card-title">Is Your ROAI Self-Sabotaging?</a>
+        <p class="signal-card-preview">Most organizations measure return on AI the same way they measure every other investment: cost reduction, headcount eliminated, tasks automated. This is scarcity logic applied to an amplification technology.</p>
+        <a href="/signals/is-your-roai-self-sabotaging" class="signal-card-link">Read &rarr;</a>
+      </li>
 
-  </ul>
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/dont-repeat-mcgregors-mistake" class="signal-card-title">Don&#8217;t Repeat McGregor&#8217;s Mistake</a>
+        <p class="signal-card-preview">In 1960, McGregor changed how the world thinks about management. Then he tried to apply Theory Y inside an architecture that was still fundamentally Theory X. The structure won. It always does.</p>
+        <a href="/signals/dont-repeat-mcgregors-mistake" class="signal-card-link">Read &rarr;</a>
+      </li>
+
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/can-your-company-survive-ai-transformation" class="signal-card-title">Can Your Company Survive AI Transformation?</a>
+        <p class="signal-card-preview">Not every company can transform in place. That&#8217;s the honest answer nobody puts in the consulting brochure. Most approaches stall at exactly the same point.</p>
+        <a href="/signals/can-your-company-survive-ai-transformation" class="signal-card-link">Read &rarr;</a>
+      </li>
+
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/avoiding-the-automation-trap" class="signal-card-title">Avoiding the Automation Trap</a>
+        <p class="signal-card-preview">The most natural thing in the world is to look at what your people do and ask, &#8220;Can AI do that faster?&#8221; It&#8217;s also a trap — when you automate existing tasks, you&#8217;re assuming those tasks should exist.</p>
+        <a href="/signals/avoiding-the-automation-trap" class="signal-card-link">Read &rarr;</a>
+      </li>
+
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/are-you-building-robo-taxis" class="signal-card-title">Are You Building Robo-taxis?</a>
+        <p class="signal-card-preview">When organizations deploy AI to replicate human tasks — faster, cheaper, at scale — they are building robotaxis. Systems that perform brilliantly within their training and freeze the moment conditions change.</p>
+        <a href="/signals/are-you-building-robo-taxis" class="signal-card-link">Read &rarr;</a>
+      </li>
+
+    </ul>
+  </section>
+
 </main>
 
 <footer>
