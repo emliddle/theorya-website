@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The End of the Transaction Factory &#8212; TheoryA.ai</title>
+<meta name="description" content="Why shared services cannot optimize its way into the AI era. A provocation from TheoryA.ai's AI Native Shared Services Collection." />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Georgia', serif; background: #ffffff; color: #000000; line-height: 1.7; font-size: 17px; }
@@ -26,10 +27,8 @@
   .site-nav-links { display: flex; align-items: center; gap: 28px; }
   .site-nav-link { font-family: 'Georgia', serif; font-size: 13px; color: #555; text-decoration: none; letter-spacing: 0.3px; }
   .site-nav-link:hover { color: #000; }
-  .site-nav-link--back { font-family: 'Georgia', serif; font-size: 13px; color: #888; text-decoration: none; }
-  .site-nav-link--back:hover { color: #000; }
 
-  /* Document styles */
+  /* Cover */
   .cover { padding: 96px 48px 80px; border-bottom: 1px solid #000; max-width: 860px; margin: 0 auto; }
   .collection-tag { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 48px; }
   .logo-mark { font-family: 'Georgia', serif; font-size: 96px; font-weight: 400; line-height: 1; letter-spacing: -4px; margin-bottom: 48px; display: block; }
@@ -37,10 +36,12 @@
   .subtitle { font-family: 'Georgia', serif; font-size: 22px; font-style: italic; color: #555; margin-bottom: 32px; font-weight: 400; }
   .byline-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
   .byline { font-family: 'Georgia', serif; font-size: 14px; color: #888; letter-spacing: 0.5px; }
-  .pdf-download { font-family: 'Georgia', serif; font-size: 13px; color: #888; text-decoration: none; letter-spacing: 0.5px; border: 1px solid #ccc; padding: 8px 16px; }
+  .pdf-download { font-family: 'Georgia', serif; font-size: 13px; color: #888; text-decoration: none; letter-spacing: 0.5px; border: 1px solid #ccc; padding: 8px 16px; transition: color 0.2s, border-color 0.2s; }
   .pdf-download:hover { color: #000; border-color: #000; }
 
+  /* Content */
   .content { max-width: 680px; margin: 0 auto; padding: 72px 48px; }
+  .intro-note { font-family: 'Georgia', serif; font-size: 14px; font-style: italic; color: #888; line-height: 1.7; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid #eee; }
   .section { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid #ddd; }
   .section:last-child { border-bottom: none; }
   h2.section-title { font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 32px; font-weight: 400; }
@@ -48,7 +49,7 @@
   p:last-child { margin-bottom: 0; }
   .pullquote { margin: 48px 0; padding: 32px 40px; border-left: 3px solid #000; background: #f8f8f8; }
   .pullquote p { font-size: 22px; font-style: italic; line-height: 1.5; color: #000; margin: 0; font-weight: 400; }
-  strong.label { font-family: 'Georgia', serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 8px; margin-top: 32px; color: #000; }
+  strong.label { font-family: 'Georgia', serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 8px; margin-top: 32px; color: #000; font-weight: 700; }
   .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 15px; }
   .comparison-table th { background: #000; color: #fff; padding: 14px 20px; text-align: left; font-weight: 400; font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 1px; }
   .comparison-table td { padding: 14px 20px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.6; font-size: 15px; }
@@ -56,6 +57,8 @@
   .comparison-table tr:last-child td { border-bottom: none; }
   .closing-section { margin-top: 72px; padding-top: 48px; border-top: 2px solid #000; }
   .closing-line { font-size: 20px; font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
+
+  /* Footer */
   footer { border-top: 1px solid #000; padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; }
   .footer-left { font-family: 'Georgia', serif; font-size: 20px; color: #000; }
   .footer-right { font-family: 'Georgia', serif; font-size: 12px; color: #888; letter-spacing: 2px; text-transform: uppercase; }
@@ -69,6 +72,8 @@
     .subtitle { font-size: 18px; }
     .content { padding: 48px 24px; }
     footer { padding: 24px; flex-direction: column; gap: 12px; }
+    .pullquote { padding: 24px; }
+    .pullquote p { font-size: 18px; }
   }
 </style>
 </head>
@@ -82,7 +87,7 @@
   <div class="site-nav-links">
     <a href="/theory/" class="site-nav-link">Theory</a>
     <a href="/signals/" class="site-nav-link">Signals</a>
-    <a href="/provocations/ai-native-shared-services.pdf" class="site-nav-link" download target="_blank" rel="noopener">Download PDF</a>
+    <a href="/provocations/ai-native-shared-services.pdf" class="site-nav-link" target="_blank" rel="noopener">Download PDF</a>
   </div>
 </nav>
 
@@ -90,19 +95,22 @@
   <div class="collection-tag">AI Native Shared Services Collection &nbsp;&middot;&nbsp; TheoryA.ai &nbsp;&middot;&nbsp; July 2026</div>
   <span class="logo-mark">A.</span>
   <h1 class="title">The End of the Transaction Factory</h1>
-  <p class="subtitle">Why GBS cannot optimize its way into the AI era</p>
+  <p class="subtitle">Why shared services cannot optimize its way into the AI era</p>
   <div class="byline-row">
-    <p class="byline">Jim Scully &nbsp;&middot;&nbsp; Co-Founder, TheoryA.ai</p>
-    <a href="/provocations/ai-native-shared-services.pdf" class="pdf-download" download target="_blank" rel="noopener">Download PDF &darr;</a>
+    <p class="byline">Jim Scully &nbsp;&middot;&nbsp; TheoryA.ai &nbsp;&middot;&nbsp; July 2026</p>
+    <a href="/provocations/ai-native-shared-services.pdf" class="pdf-download" target="_blank" rel="noopener" download>Download PDF &darr;</a>
   </div>
 </div>
 
 <div class="content">
+
+  <p class="intro-note">This paper applies Theory A, a management philosophy for organizing agency in an age of abundant intelligence, to shared services. It is part of the AI Native Shared Services Collection.</p>
+
   <div class="section">
     <div class="pullquote"><p>An operating model is a machine for managing scarcity. When the scarcity inverts, the machine does not merely become suboptimal. It becomes the constraint.</p></div>
-    <p>For thirty years, shared services and Global Business Services ran on a single economic engine: the same work, performed by cheaper labor, somewhere else. That engine is failing. Not because it was badly built. Because AI has changed the scarcity it was built to manage.</p>
+    <p>For thirty years, shared services ran on a single economic engine: the same work, performed by cheaper labor, somewhere else. That engine is failing. Not because it was badly built. Because AI has changed the scarcity it was built to manage.</p>
     <p>Knowledge retrieval, drafting, case preparation, routing, translation, routine analysis, first-line decision support. These are becoming abundant. The price of routine cognitive work is collapsing toward the cost of computation. And with it collapses the arbitrage that funds the legacy model.</p>
-    <p>This is not a technology problem. It is an organizational design problem. And the response most GBS organizations are choosing, AI inside the legacy model, will not solve it.</p>
+    <p>This is not a technology problem. It is an organizational design problem. And the response most shared services organizations are choosing, AI inside the legacy model, will not solve it.</p>
   </div>
 
   <div class="section">
@@ -117,9 +125,9 @@
 
   <div class="section">
     <h2 class="section-title">The Fork</h2>
-    <p>Every GBS leader now faces a choice. The two paths use the same technology, which is why they are so easily confused in strategy decks and board updates.</p>
+    <p>Every shared services leader now faces a choice. The two paths use the same technology, which is why they are so easily confused in strategy decks and board updates.</p>
     <p>The first path: AI inside the legacy model. Copilots in the towers, a chatbot on the portal, automation in the back office. The same operating model, run faster and cheaper. This path is measurable in familiar currency. It requires no structural change. It delivers real gains for several quarters.</p>
-    <p>The second path: redesign from the ground up. Not "which of our tasks can AI do?" but "if abundant intelligence had existed when shared services was invented, what would we have built?"</p>
+    <p>The second path: redesign from the ground up. Not &#8220;which of our tasks can AI do?&#8221; but &#8220;if abundant intelligence had existed when shared services was invented, what would we have built?&#8221;</p>
     <p>The first path is the natural choice. It is also a trap.</p>
     <table class="comparison-table">
       <thead><tr><th></th><th>AI for efficiency</th><th>AI-native redesign</th></tr></thead>
@@ -132,18 +140,18 @@
         <tr><td>Trajectory</td><td>Early gains, then plateau</td><td>Compounding capability</td></tr>
       </tbody>
     </table>
-    <p>Read down the efficiency column and one pattern emerges: every row keeps the legacy model's assumptions intact and inserts AI beneath them. The AI-native column replaces the assumptions themselves. No sequence of efficiency gains adds up to that. Optimization of the old model is not a path to the new one.</p>
+    <p>Read down the efficiency column and one pattern emerges: every row keeps the legacy model&#8217;s assumptions intact and inserts AI beneath them. The AI-native column replaces the assumptions themselves. No sequence of efficiency gains adds up to that. Optimization of the old model is not a path to the new one.</p>
   </div>
 
   <div class="section">
     <h2 class="section-title">Three Clocks Running</h2>
     <p>The efficiency strategy feels safe because it changes nothing structural. It is not safe. Three clocks are already running, and the efficiency path accelerates all of them.</p>
     <strong class="label">The arbitrage clock.</strong>
-    <p>Arbitrage is a depleting asset. Every advance in AI shrinks the labor base the arbitrage is priced on. CFOs and clients will reprice accordingly, benchmark by benchmark, contract by contract. A GBS organization whose value proposition is labor cost gap multiplied by volume is optimizing a declining asset. Its own vendors, racing to automate the same work, will capture the difference first.</p>
+    <p>Arbitrage is a depleting asset. Every advance in AI shrinks the labor base the arbitrage is priced on. CFOs and clients will reprice accordingly, benchmark by benchmark, contract by contract. A shared services organization whose value proposition is labor cost gap multiplied by volume is optimizing a declining asset. Its own vendors, racing to automate the same work, will capture the difference first.</p>
     <strong class="label">The talent clock.</strong>
-    <p>A transformation framed as headcount reduction tells the workforce that AI's purpose is to replace them. The best people, the ones with judgment, the future experts, leave first. Meanwhile AI absorbs the routine casework that once trained novices into experts. If nothing replaces that apprenticeship, the pipeline of judgment quietly dies. The legacy model destroys the very scarcity the new model runs on, precisely when it matters most.</p>
+    <p>A transformation framed as headcount reduction tells the workforce that AI&#8217;s purpose is to replace them. The best people, the ones with judgment, the future experts, leave first. Meanwhile AI absorbs the routine casework that once trained novices into experts. If nothing replaces that apprenticeship, the pipeline of judgment quietly dies. The legacy model destroys the very scarcity the new model runs on, precisely when it matters most.</p>
     <strong class="label">The disintermediation clock.</strong>
-    <p>If GBS does not provide the enterprise's shared intelligence infrastructure, every function and business unit will build its own. Employees will route around a front door that only deflects, toward shadow AI channels with no governance. The enterprise ends up with fragmented intelligence delivery, inconsistent policy answers at machine speed, and no institution accountable for any of it. GBS exists because fragmented service delivery was ungovernable. Fragmented intelligence delivery is worse.</p>
+    <p>If shared services does not provide the enterprise&#8217;s shared intelligence infrastructure, every function and business unit will build its own. Employees will route around a front door that only deflects, toward shadow AI channels with no governance. The enterprise ends up with fragmented intelligence delivery, inconsistent policy answers at machine speed, and no institution accountable for any of it. Shared services exists because fragmented service delivery was ungovernable. Fragmented intelligence delivery is worse.</p>
     <div class="pullquote"><p>Choosing efficiency is not preserving optionality. It is spending it.</p></div>
   </div>
 
@@ -158,18 +166,18 @@
         <tr><td>Consistency</td><td>Standardized process paths</td><td>Standardized constraints. The boundaries are standardized. The path personalizes. Governance becomes architecture, not friction.</td></tr>
       </tbody>
     </table>
-    <p>Around these substitutions sits a different view of what GBS is for: not centralizing transaction execution, but providing the shared intelligence, policy logic, orchestration, governance, and human expertise that let work happen safely and consistently anywhere in the enterprise.</p>
+    <p>Around these substitutions sits a different view of what shared services is for: not centralizing transaction execution, but providing the shared intelligence, policy logic, orchestration, governance, and human expertise that let work happen safely and consistently anywhere in the enterprise.</p>
     <p>The roles change accordingly. Case processors become service stewards, supervising a human-AI system, measured on escalation quality and judgment. Centers convert from labor-concentration sites to expertise, governance, and learning hubs. Agent operations becomes a formal discipline: agents designed, tested, monitored, tuned, governed, and retired like the workforce they are.</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">Why GBS, and Why First</h2>
+    <h2 class="section-title">Why Shared Services, and Why First</h2>
     <p>Every enterprise serious about AI eventually confronts the same question: where can a fundamentally different operating model be proven without betting the company?</p>
-    <p>Innovation labs fail this test because they own nothing real. Enterprise-wide transformation fails it because the blast radius is unbounded. GBS passes it uniquely.</p>
-    <p>GBS already has customers: employees, managers, functions, business units. It already has products: service lines, journeys, data services. It already has demand flows: cases, transactions, inquiries, escalations. It already has governance: service councils, controls, cost models, operating rhythms. And it carries production accountability of the most unforgiving kind. Payroll must run. Employees must onboard. Records must survive audit.</p>
+    <p>Innovation labs fail this test because they own nothing real. Enterprise-wide transformation fails it because the blast radius is unbounded. Shared services passes it uniquely.</p>
+    <p>Shared services already has customers: employees, managers, functions, business units. It already has products: service lines, journeys, data services. It already has demand flows: cases, transactions, inquiries, escalations. It already has governance: service councils, controls, cost models, operating rhythms. And it carries production accountability of the most unforgiving kind. Payroll must run. Employees must onboard. Records must survive audit.</p>
     <p>It is bounded enough to govern, real enough to prove anything, and measurable enough to convince a skeptical CFO.</p>
-    <p>The business case extends beyond GBS itself. Inside the unit, the returns are outcome achievement, waste elimination, and response latency. Beyond the unit, the return is option value: a proven AI-native GBS delivers validated roles, governance patterns, agent operations, measurement frames, and management practices that de-risk the transformation of everything else.</p>
-    <div class="pullquote"><p>The highest return on AI-native GBS is not the transactions it automates. It is the enterprise it teaches to operate differently.</p></div>
+    <p>The business case extends beyond shared services itself. Inside the unit, the returns are outcome achievement, waste elimination, and response latency. Beyond the unit, the return is option value: a proven AI-native shared services function delivers validated roles, governance patterns, agent operations, measurement frames, and management practices that de-risk the transformation of everything else.</p>
+    <div class="pullquote"><p>The highest return on AI-native shared services is not the transactions it automates. It is the enterprise it teaches to operate differently.</p></div>
   </div>
 
   <div class="closing-section">
@@ -177,10 +185,12 @@
     <p>AI does not make shared services obsolete. It makes the traditional rationale for shared services obsolete.</p>
     <p>The model built to manage scarce labor cannot manage abundant intelligence. No volume of technology deployed inside it will change that. The structure, not the software, sets the ceiling.</p>
     <p>Three clocks are running. Organizational readiness takes longer to build than AI capability. And the organizations that wait for the technology to mature before redesigning the vessel will discover, when the capability arrives, that they have nowhere to put it.</p>
-    <p>The question facing every GBS leader today is not whether to adopt AI. Everyone will adopt AI. The question is which side of the fork the adoption serves.</p>
+    <p>Theory A argues that organizations were designed around constraints that AI removes. Shared services is the clearest proof of that argument in the enterprise, and the most powerful place to begin designing differently.</p>
+    <p>The question facing every shared services leader today is not whether to adopt AI. Everyone will adopt AI. The question is which side of the fork the adoption serves.</p>
     <p class="closing-line">One side optimizes what already exists. The other asks what shared services should have been all along, if it had been designed for a world of abundant intelligence from the start.</p>
     <p>Only one of those questions has an interesting answer.</p>
   </div>
+
 </div>
 
 <footer>
