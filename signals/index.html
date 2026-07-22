@@ -50,7 +50,7 @@
     .block-desc { font-family: var(--inter); font-size: 0.92rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 600px; }
 
     /* PROVOCATION CARDS */
-    .provocation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+    .provocation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
     .provocation-card { background: var(--black); padding: 2.2rem 2rem 2rem; }
     .provocation-title { font-family: var(--newsreader); font-size: clamp(1.3rem, 2.5vw, 1.65rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--white); margin-bottom: 0.85rem; }
     .provocation-desc { font-family: var(--inter); font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 1.8rem; }
@@ -58,6 +58,8 @@
     .prov-link { font-family: var(--inter); font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; transition: opacity 0.2s; }
     .prov-link:hover { opacity: 0.6; }
     .prov-link--dl { color: rgba(255,255,255,0.44); }
+    .provocation-card--soon { opacity: 0.5; }
+    .prov-coming-soon { font-family: var(--inter); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
 
     /* PAGE DIVIDER */
     .page-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0; }
@@ -88,12 +90,13 @@
       #nav-links li:first-child { border-top: none; }
       #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
       .signals-page { padding: 3rem 1.5rem 5rem; }
-      .provocation-grid { grid-template-columns: 1fr; }
+      .provocation-grid { grid-template-columns: 1fr 1fr; }
       .signal-grid { grid-template-columns: repeat(2, 1fr); }
       .signal-card { padding-right: 1rem; }
       .signal-card:nth-child(2n) { padding-right: 0; }
     }
     @media (max-width: 480px) {
+      .provocation-grid { grid-template-columns: 1fr; }
       .signal-grid { grid-template-columns: 1fr; }
       .signal-card { padding-right: 0; }
     }
@@ -138,11 +141,18 @@
         </div>
       </div>
       <div class="provocation-card">
-        <h3 class="provocation-title">Design for Agency</h3>
-        <p class="provocation-desc">Designing organizations that expand&#8212;not constrain&#8212;human agency.</p>
+        <h3 class="provocation-title">AI Native Shared Services</h3>
+        <p class="provocation-desc">The natural proving ground for an AI-native operating model&#8212;and the template it creates for transforming everything else.</p>
         <div class="provocation-links">
-          <a href="/provocations/design-for-agency" class="prov-link">Read the Provocation &rarr;</a>
-          <a href="/provocations/design-for-agency.pdf" class="prov-link prov-link--dl">Download PDF &rarr;</a>
+          <a href="/provocations/ai-native-shared-services" class="prov-link">Read the Provocation &rarr;</a>
+          <a href="/provocations/ai-native-shared-services.pdf" class="prov-link prov-link--dl">Download PDF &rarr;</a>
+        </div>
+      </div>
+      <div class="provocation-card provocation-card--soon">
+        <h3 class="provocation-title">Design for Agency</h3>
+        <p class="provocation-desc">How organizations design the conditions where human and machine agency combine to create value&#8212;rather than work against each other.</p>
+        <div class="provocation-links">
+          <span class="prov-coming-soon">Coming Soon</span>
         </div>
       </div>
     </div>
