@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How AI Inverts HR | Signals | TheoryA.ai</title>
+  <meta name="description" content="AI doesn't reform the HR function. It turns it inside out — and the name on the door is the last thing left to change." />
+  <meta property="og:title" content="How AI Inverts HR — TheoryA.ai" />
+  <meta property="og:description" content="AI does not reform human resources. It inverts it. Same seat at the table. Opposite job." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 1.25rem; line-height: 1.3; color: var(--black); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    strong { color: var(--black); }
+    em { font-style: italic; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .provocation-link { display: none; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/signals/" class="active">Signals</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>How AI Inverts HR</h1>
+  <div class="byline">Jim Scully</div>
+
+  <p class="dropcap">AI does not reform human resources. It inverts it. Not &#8220;transforms,&#8221; not &#8220;disrupts,&#8221; not &#8220;augments&#8221; &#8212; <em>inverts:</em> it takes the function&#8217;s purpose and turns it into its opposite, while leaving it in the same seat. The clearest proof that this has happened will be the most trivial-seeming: the function will need a new name, because its old one will describe the opposite of what it does.</p>
+
+  <h2>The Function Was Built to Ration People</h2>
+
+  <p>Human Resources was built to solve one problem &#8212; human labor and expertise were scarce, expensive, and hard to coordinate. Every method it owns is a mechanism for managing that scarcity: acquire the talent, allocate it to roles, control its performance, ration its development, retain it against poaching, exit it when the balance sheet requires. The name says it plainly. People are <em>resources</em> &#8212; an input, a factor of production, a cost to be optimized like any other. That was never cynicism. It was an accurate description of the job in an economy where the binding constraint was human capacity.</p>
+
+  <h2>The Scarcity Inverts</h2>
+
+  <p>AI removes that constraint and installs a new one. Execution, retrieval, drafting, classification, routine analysis &#8212; the cognitive work organizations spent a century hoarding and rationing &#8212; becomes abundant. What becomes scarce is judgment, context, trust, governance, and the ability to design systems that use abundant intelligence well. When the scarcity a function exists to manage inverts, the function&#8217;s purpose inverts with it. HR stops being the system that <strong>rations scarce human capacity</strong> and becomes the system that <strong>governs abundant machine capability and cultivates scarce human judgment.</strong> Same seat at the table. Opposite job.</p>
+
+  <h2>A Nest of Inversions</h2>
+
+  <p>It is not one flip but several, each following from the first.</p>
+  <p><strong>Value inverts</strong> &#8212; from arbitrage (do the same work cheaper) to amplification (do what was never possible). The function stops being a cost to minimize and becomes a capability to multiply.</p>
+  <p><strong>The signal inverts</strong> &#8212; the daily flood of employee demand, once treated as workload to deflect, becomes the richest intelligence the enterprise has about itself. The case queue was a cost center; it is now a sensing instrument.</p>
+  <p><strong>Maslow inverts</strong> &#8212; self-actualization moves from the peak of the pyramid, a reward available after the basics are met, to the baseline operating condition, because the routine work that filled the lower levels has been absorbed by machines. What remains for people is judgment, creativity, and stewardship. The pyramid stands on its head.</p>
+  <p><strong>The direction of work inverts</strong> &#8212; for a century HR pushed work outward and downward, to managers, portals, service centers, and offshore locations, all to economize on its own scarce labor. The AI-native function reverses the flow. It pulls intelligence inward, because the center is now where sensing and governance create value, not where cost is hidden.</p>
+  <p><strong>HR&#8217;s relationship to the operating model inverts</strong> &#8212; from administering the model to architecting it. The operating model stops being the machine HR runs and becomes the thing HR designs. It is the function&#8217;s product.</p>
+
+  <h2>Why the Whole Inverts Though the Parts Only Transform</h2>
+
+  <p>Look method by method and you will not see an inversion. Payroll, benefits, onboarding, compensation, succession &#8212; assessed one at a time, most of them <em>transform:</em> they keep their names and their purposes and change the unit they run on, from headcount to capability, from activity to outcome, from the annual survey to the continuous signal. A few go obsolete. A few are elevated. Very few individually flip.</p>
+  <p>That is not a contradiction; it is the mechanism. The inversion happens one level up, at the level of the function&#8217;s purpose. Flip the purpose and every method is re-judged against a new question &#8212; <em>does this govern the new scarcity, or ration the old one?</em> &#8212; and that re-judgment is exactly what sorts the methods into obsolete, transformed, and elevated. The inversion is the cause; the reclassification of the parts is the effect. A function whose purpose has inverted will always look, from the inside, like a function whose parts are merely being rebuilt.</p>
+
+  <h2>What Does Not Invert</h2>
+
+  <p>One thing does not flip, and naming it keeps the argument honest: the duty of care. The obligation to treat people lawfully, fairly, and with dignity &#8212; grievance, investigation, due process, equity, the human being sitting across the table at the worst moment of their working life &#8212; does not become its opposite. It persists, and it rises; it is most of what gets elevated. So it is HR&#8217;s <em>operating logic</em> that inverts &#8212; the labor-rationing engine &#8212; not its moral purpose. The function turns to face the other direction, but it keeps its conscience.</p>
+  <p>And the inversion is not automatic. Left alone, HR does not invert. It bolts AI onto the old purpose and becomes a faster, cheaper version of the same cost function &#8212; the same rationing logic, now running at machine speed. The inversion is not a forecast. It is a design decision most organizations have not yet made.</p>
+
+  <h2>The Name Is the Last Artifact</h2>
+
+  <p>Which returns us to the name. &#8220;Human Resources&#8221; encodes the old world in two words. <em>Resources</em> names people as an input to be consumed &#8212; the exact framing the inversion overturns. And <em>Management,</em> the quieter tell, names the old verb: the control of scarce labor. A function that has stopped rationing people and started cultivating judgment and governing intelligence cannot keep a name that calls people resources and calls the work management. To do so would be to commit, on its own letterhead, the precise error this argument warns against everywhere else &#8212; changing what the function does while leaving the old logic sitting in the title.</p>
+  <p>So change both words. Drop <em>Resources,</em> because people are not inputs. Drop <em>Management,</em> because the work is no longer control. What remains is a function defined by what it now builds and protects: human capability, and the governance of the human-machine system that capability now works inside. Call it <strong>Human Capability &amp; Governance.</strong> Or, read at its boldest &#8212; and this may be the truer name &#8212; call it what the function has actually become: the stewardship of <strong>human agency</strong> in an age of abundant intelligence.</p>
+  <p>HR spent a century as the place the organization managed the scarcity of people. It becomes the place the organization governs the abundance of intelligence and grows the scarcity of judgment. Same seat at the table, turned to face the opposite direction. The last thing to change will be the sign on the door &#8212; and it will be the clearest proof that everything behind it already has.</p>
+
+  <blockquote>The riverbed is the operating model. The current is the behavior. The rock has shifted.</blockquote>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals/">More Signals &rarr;</a>
+    <span class="provocation-link"></span>
+  </div>
+</article>
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body></html>
