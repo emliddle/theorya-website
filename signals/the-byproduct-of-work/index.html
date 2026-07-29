@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Byproduct of Work | Signals | TheoryA.ai</title>
+  <meta name="description" content="Work was always doing two things at once. It produced output, and it developed capability. Organizations optimized for the first and assumed the second." />
+  <meta property="og:title" content="The Byproduct of Work — TheoryA.ai" />
+  <meta property="og:description" content="Work was always doing two things at once. It produced output, and it developed capability. Organizations optimized for the first and assumed the second." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    strong { color: var(--black); }
+    em { font-style: italic; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .provocation-link { display: none; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/signals/" class="active">Signals</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>The Byproduct of Work</h1>
+  <div class="byline">Emily Liddle</div>
+
+  <p class="dropcap">For decades, one of the goals of organizational design was reducing time to productivity.</p>
+
+  <p>The faster someone became productive, the better.</p>
+
+  <p>It was a reasonable goal. Organizations invested in people, and the sooner they contributed, the sooner they generated value.</p>
+
+  <p>What we rarely considered was that work had always been doing two things at once.</p>
+
+  <p>It produced output.</p>
+
+  <p>It also developed capability.</p>
+
+  <p>The analyst building the model wasn&#8217;t simply producing analysis. The engineer writing code wasn&#8217;t simply delivering software. The consultant assembling a presentation wasn&#8217;t simply preparing a client deliverable.</p>
+
+  <p>They were developing pattern recognition, judgment, intuition, discernment, and eventually wisdom.</p>
+
+  <p>For years, organizations didn&#8217;t have to think very hard about how people developed those capabilities. They emerged because people spent years doing the work.</p>
+
+  <p>The work itself was the teacher.</p>
+
+  <p>That assumption no longer holds.</p>
+
+  <p>Today, people can become productive much faster with AI. The evidence is compelling. Studies across Microsoft, Accenture, and other large organizations have found meaningful productivity gains, particularly among less experienced employees. GitHub Copilot research found similar results.</p>
+
+  <p>But another pattern is emerging alongside those gains.</p>
+
+  <p>Senior employees are spending more time reviewing AI-generated work for subtle mistakes and contextual gaps that less experienced employees often don&#8217;t recognize. Researchers studying software engineering have described this as an &#8220;experience paradox.&#8221; Junior employees produce more. Senior employees review more.</p>
+
+  <p>There is a quieter finding alongside it. Research on developer wellbeing found that junior employees had less time for deliberate learning than their senior colleagues, working against tighter deadlines and higher output expectations. Senior employees reported spending more time on self-study. The researchers raised a concern that junior employees may be building a habit of using AI without the foundation to evaluate what it produces.</p>
+
+  <p>At the same time, organizations are rebuilding the bottom of the career ladder.</p>
+
+  <p>IBM announced plans to significantly expand entry-level hiring. Amazon Web Services is bringing on 11,000 interns and recent graduates after reducing thousands of corporate roles the previous year. IBM&#8217;s Chief Human Resources Officer, Nickle LaMoreaux, summarized the concern simply: stop investing in entry-level hiring, and within a few years, the pipeline disappears.</p>
+
+  <p>I think she&#8217;s pointing to something even more fundamental.</p>
+
+  <p>The pipeline was never just about hiring.</p>
+
+  <p>Nobody intentionally designed the first years of an analyst&#8217;s career to develop judgment. It happened because someone had to build the model, analyze the data, review the contract, or write the code.</p>
+
+  <p>By doing the work, they became capable.</p>
+
+  <p>Capability emerged as a byproduct of work.</p>
+
+  <blockquote>Organizations can rebuild the hiring pipeline, but rebuilding headcount is not the same as rebuilding capability.</blockquote>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals/">More Signals &rarr;</a>
+    <span class="provocation-link"></span>
+  </div>
+</article>
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body></html>
