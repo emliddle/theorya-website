@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 95% Was Never a Measurement | Signals | TheoryA.ai</title>
+  <meta name="description" content="The most-quoted number in enterprise AI comes from a single yes-or-no question. Almost nobody who quotes it has read the appendix." />
+  <meta property="og:title" content="The 95% Was Never a Measurement — TheoryA.ai" />
+  <meta property="og:description" content="The most-quoted number in enterprise AI comes from a single yes-or-no question. Almost nobody who quotes it has read the appendix." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1rem; }
+    .signal-dek { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.6; color: var(--mid-gray); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    strong { color: var(--black); }
+    em { font-style: italic; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    .beat { font-family: var(--serif); font-size: 1.05rem; line-height: 1.5; color: var(--black); margin: 2rem 0; padding: 0 0 0 1.1rem; border-left: 3px solid var(--black); font-style: italic; }
+    .shame { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.75rem); line-height: 1.2; color: var(--black); text-align: center; margin: 2.5rem 0; padding: 1.3rem 0; border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); }
+    .checkbox { background: #f2f2f0; border: 1px solid var(--light-gray); padding: 1.4rem 1.5rem; margin: 2rem 0; }
+    .checkbox h4 { font-family: var(--sans); font-weight: 600; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.75rem; }
+    .checkbox p { font-size: 0.95rem; line-height: 1.65; color: var(--mid-gray); margin-bottom: 0.875rem; }
+    .checkbox p:last-child { margin-bottom: 0; }
+    .prompt { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.75rem; line-height: 1.7; color: var(--black); background: var(--white); border-left: 3px solid var(--black); padding: 1rem 1.1rem; white-space: pre-wrap; margin-bottom: 0.875rem; display: block; }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-refs { font-family: var(--sans); font-size: 0.72rem; line-height: 1.65; color: var(--mid-gray); border-top: 1px solid var(--light-gray); margin-top: 2.5rem; padding-top: 0.875rem; }
+    .signal-refs strong { color: var(--black); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.65rem; display: block; margin-bottom: 0.5rem; }
+    .signal-refs a { color: var(--mid-gray); }
+    .signal-footer { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .provocation-link { display: none; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/signals/" class="active">Signals</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>The 95% Was Never a Measurement</h1>
+  <p class="signal-dek">The most-quoted number in enterprise AI comes from a single yes-or-no question. Almost nobody who quotes it has read the appendix.</p>
+  <div class="byline">Jim Scully</div>
+
+  <p class="dropcap">Ninety-five percent of AI pilots fail. You have seen it on a slide this month. It carries MIT&#8217;s name, and that is usually enough.</p>
+
+  <p>Here is where it comes from.</p>
+
+  <p><strong>One question.</strong> The MIT NANDA report prints its interview script in the appendix. Question 12: <em>&#8220;Have you observed measurable ROI from any GenAI deployment?&#8221;</em> One yes-or-no question, put to one executive, about their whole company, answered from memory. The 95% is the share who said no.</p>
+
+  <p class="beat">Nobody examined a pilot. Nobody counted one.</p>
+
+  <p><strong>Everyone wrote their own exam.</strong> Question 13 asks which metric was used &#8212; and lets each executive pick their own. Cost savings, productivity, retention, whatever came to mind. The report&#8217;s own limitations concede that success metrics <em>&#8220;vary significantly across organizations and industries, limiting direct comparisons.&#8221;</em> The most-quoted number in enterprise AI compares things its authors say cannot be compared.</p>
+
+  <p><strong>The authors flagged it themselves.</strong> One limitation reads that the six-month window <em>&#8220;may be insufficient,&#8221;</em> and is <em>&#8220;potentially understating success rates.&#8221;</em> The researchers said their own failure rate was probably too high. Almost nobody has quoted that sentence.</p>
+
+  <p>Now the reckoning.</p>
+
+  <p><strong>MIT gets a pass.</strong> They labeled it Preliminary Findings, version 0.1. They published the sample limits. They printed the questionnaire. Fifty-two interviews is a good way to generate hypotheses, and they never claimed it was anything else. You cannot fault researchers for being transparent about work other people chose to misuse.</p>
+
+  <p><strong>Fortune knew better.</strong> On 18 August 2025 the headline read: <em>&#8220;MIT report: 95% of generative AI pilots at companies are failing.&#8221;</em> The report said 95% of <em>organizations</em> were getting zero return. Organizations are not pilots. One word, swapped for traffic, and a caveated finding became a fact.</p>
+
+  <p><strong>Consultants and vendors are the real problem.</strong> They took the headline, never opened the PDF, and built decks on it. It is a perfect sales number: big, alarming, attributed to MIT, and pointing straight at whatever they happened to be selling. None of them needed four pages of appendix to see it would not hold. They needed it to hold.</p>
+
+  <div class="shame">Shame on you.</div>
+
+  <p>The companion statistic is worse. Eighty-eight percent of agent pilots never reach production, we are told. It also circulates as 78, 80 and 89 percent, credited to four different sources. That is not a finding. It is a rumor with a decimal point.</p>
+
+  <p>None of this means enterprise AI is going well. Much of it is not. But the useful question is the one nobody asked: what were these pilots trying to achieve, and did they achieve it?</p>
+
+  <p>If you have put the 95% on a slide in the last year, you owe it ten minutes. The appendix is four pages.</p>
+
+  <div class="checkbox">
+    <h4>Don&#8217;t take my word for it</h4>
+    <p>Skip my analysis. Paste this into whichever AI you already use, and read what comes back:</p>
+    <code class="prompt">Find the MIT Project NANDA report "The GenAI Divide: State of AI in Business 2025" (version 0.1). Read Appendix sections 8.2 and 8.3.
+
+Answer using verbatim quotes from the report, not paraphrase:
+1. What is the exact wording of the interview question that produces the 95% figure?
+2. Does the 95% refer to pilots, or to organizations?
+3. How were "success" and "ROI" defined and measured, and over what period?
+4. Did each respondent choose their own success metric, or was one imposed?
+5. Quote every stated limitation in full.
+6. What was the total sample, and is any sampling frame or response rate given?
+
+Then tell me what this study can and cannot support.</code>
+    <p>If it comes back with anything materially different from what you have just read, I want to know.</p>
+  </div>
+
+  <blockquote>You cannot sell rigor with a number you never checked.</blockquote>
+
+  <div class="signal-refs">
+    <strong>Sources</strong>
+    MIT Project NANDA, <em>The GenAI Divide: State of AI in Business 2025</em>, v0.1 (Preliminary Findings), §8.2&#8211;8.3 &#8212; <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf">PDF</a>. Fortune, <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/">18 August 2025</a>. Gartner, <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027">Over 40% of Agentic AI Projects Will Be Canceled by End of 2027</a>.
+  </div>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals/">More Signals &rarr;</a>
+    <span class="provocation-link"></span>
+  </div>
+</article>
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body></html>
