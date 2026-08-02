@@ -81,6 +81,14 @@
     footer .wordmark { font-family: var(--inter); font-size: 0.9rem; font-weight: 600; color: var(--white); text-decoration: none; }
     footer p { font-family: var(--inter); font-size: 0.8rem; color: rgba(255,255,255,0.25); }
 
+    /* SUBMISSION */
+    .submission-section { border-top: 1px solid rgba(255,255,255,0.1); padding: 6rem 2rem; text-align: center; }
+    .submission-section .sub-kicker { font-family: var(--inter); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 1.5rem; }
+    .submission-section h2 { font-family: var(--newsreader); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; color: var(--white); letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 1.2rem; }
+    .submission-section p { font-family: var(--inter); font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 500px; margin: 0 auto 2.5rem; }
+    .submission-link { display: inline-block; font-family: var(--inter); font-size: 0.9rem; font-weight: 500; color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 2px; transition: opacity 0.2s; }
+    .submission-link:hover { opacity: 0.6; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-toggle { display: flex; }
@@ -298,6 +306,13 @@
   </section>
 
 </main>
+
+<section class="submission-section">
+  <p class="sub-kicker">Contribute</p>
+  <h2>What are you seeing?</h2>
+  <p>Theory A grows through observation as much as argument. Share a signal, experiment, contradiction, or emerging pattern you're seeing inside organizations.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcL-eozmYKbVKi2dyESaYjxnQYnHp44luVLxJ7CSKPLzmCyw/viewform" class="submission-link" target="_blank" rel="noopener">Submit an observation &rarr;</a>
+</section>
 
 <footer>
   <div class="container">
