@@ -247,7 +247,12 @@
     @media (max-width: 768px) {
       .p-split { display: none; }
       .p-mobile { display: block; }
-      .people-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .founder-feature, .founder-alt .founder-feature { grid-template-columns: 1fr; gap: 2.5rem; }
+      .founder-alt .founder-copy, .founder-alt .founder-portrait-wrap { grid-column: 1; }
+      .founder-alt .founder-portrait-wrap { grid-row: 2; }
+      .founder-portrait-wrap { max-width: 300px; }
+      .founder-bio-layout { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 3rem; padding-top: 2.5rem; }
+      .founder-bio-label { line-height: 1.6; }
       .contact-inner { flex-direction: column; gap: 2.5rem; }
 
       /* Mobile nav */
@@ -280,19 +285,40 @@
     }
 
     /* PEOPLE */
-    .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.5rem; }
-    .person-photo { width: 100%; max-width: 220px; aspect-ratio: 1; object-fit: cover; object-position: top center; display: block; margin-bottom: 1.5rem; filter: grayscale(100%); }
-    @media (max-width: 768px) { .person-photo { max-width: 160px; } }
+    .founders { margin-top: 4rem; }
+    .founder { border-top: 1px solid var(--light-gray); padding-top: 3.5rem; margin-top: 4.5rem; }
+    .founder:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+
+    .founder-index { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+    .founder-rule { height: 1px; width: 40px; background: var(--black); flex-shrink: 0; }
+    .founder-kicker { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray); }
+
+    .founder-feature { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(2.5rem, 5vw, 4.5rem); align-items: start; }
+    .founder-alt .founder-feature { grid-template-columns: 300px minmax(0, 1fr); }
+    .founder-alt .founder-copy { grid-column: 2; grid-row: 1; }
+    .founder-alt .founder-portrait-wrap { grid-column: 1; grid-row: 1; }
+
+    .founder-byline { padding-bottom: 1.6rem; margin-bottom: 2rem; border-bottom: 1px solid var(--light-gray); }
+    .founder-statement { font-family: 'Newsreader', Georgia, serif; font-size: clamp(1.55rem, 3vw, 2.25rem); font-weight: 300; line-height: 1.18; letter-spacing: -0.02em; color: var(--black); margin: 0; max-width: none; position: relative; }
+    .founder-statement::before { content: "\201C"; position: absolute; transform: translateX(-0.58em); color: var(--mid-gray); }
+    .founder-statement::after { content: "\201D"; color: var(--mid-gray); }
+
+    .founder-portrait-wrap { margin: 0; }
+    .founder-portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; filter: grayscale(100%); }
+
+    .founder-bio-layout { display: grid; grid-template-columns: 150px minmax(0, 640px); gap: 2.75rem; margin-top: 4.5rem; padding-top: 3.25rem; border-top: 1px solid var(--light-gray); }
+    .founder-bio-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid-gray); line-height: 1.95; }
+    .founder-bio p { font-size: 1rem; line-height: 1.75; color: var(--body-text); margin-bottom: 1.4rem; max-width: none; }
+    .founder-bio p:last-child { margin-bottom: 0; }
+    .founder-bio p:first-child::first-letter { float: left; font-family: 'Newsreader', Georgia, serif; font-size: 3.6em; line-height: 0.78; padding: 8px 10px 0 0; color: var(--black); }
 
     /* HOW WE WORK */
     #how-we-work { background: var(--off-white); padding: 5rem 0; }
     #how-we-work h2 { margin-bottom: 1.5rem; }
     #how-we-work p { max-width: 680px; margin-bottom: 1.2rem; color: var(--body-text); }
     #how-we-work .works-statement { font-family: 'Newsreader', Georgia, serif; font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; color: var(--black); margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--light-gray); max-width: 620px; }
-    .person { padding-top: 1.5rem; border-top: 1px solid var(--light-gray); }
-    .person-name { font-family: 'Newsreader', Georgia, serif; font-size: 1.7rem; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0.25rem; color: var(--black); }
-    .person-role { font-size: 0.75rem; color: var(--mid-gray); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.2rem; font-weight: 500; }
-    .person p { font-size: 0.92rem; line-height: 1.65; }
+    .person-name { font-family: 'Newsreader', Georgia, serif; font-size: clamp(1.7rem, 2.8vw, 2.1rem); font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0.4rem; color: var(--black); }
+    .person-role { font-size: 0.75rem; color: var(--mid-gray); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0; font-weight: 500; }
 
     /* CONTACT */
     #contact { background: var(--off-white); }
@@ -616,25 +642,64 @@
   <div class="container">
     <p class="section-label">People</p>
     <h2>Theory A is bigger than any one person. Here's who's building it.</h2>
-    <div class="people-grid">
-      <div class="person">
-        <img src="/images/jim-scully.jpg" alt="Jim Scully" class="person-photo" width="220" height="220">
-        <p class="person-name">Jim Scully</p>
-        <p class="person-role">Co-Founder, TheoryA.ai</p>
-        <p>I have been watching technology reshape work since before keyboards existed. Across nearly five decades, I have had a front-row seat to every major wave: mainframes, personal computers, client-server systems, enterprise platforms, the internet, cloud, automation, analytics, and now AI. That vantage point has convinced me that what is happening now is not simply the biggest technology transformation in workplace history. It is as significant as all prior transformations combined.</p>
-        <p>My work begins from a simple premise: AI transformation is not a technology implementation. It is a redesign of how work is organized, how decisions are made, and how human and artificial agency work together. I help leaders understand those deeper implications and design organizations capable of acting on them.</p>
-        <p>I am the creator of The AI Enterprise and AI Native Shared Services Collections, and co-author of the Theory A manifesto and principles.</p>
-        <p>When I am not thinking about the future of organizations, I am building one of a different kind. My backyard farm is a work in progress toward full sustainability, and it keeps me honest about what it actually takes to design a system that compounds over time.</p>
+    <div class="founders">
+
+      <div class="founder">
+        <div class="founder-index">
+          <span class="founder-rule"></span>
+          <span class="founder-kicker">Founder perspective</span>
+        </div>
+        <div class="founder-feature">
+          <div class="founder-copy">
+            <div class="founder-byline">
+              <p class="person-name">Jim Scully</p>
+              <p class="person-role">Co-Founder, TheoryA.ai</p>
+            </div>
+            <p class="founder-statement">The organizations that create the most value with AI will not simply automate existing work. They will redesign the enterprise around what intelligence now makes possible.</p>
+          </div>
+          <figure class="founder-portrait-wrap">
+            <img src="/images/jim-scully.jpg" alt="Jim Scully" class="founder-portrait" width="300" height="375">
+          </figure>
+        </div>
+        <div class="founder-bio-layout">
+          <div class="founder-bio-label">Experience<br>Perspective<br>Practice</div>
+          <div class="founder-bio">
+          <p>I have been watching technology reshape work since before keyboards existed. Across nearly five decades, I have had a front-row seat to every major wave: mainframes, personal computers, client-server systems, enterprise platforms, the internet, cloud, automation, analytics, and now AI. That vantage point has convinced me that what is happening now is not simply the biggest technology transformation in workplace history. It is as significant as all prior transformations combined.</p>
+          <p>My work begins from a simple premise: AI transformation is not a technology implementation. It is a redesign of how work is organized, how decisions are made, and how human and artificial agency work together. I help leaders understand those deeper implications and design organizations capable of acting on them.</p>
+          <p>I am the creator of The AI Enterprise and AI Native Shared Services Collections, and co-author of the Theory A manifesto and principles.</p>
+          <p>When I am not thinking about the future of organizations, I am building one of a different kind. My backyard farm is a work in progress toward full sustainability, and it keeps me honest about what it actually takes to design a system that compounds over time.</p>
+          </div>
+        </div>
       </div>
-      <div class="person">
-        <img src="/images/emily-liddle.jpg" alt="Emily Liddle" class="person-photo" width="220" height="220">
-        <p class="person-name">Emily Liddle</p>
-        <p class="person-role">Co-Founder, TheoryA.ai</p>
-        <p>I began my career in politics, not because I wanted to hold office, but because I was troubled by how little agency most people felt over systems that shaped their lives. That question eventually pulled me toward technology and the workplace, where I have spent more than two decades helping organizations respond to fundamental shifts in how work gets done and value is created.</p>
-        <p>I have built new markets, consulting practices, methodologies, and client offerings across Europe, the Pacific, and globally, working repeatedly at moments of transition where emerging ideas needed to move into practice. I believe transformation only matters when it can actually change how an organization operates, not just how it thinks.</p>
-        <p>At TheoryA.ai, I am the architect of the firm&#8217;s model, including Digital Intelligence, the Collections structure, and the advisory approach that brings Theory A to life. I am co-author of the Theory A manifesto and principles and the creator of the Design for Agency Collection.</p>
-        <p>Outside of this work, I am a certified sommelier with a long-held dream of one day opening a small, carefully curated wine shop. It is a dream about curation, judgment, and the belief that the best things do not need to be complicated to be extraordinary.</p>
+
+      <div class="founder founder-alt">
+        <div class="founder-index">
+          <span class="founder-rule"></span>
+          <span class="founder-kicker">Founder perspective</span>
+        </div>
+        <div class="founder-feature">
+          <div class="founder-copy">
+            <div class="founder-byline">
+              <p class="person-name">Emily Liddle</p>
+              <p class="person-role">Co-Founder, TheoryA.ai</p>
+            </div>
+            <p class="founder-statement">Organizational agency is not something leaders can simply ask for. It is a capacity the organization must be deliberately designed to create.</p>
+          </div>
+          <figure class="founder-portrait-wrap">
+            <img src="/images/emily-liddle.jpg" alt="Emily Liddle" class="founder-portrait" width="300" height="375">
+          </figure>
+        </div>
+        <div class="founder-bio-layout">
+          <div class="founder-bio-label">Agency<br>Systems<br>Transformation</div>
+          <div class="founder-bio">
+          <p>I began my career in politics, not because I wanted to hold office, but because I was troubled by how little agency most people felt over systems that shaped their lives. That question eventually pulled me toward technology and the workplace, where I have spent more than two decades helping organizations respond to fundamental shifts in how work gets done and value is created.</p>
+          <p>I have built new markets, consulting practices, methodologies, and client offerings across Europe, the Pacific, and globally, working repeatedly at moments of transition where emerging ideas needed to move into practice. I believe transformation only matters when it can actually change how an organization operates, not just how it thinks.</p>
+          <p>At TheoryA.ai, I am the architect of the firm&#8217;s model, including Digital Intelligence, the Collections structure, and the advisory approach that brings Theory A to life. I am co-author of the Theory A manifesto and principles and the creator of the Design for Agency Collection.</p>
+          <p>Outside of this work, I am a certified sommelier with a long-held dream of one day opening a small, carefully curated wine shop. It is a dream about curation, judgment, and the belief that the best things do not need to be complicated to be extraordinary.</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
