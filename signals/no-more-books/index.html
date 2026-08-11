@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No More Books | Signals | TheoryA.ai</title>
+  <meta name="description" content="Every book written about AI is out of date by the time it is printed. The static manuscript was the right container when the constraint was distribution. That scarcity has inverted." />
+  <meta property="og:title" content="No More Books — TheoryA.ai" />
+  <meta property="og:description" content="Every book written about AI is out of date by the time it is printed. The static manuscript was the right container when the constraint was distribution. That scarcity has inverted." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --body: #1a1a1a; --mid-gray: #494949; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--body); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--body); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    strong { color: var(--black); }
+    em { font-style: italic; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    a { color: var(--black); }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "No More Books",
+    "description": "Every book written about AI is out of date by the time it is printed. The static manuscript was the right container when the constraint was distribution. That scarcity has inverted.",
+    "author": { "@type": "Person", "name": "Jim Scully" },
+    "publisher": { "@type": "Organization", "name": "TheoryA.ai", "url": "https://theorya.ai" },
+    "url": "https://theorya.ai/signals/no-more-books/",
+    "mainEntityOfPage": "https://theorya.ai/signals/no-more-books/",
+    "isPartOf": { "@type": "WebSite", "name": "TheoryA.ai", "url": "https://theorya.ai" }
+  }
+  </script>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/signals/" class="active">Signals</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>No More Books</h1>
+  <div class="byline">Jim Scully</div>
+
+  <p class="dropcap">Let me say at the outset that this is not a call to burn books. I love books &#8212; though my collection has actually thinned over the years, because I keep only the ones with forever value; the books that mattered for a moment and then lost their relevance have gone off to the local thrift store. This is not an argument against books as such. It is an argument for rethinking one particular <em>kind</em> of book, and being honest about why that kind, and only that kind, has outgrown its form.</p>
+
+  <p>Every book written about artificial intelligence shares an uncomfortable fact: by the time it is printed, it is almost assuredly out of date. Not slowly, the way a history book ages, but immediately. Between the last edit and the first printing, a model ships that does what the author called two years away, a price collapses, a capability the author hedged as &#8220;emerging&#8221; becomes a default setting. The book arrives as a photograph of a room that has been rearranged.</p>
+
+  <p>I recently read one &#8212; I&#8217;ll leave it unnamed &#8212; built largely on the distinction between large language models (LLMs) and large reasoning models (LRMs). A careful book, overtaken almost immediately, because the distinction dissolved: today both capabilities live in the same model, which reasons where reasoning helps and doesn&#8217;t where it doesn&#8217;t. The authors did nothing wrong. They simply nailed a moving object to a fixed page.</p>
+
+  <p>Getting theoretical for a moment, the static manuscript was the right container when the constraint was distribution. Knowledge was expensive to move, so we froze it into durable objects and shipped them &#8212; a trade of currency for permanence that was magnificent for most of human history, ever since Gutenberg. But the scarcity has inverted. Knowledge is no longer expensive to move; it is expensive to keep <em>current</em>. The book now optimizes for exactly the wrong variable, maximizing permanence at the moment permanence became the liability.</p>
+
+  <p>That does not mean the argument dies with the facts &#8212; only if the book was made of facts. Consider the analogy of the water&#8217;s current versus the riverbed: LLM versus LRM, this quarter&#8217;s context window, today&#8217;s price per token. These are the current. Why intelligence getting cheap makes execution abundant and judgment, trust, and governance scarce. These are riverbed. The current is obsolete before the book is bound. The riverbed stays true until something carves a new shape.</p>
+
+  <p>So the answer isn&#8217;t <em>no more books</em>. It&#8217;s: publish the durable part durably, and let the perishable part breathe. In other words, publish agentically. Give an agent the content and let people engage with it conversationally. For this new kind of book I no longer call them readers but interlocutors &#8212; an interlocutor is a partner in dialogue, someone who talks <em>with</em> the work rather than simply reading it. When facts change, you don&#8217;t reprint &#8212; you add the new knowledge to the agent&#8217;s reference stack, and the &#8220;book&#8221; is current again. This is how TheoryA.ai publishes its serious IP: each agent is a digital twin of the author, carrying that author&#8217;s wider body of work and instructions for representing them faithfully.</p>
+
+  <p>And here is the part that makes it more than a fix for staleness. The agent does not recite the manuscript &#8212; it <em>reads</em> the manuscript, interprets it, and generates a (hopefully) faithful response. So while every reader gets the same messages, no two people experience them in exactly the same way. Each interlocutor pulls on the thread that interests them and follows it down a path no one else takes, deciding for themselves which ideas matter most. Back to the river analogy, the book is a raft: everyone aboard rides the same current the same way. The agent, on the other hand, gives each reader a canoe &#8212; same river, but you paddle, and you choose which channel to follow.</p>
+
+  <p>None of this touches most of what is on your shelf. No one wants a living, self-updating edition of Twain or Hemingway. Those books are not reports on a changing world; they are finished things, works of art, and we should read them exactly as they were written, forever. The books that have outgrown their form are the temporal ones &#8212; particularly the thought-leadership books about AI, written to describe a world that refuses to hold still long enough to be described.</p>
+
+  <p>Go to TheoryA.ai Collections to experience our agent based on our book, <em>The Human Side of AI Enterprise</em>.</p>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals/">More Signals &rarr;</a>
+  </div>
+</article>
+
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body>
+</html>
