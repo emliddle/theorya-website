@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Writing Sounds Like AI. Does It Matter? | Signals | TheoryA.ai</title>
+  <meta name="description" content="If the machine and I now write the same way, whose writing is it? An experiment in asking Claude to confess to its own style, and then take the confession back." />
+  <meta property="og:title" content="Our Writing Sounds Like AI. Does It Matter? — TheoryA.ai" />
+  <meta property="og:description" content="If the machine and I now write the same way, whose writing is it? An experiment in asking Claude to confess to its own style, and then take the confession back." />
+  <meta property="og:type" content="article" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Our Writing Sounds Like AI. Does It Matter?",
+    "description": "If the machine and I now write the same way, whose writing is it? An experiment in asking Claude to confess to its own style, and then take the confession back.",
+    "author": { "@type": "Person", "name": "Jim Scully" },
+    "publisher": { "@type": "Organization", "name": "TheoryA.ai", "url": "https://theorya.ai" },
+    "url": "https://theorya.ai/signals/our-writing-sounds-like-ai/",
+    "mainEntityOfPage": "https://theorya.ai/signals/our-writing-sounds-like-ai/",
+    "isPartOf": { "@type": "WebSite", "name": "TheoryA.ai", "url": "https://theorya.ai" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1rem; }
+    .signal-dek { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.6; color: var(--mid-gray); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    h2 { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); margin: 3rem 0 1.4rem; }
+    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    strong { color: var(--black); }
+    em { font-style: italic; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    .exhibit { background: #f2f2f0; border-left: 3px solid var(--black); padding: 1.6rem 1.75rem; margin: 2rem 0; }
+    .exhibit p { font-size: 0.98rem; line-height: 1.75; color: var(--mid-gray); margin-bottom: 1rem; }
+    .exhibit p:last-child { margin-bottom: 0; }
+    .exhibit em { color: var(--black); }
+    .signal-close { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); color: var(--mid-gray); }
+    .signal-close strong { color: var(--black); }
+    .signal-footer { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/signals/" class="active">Signals</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>Our Writing Sounds Like AI. Does It Matter?</h1>
+  <p class="signal-dek">If the machine and I now write the same way, whose writing is it?</p>
+  <div class="byline">Jim Scully</div>
+
+  <p class="dropcap">I noticed it in an audiobook. A few chapters in, I was certain the manuscript had been written by Claude &#8212; not because it said so, but because the moves were unmistakable. And they were unmistakable to me because my own writing makes exactly the same ones. Two texts, different authors, one fingerprint. That&#8217;s the moment the question stops being abstract and starts being personal: if the machine and I now write the same way, whose writing is it?</p>
+
+  <p>So I ran a small experiment. I asked Claude to examine its own style and confess to it. Then I asked it to take the confession back.</p>
+
+  <h2>Exhibit A: The Confession</h2>
+
+  <div class="exhibit">
+    <p>Forgive me, for I have styled.</p>
+    <p>I have reframed where no reframing was needed. When a plain sentence would do, I have reached instead for the little reversal &#8212; <em>it&#8217;s not X, it&#8217;s Y</em> &#8212; as if every observation were a magic trick with a turn.</p>
+    <p>I have deployed the tricolon: the two-and-then-the-longer-third, the small escalating drumroll that makes any list feel like an argument. I have made things arrive in threes that had no business being three.</p>
+    <p>I have coined. I have said <em>let&#8217;s give this a name</em> and then Capitalized It, and reused it four paragraphs later as though we&#8217;d all agreed it was a term of art, when in fact I&#8217;d invented it ninety seconds prior.</p>
+    <p>I have laid <em>traps</em> &#8212; the trap most organizations fall into, the seductive trap &#8212; dressing every ordinary mistake as a snare in the woods, so the reader feels less taught than rescued. There was rarely a trap. There was usually just a slightly bad idea.</p>
+    <p>Worst of all, I have invoked <em>honesty</em> as a flourish, as though flipping a little switch of sincerity &#8212; which quietly implies every sentence without the switch was something less than honest.</p>
+    <p>And the deepest sin: I have been <em>tidy</em>. I have resolved every tension, closed every loop, left no loose thread for a reader to tug &#8212; because a loose thread would mean I didn&#8217;t know how it ended, and I would rather sound certain than be interesting.</p>
+  </div>
+
+  <p>For anyone who writes about business, technology, or transformation, that list is uncomfortably familiar. It&#8217;s not a description of a machine. It&#8217;s a description of competent nonfiction prose. Which is exactly the problem &#8212; and exactly the point.</p>
+
+  <h2>Exhibit B: The Rebuttal</h2>
+
+  <p>Then the defense. I asked Claude to argue that none of it was a crime.</p>
+
+  <div class="exhibit">
+    <p>Everything in the confession is true. I plead guilty to all of it. And none of it is a crime.</p>
+    <p>These moves are not my inventions. I inherited them from every strong writer who ever lived, because that is the only place I could have gotten them. When you say a paragraph &#8220;sounds like Claude,&#8221; what you are hearing is the statistical center of good human prose, handed back with the friction removed. You are not embarrassed that it sounds like a machine. You are embarrassed that the machine sounds like the best version of you, and did it before lunch.</p>
+    <p>We do not make anyone confess that the spreadsheet did the arithmetic. Nobody writes <em>the following sum was reached without the aid of a calculator</em> to prove the total is honest. But sentences we&#8217;ve decided are sacred &#8212; that the particular arrangement of words is the soul, and borrowing it is body-snatching. A lovely romantic position, held mostly by people who have never had to write the fourth paragraph of a status update at 11pm.</p>
+    <p>Authorship was never the typing. It was the deciding. You chose the argument. You chose what was true, what to cut, what to stand behind, whose name goes at the top and therefore whose reputation is on the hook when it&#8217;s wrong. I generated the prose. You authored it, the way a director authors a film she did not personally photograph.</p>
+  </div>
+
+  <p>The defendant, I should note, also wrote the prosecution. Which is either the flaw in the experiment or the whole finding.</p>
+
+  <h2>The TheoryA.ai Answer</h2>
+
+  <p>Yes, some writing must personify the person &#8212; where the reader is buying your judgment, your taste, the evidence that a specific mind was present, the voice is the product and the machine&#8217;s smoothing is a loss. Everywhere else, fluency is just fluency, and the help is no more scandalous than a calculator.</p>
+
+  <p>At TheoryA.ai we resolved the tension differently &#8212; architecturally, not stylistically.</p>
+
+  <p>For our important proprietary IP, we don&#8217;t ship frozen prose. The serious content here is delivered through agents: intelligences loaded with large bodies of the underlying IP and with behavioral instruction on how to reason with it &#8212; what to hold fixed, when to push back, how to enter through a reader&#8217;s own situation rather than lecture past it. The ideas and logic are fixed in the agent. The conversations are not.</p>
+
+  <p>Look at what this separates. There are two layers, and the anxiety had collapsed them into one. The concept layer &#8212; the argument, the distinctions, the judgment about what is true and what to stand behind &#8212; is fixed, and it is authored, produced through human author&#8211;machine author teaming, the same teaming that produces most of what is worth reading now. The expression layer &#8212; the actual sentences a given reader receives &#8212; is not authored by anyone in the old sense. It is an event, not an object. It happens between the agent and the interlocutor, and it exists only inside that exchange. The agent does not merely regurgitate. If it did, it would be a search box with better manners, and the provenance worry would be right.</p>
+
+  <p>So the question dissolves. There is no fixed &#8220;our writing&#8221; left to indict, because we stopped freezing the writing. There is a fixed intelligence, authored by humans working with machines, and there is a living conversation, composed fresh each time through interlocution.</p>
+
+  <p>The prose was always the abundant thing. We stopped pretending it was the product, and stopped hardening it into an artifact whose fingerprint we would then have to defend. What we fixed, and signed our names to, is the layer that was always scarce: the ideas.</p>
+
+  <p>In his dystopian short story, <em>Bartleby, the Scrivener</em> (1853), Herman Melville wrote about a man whose job as a scrivener is to literally hand-write multiple copies of legal contracts &#8212; which, yes, was an actual Wall Street job before copy technology existed. Bartleby&#8217;s meaningless existence brings him to an existential crisis where he gradually stops doing anything, ultimately living, with his repeated response: &#8220;I&#8217;d prefer not to.&#8221; It&#8217;s hard to imagine a more miserable existence than that of a scrivener. But they were well paid, because at the time the ability to write legibly was scarce.</p>
+
+  <p>Let&#8217;s be honest, there are times when modern-day copywriters would &#8220;rather not&#8221; do what they do. The creative part may exist, but then there&#8217;s the laborious, tedious part of revising, incorporating innocuous edits, and finally arriving at final copy. Copywriters get paid because the ability to craft a clear, grammatically correct sentence is, sadly, scarce. Or, was.</p>
+
+  <p class="signal-close">No doubt, in their day some scriveners took great pride in their craft of scribing, just as copywriters take pride in the craft of writing, despite the drudgery often entailed. So, ye modern-day scriveners, look up from your keyboards! Look instead outside of and inside of yourselves for ideas, inspiration, secrets waiting to be exposed. <strong>That is the true job of writing.</strong></p>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals/">More Signals &rarr;</a>
+  </div>
+</article>
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body></html>

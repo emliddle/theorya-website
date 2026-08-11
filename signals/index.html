@@ -27,7 +27,7 @@
     .site-nav { position: sticky; top: 0; z-index: 100; background: var(--black); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
     .site-nav .wordmark { font-family: var(--inter); font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--white); text-decoration: none; }
     .site-nav ul { display: flex; gap: 2rem; list-style: none; }
-    .site-nav ul a { font-family: var(--inter); font-size: 0.88rem; color: rgba(255,255,255,0.38); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .site-nav ul a { font-family: var(--inter); font-size: 0.88rem; color: rgba(255,255,255,0.58); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
     .site-nav ul a:hover, .site-nav ul a.active { color: var(--white); }
     .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
     .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--white); transition: transform 0.25s ease, opacity 0.2s ease; }
@@ -39,27 +39,27 @@
     .signals-page { max-width: var(--max); margin: 0 auto; padding: 5rem 2rem 7rem; }
 
     /* PAGE HEADER */
-    .page-kicker { font-family: var(--inter); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 1.2rem; }
+    .page-kicker { font-family: var(--inter); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.52); margin-bottom: 1.2rem; }
     .page-title { font-family: var(--newsreader); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); margin-bottom: 1.4rem; }
-    .page-desc { font-family: var(--inter); font-size: 0.95rem; color: rgba(255,255,255,0.44); line-height: 1.75; max-width: 600px; padding-bottom: 4rem; }
+    .page-desc { font-family: var(--inter); font-size: 0.95rem; color: rgba(255,255,255,0.66); line-height: 1.75; max-width: 600px; padding-bottom: 4rem; }
 
     /* CONTENT BLOCKS */
     .content-block { padding: 0 0 4rem; }
     .block-header { margin-bottom: 2.5rem; }
     .block-label { font-family: var(--inter); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 1rem; }
-    .block-desc { font-family: var(--inter); font-size: 0.92rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 600px; }
+    .block-desc { font-family: var(--inter); font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 600px; }
 
     /* PROVOCATION CARDS */
     .provocation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
     .provocation-card { background: var(--black); padding: 2.2rem 2rem 2rem; }
     .provocation-title { font-family: var(--newsreader); font-size: clamp(1.3rem, 2.5vw, 1.65rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--white); margin-bottom: 0.85rem; }
-    .provocation-desc { font-family: var(--inter); font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 1.8rem; }
+    .provocation-desc { font-family: var(--inter); font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 1.8rem; }
     .provocation-links { display: flex; flex-direction: column; gap: 0.55rem; }
     .prov-link { font-family: var(--inter); font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; transition: opacity 0.2s; }
     .prov-link:hover { opacity: 0.6; }
-    .prov-link--dl { color: rgba(255,255,255,0.44); }
+    .prov-link--dl { color: rgba(255,255,255,0.66); }
     .provocation-card--soon { opacity: 0.5; }
-    .prov-coming-soon { font-family: var(--inter); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+    .prov-coming-soon { font-family: var(--inter); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.58); }
 
     /* PAGE DIVIDER */
     .page-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0; }
@@ -68,24 +68,24 @@
     .signal-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
     .signal-card { padding: 1.8rem 1.5rem 1.8rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
     .signal-card:nth-child(3n) { padding-right: 0; }
-    .signal-card-author { font-family: var(--inter); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 0.7rem; display: block; }
+    .signal-card-author { font-family: var(--inter); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.52); margin-bottom: 0.7rem; display: block; }
     .signal-card-title { font-family: var(--newsreader); font-size: 1.25rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--white); text-decoration: none; display: block; margin-bottom: 0.6rem; transition: opacity 0.2s; }
     .signal-card-title:hover { opacity: 0.7; }
-    .signal-card-preview { font-family: var(--inter); font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    .signal-card-link { font-family: var(--inter); font-size: 13px; color: rgba(255,255,255,0.65); text-decoration: none; transition: opacity 0.2s; }
+    .signal-card-preview { font-family: var(--inter); font-size: 13px; color: rgba(255,255,255,0.62); line-height: 1.6; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .signal-card-link { font-family: var(--inter); font-size: 13px; color: rgba(255,255,255,0.82); text-decoration: none; transition: opacity 0.2s; }
     .signal-card-link:hover { opacity: 0.7; }
 
     /* FOOTER */
     footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 2.5rem 0; }
     footer .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     footer .wordmark { font-family: var(--inter); font-size: 0.9rem; font-weight: 600; color: var(--white); text-decoration: none; }
-    footer p { font-family: var(--inter); font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+    footer p { font-family: var(--inter); font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
     /* SUBMISSION */
     .submission-section { background: var(--white); padding: 6rem 2rem; text-align: center; }
-    .submission-section .sub-kicker { font-family: var(--inter); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(11,11,11,0.55); margin-bottom: 1.5rem; }
+    .submission-section .sub-kicker { font-family: var(--inter); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(11,11,11,0.7); margin-bottom: 1.5rem; }
     .submission-section h2 { font-family: var(--newsreader); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; color: var(--black); letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 1.2rem; }
-    .submission-section p { font-family: var(--inter); font-size: 0.95rem; color: rgba(11,11,11,0.65); line-height: 1.75; max-width: 500px; margin: 0 auto 2.5rem; }
+    .submission-section p { font-family: var(--inter); font-size: 0.95rem; color: rgba(11,11,11,0.78); line-height: 1.75; max-width: 500px; margin: 0 auto 2.5rem; }
     .submission-link { display: inline-block; font-family: var(--inter); font-size: 0.9rem; font-weight: 500; color: var(--white); background: var(--black); text-decoration: none; border: 1px solid var(--black); padding: 0.85rem 1.8rem; letter-spacing: 0.02em; transition: background 0.2s, color 0.2s; }
     .submission-link:hover { background: var(--white); color: var(--black); }
 
@@ -175,6 +175,13 @@
       <p class="block-desc">A curated library of observations that continue to explore and expand the ideas introduced in our Provocations.</p>
     </div>
     <ul class="signal-grid">
+
+      <li class="signal-card">
+        <span class="signal-card-author">Jim Scully</span>
+        <a href="/signals/our-writing-sounds-like-ai" class="signal-card-title">Our Writing Sounds Like AI. Does It Matter?</a>
+        <p class="signal-card-preview">If the machine and I now write the same way, whose writing is it? An experiment in asking Claude to confess to its own style, and then take the confession back.</p>
+        <a href="/signals/our-writing-sounds-like-ai" class="signal-card-link">Read &rarr;</a>
+      </li>
 
       <li class="signal-card">
         <span class="signal-card-author">Jim Scully</span>
