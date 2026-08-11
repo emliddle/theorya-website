@@ -35,7 +35,8 @@
       --black: #0a0a0a;
       --white: #fafafa;
       --off-white: #f4f3f0;
-      --mid-gray: #525252;
+      --mid-gray: #494949;
+      --body-text: #1a1a1a;
       --light-gray: #e2e0db;
       --dark-bg: #1a1a1a;
       --dark-text: #ddddd9;
@@ -66,7 +67,7 @@
     section + section { border-top: 1px solid var(--light-gray); }
     .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; }
     h2 { font-family: 'Newsreader', Georgia, serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1.5rem; }
-    p { color: var(--mid-gray); margin-bottom: 1.2rem; max-width: 660px; font-weight: 400; }
+    p { color: var(--body-text); margin-bottom: 1.2rem; max-width: 660px; font-weight: 400; }
     p:last-child { margin-bottom: 0; }
     .text-link { display: inline-block; margin-top: 1.8rem; font-size: 0.9rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 2px; transition: opacity 0.2s; }
     .text-link:hover { opacity: 0.6; }
@@ -280,6 +281,13 @@
 
     /* PEOPLE */
     .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.5rem; }
+    .person-photo { width: 100%; max-width: 220px; aspect-ratio: 1; object-fit: cover; object-position: top center; display: block; margin-bottom: 1.5rem; filter: grayscale(100%); }
+    @media (max-width: 768px) { .person-photo { max-width: 160px; } }
+
+    /* HOW WE WORK */
+    #how-we-work { background: var(--off-white); padding: 5rem 0; }
+    #how-we-work h2 { margin-bottom: 1.5rem; }
+    #how-we-work p { max-width: 680px; margin-bottom: 1.2rem; color: var(--body-text); }
     .person { padding-top: 1.5rem; border-top: 1px solid var(--light-gray); }
     .person-name { font-family: 'Newsreader', Georgia, serif; font-size: 1.7rem; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0.25rem; color: var(--black); }
     .person-role { font-size: 0.75rem; color: var(--mid-gray); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.2rem; font-weight: 500; }
@@ -566,8 +574,8 @@
   <div class="container">
     <h2>How TheoryA.ai Works</h2>
     <p>Theory A is the philosophy. TheoryA.ai is the company built in service of it.</p>
-    <p>TheoryA.ai exists to develop the philosophy, apply it through practice, and make expert guidance available to organizations redesigning themselves for a world where intelligence is increasingly abundant and competitive advantage depends on how effectively human and artificial agency work together.</p>
-    <p>We do this through Collections, Digital Intelligence, and direct collaboration with the experts behind the work.</p>
+    <p>We exist to develop the philosophy, apply it through practice, and make expert guidance available to organizations redesigning themselves for a world where intelligence is increasingly abundant and competitive advantage depends on how effectively human and artificial agency work together.</p>
+    <p>We do this through Collections, Digital Intelligence, and direct collaboration.</p>
 
     <hr class="works-divider">
 
@@ -575,8 +583,8 @@
       <p class="works-block-label">Collections</p>
       <h3>Bringing Theory A into practice.</h3>
       <p>Theory A is applied through Collections.</p>
-      <p>Each Collection focuses on a specific organizational challenge, bringing together original thinking, practical frameworks, methods, implementation guidance, and the expertise of the authors who developed it.</p>
-      <p>Rather than static reports or consulting frameworks, Collections are continuously refined through research, practice, and application, allowing the work to evolve as new evidence and experience emerges.</p>
+      <p>Each Collection focuses on a specific organizational challenge, bringing together original thinking, practical frameworks, methods, implementation guidance, and our expertise as the authors behind the work.</p>
+      <p>Rather than static reports or consulting frameworks, we continuously refine our Collections through research, practice, and application, allowing the work to evolve as new evidence and experience emerges.</p>
       <p>A Collection is not simply something to read. It is a continually evolving body of expertise designed to help organizations solve meaningful problems.</p>
     </div>
 
@@ -585,17 +593,17 @@
     <div class="works-block">
       <p class="works-block-label">Digital Intelligence</p>
       <h3>Every Collection is experienced through Digital Intelligence.</h3>
-      <p>Digital Intelligence extends the expertise behind each Collection, making its ideas, methods, and professional judgment continuously available while remaining governed, refined, and improved by the experts who created the work.</p>
+      <p>Digital Intelligence extends our expertise behind each Collection, making its ideas, methods, and professional judgment continuously available while remaining governed, refined, and improved by us.</p>
       <p>It allows organizations to engage with the Collection whenever they need it, while preserving the depth, context, and judgment that make expert guidance valuable.</p>
-      <p>When deeper collaboration is needed, organizations can work directly with the experts behind the Collection.</p>
+      <p>When deeper collaboration is needed, organizations can work directly with us.</p>
     </div>
 
     <div class="works-closing">
-      <p class="closing-open">TheoryA.ai combines enduring ideas with practical application.</p>
+      <p class="closing-open">We combine enduring ideas with practical application.</p>
       <p>Our philosophy shapes how organizations think.</p>
       <p>Our Collections help organizations apply that thinking.</p>
       <p>Our Digital Intelligence extends expert judgment.</p>
-      <p>And when the challenge requires it, direct collaboration with the experts behind the work provides the depth that only human partnership can offer.</p>
+      <p>And when the challenge requires it, working directly with us provides the depth that only human partnership can offer.</p>
       <p class="waitlist-label">Follow the development of Collections, Digital Intelligence, and the ongoing evolution of Theory A.</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcL-eozmYKbVKi2dyESaYjxnQYnHp44luVLxJ7CSKPLzmCyw/viewform" class="btn-primary" target="_blank" rel="noopener">Join the List</a>
     </div>
@@ -609,18 +617,37 @@
     <h2>Theory A is bigger than any one person. Here's who's building it.</h2>
     <div class="people-grid">
       <div class="person">
+        <img src="/images/jim-scully.jpg" alt="Jim Scully" class="person-photo" width="220" height="220" onerror="this.style.display='none'">
         <p class="person-name">Jim Scully</p>
-        <p class="person-role">Founder, TheoryA.ai</p>
-        <p>Jim is an organization theorist and AI-native operating model advisor with more than 30 years of consulting and corporate leadership experience and a career spanning every major wave of workplace information technology. He develops practical models for AI-native business design, human-AI teaming, outcome-based organization design, and work reimagination. His work helps leaders move beyond applying AI to legacy processes toward redesigning how organizations create value, make decisions, and combine human and artificial agency.</p>
-        <p>He is co-author of the Theory A manifesto and principles and creator of The AI Enterprise, the first collection available through TheoryA.ai.</p>
+        <p class="person-role">Co-Founder, TheoryA.ai</p>
+        <p>I have been watching technology reshape work since before keyboards existed. Across nearly five decades, I have had a front-row seat to every major wave: mainframes, personal computers, client-server systems, enterprise platforms, the internet, cloud, automation, analytics, and now AI. That vantage point has convinced me that what is happening now is not simply the biggest technology transformation in workplace history. It is as significant as all prior transformations combined.</p>
+        <p>My work begins from a simple premise: AI transformation is not a technology implementation. It is a redesign of how work is organized, how decisions are made, and how human and artificial agency work together. I help leaders understand those deeper implications and design organizations capable of acting on them.</p>
+        <p>I am the creator of The AI Enterprise and AI Native Shared Services Collections, and co-author of the Theory A manifesto and principles.</p>
+        <p>When I am not thinking about the future of organizations, I am building one of a different kind. My backyard farm is a work in progress toward full sustainability, and it keeps me honest about what it actually takes to design a system that compounds over time.</p>
       </div>
       <div class="person">
+        <img src="/images/emily-liddle.jpg" alt="Emily Liddle" class="person-photo" width="220" height="220" onerror="this.style.display='none'">
         <p class="person-name">Emily Liddle</p>
-        <p class="person-role">Founder, TheoryA.ai</p>
-        <p>Emily is a global transformation leader and business builder who has spent more than two decades at the intersection of people, technology, and organizational change. She has built new markets, consulting practices, methodologies, and offerings across the Americas, Europe, and Asia, working with global organizations through major shifts in technology and work.</p>
-        <p>At TheoryA.ai, she is the architect of the firm's core model, including Digital Intelligence, the collections structure, and the AI-native advisory approach that brings Theory A into practice. She is co-author of the Theory A manifesto and principles, and her work focuses on designing organizations where human and artificial agency are orchestrated to create value.</p>
+        <p class="person-role">Co-Founder, TheoryA.ai</p>
+        <p>I began my career in politics, not because I wanted to hold office, but because I was troubled by how little agency most people felt over systems that shaped their lives. That question eventually pulled me toward technology and the workplace, where I have spent more than two decades helping organizations respond to fundamental shifts in how work gets done and value is created.</p>
+        <p>I have built new markets, consulting practices, methodologies, and client offerings across Europe, the Pacific, and globally, working repeatedly at moments of transition where emerging ideas needed to move into practice. I believe transformation only matters when it can actually change how an organization operates, not just how it thinks.</p>
+        <p>At TheoryA.ai, I am the architect of the firm&#8217;s model, including Digital Intelligence, the Collections structure, and the advisory approach that brings Theory A to life. I am co-author of the Theory A manifesto and principles and the creator of the Design for Agency Collection.</p>
+        <p>Outside of this work, I am a certified sommelier with a long-held dream of one day opening a small, carefully curated wine shop. It is a dream about curation, judgment, and the belief that the best things do not need to be complicated to be extraordinary.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="how-we-work">
+  <div class="container">
+    <p class="section-label">How We Work</p>
+    <h2>Theory A in practice, inside our own firm.</h2>
+    <p>We build TheoryA.ai the way we believe organizations should operate.</p>
+    <p>Our thinking and judgment sit at the center. Jim authors The AI Enterprise and AI Native Shared Services. Emily authors Design for Agency. We govern all IP, lead every client relationship, and make every call that matters. AI extends that work across three distinct roles: as a thinking partner for developing and stress-testing our ideas, as an operational layer that lets two people run a firm with the reach of a much larger team, and as an adversarial reviewer that pressure-tests our strongest arguments before they go anywhere.</p>
+    <p>Digital Intelligence is the next expression of this model. It is how clients will engage directly with our Collections, an interactive and continuously evolving extension of our judgment and expertise. It is in development now.</p>
+    <p>The thinking is ours. The judgment is ours. The AI makes both more rigorous and more productive than either of us could manage alone.</p>
+    <p>This is Theory A in practice inside our own firm.</p>
   </div>
 </section>
 
