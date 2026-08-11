@@ -22,8 +22,8 @@
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --black: #0a0a0a; --white: #fafafa; --mid-gray: #525252; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
-    body { background: var(--white); color: var(--black); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    :root { --black: #0a0a0a; --white: #fafafa; --body: #1a1a1a; --mid-gray: #494949; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--body); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
     .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
     .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
     .site-nav ul { display: flex; gap: 2rem; list-style: none; }
@@ -42,16 +42,16 @@
     .signal-dek { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.6; color: var(--mid-gray); margin-bottom: 1.5rem; }
     .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
     h2 { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); margin: 3rem 0 1.4rem; }
-    p { color: var(--mid-gray); margin-bottom: 1.4rem; font-weight: 400; }
+    p { color: var(--body); margin-bottom: 1.4rem; font-weight: 400; }
     p:last-of-type { margin-bottom: 0; }
     strong { color: var(--black); }
     em { font-style: italic; }
     .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
     .exhibit { background: #f2f2f0; border-left: 3px solid var(--black); padding: 1.6rem 1.75rem; margin: 2rem 0; }
-    .exhibit p { font-size: 0.98rem; line-height: 1.75; color: var(--mid-gray); margin-bottom: 1rem; }
+    .exhibit p { font-size: 0.98rem; line-height: 1.75; color: var(--body); margin-bottom: 1rem; }
     .exhibit p:last-child { margin-bottom: 0; }
     .exhibit em { color: var(--black); }
-    .signal-close { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); color: var(--mid-gray); }
+    .signal-close { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); color: var(--body); }
     .signal-close strong { color: var(--black); }
     .signal-footer { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
     .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }

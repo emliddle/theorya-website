@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move Over HCM | Signals | TheoryA.ai</title>
+  <meta name="description" content="Every enterprise runs one system that tells it who its people are. That system was built on a philosophy older than anyone running it. HCMs will not be reinvented. They will split." />
+  <meta property="og:title" content="Move Over HCM — TheoryA.ai" />
+  <meta property="og:description" content="The HCM platform won't be reinvented in a product cycle. It will quietly duplicate — one system for compliance, one for how work actually happens. The question is which one you'll manage by." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --body: #1a1a1a; --mid-gray: #494949; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--body); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1.5rem; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.3; letter-spacing: -0.01em; color: var(--black); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--body); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    a { color: var(--black); }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .signal-footer .provocation-ref { display: block; margin-top: 1rem; }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Move Over HCM",
+    "description": "Every enterprise runs one system that tells it who its people are. That system was built on a philosophy older than anyone running it. HCMs will not be reinvented. They will split.",
+    "author": { "@type": "Person", "name": "Jim Scully" },
+    "publisher": { "@type": "Organization", "name": "TheoryA.ai", "url": "https://theorya.ai" },
+    "url": "https://theorya.ai/signals/move-over-hcm/",
+    "mainEntityOfPage": "https://theorya.ai/signals/move-over-hcm/",
+    "isPartOf": { "@type": "WebSite", "name": "TheoryA.ai", "url": "https://theorya.ai" }
+  }
+  </script>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/#principles">Principles</a></li>
+    <li><a href="/signals/" class="active">Signals</a></li>
+    <li><a href="/#people">People</a></li>
+    <li><a href="/#contact">Work With Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>Move Over HCM</h1>
+  <div class="byline">Jim Scully</div>
+
+  <p class="dropcap">Every enterprise keeps one place where it goes to become legible to itself. Not the strategy deck and not the org design workshop, but the human capital management platform &#8212; the system that decides what, where, and why a person is inside the organization. And that system, in almost every enterprise running today, is built on a template that is older than any living person.</p>
+
+  <p>The template has a name in the industry: position management, sometimes called org management. Underneath it sits a three-object model. There is the job, an abstract classification. The position, a specific instance of the job. And the person, the temporary occupant of that instance, or box. The job is the engineering drawing. The position is the place on the line. The person is the part that fills it.</p>
+
+  <p>This is not a neutral piece of data architecture. It is a philosophy of work, encoded and shipped as software, and the philosophy is the assembly line. The name of the philosophy is bureaucracy.</p>
+
+  <h2>Conventional wisdom already left this behind</h2>
+
+  <p>The strange part is that few defend the assembly line paradigm of work anymore. The case for fluid, non-hierarchical, adaptive organization is not a frontier idea waiting to be proven. It is decades old and thoroughly mainstream.</p>
+
+  <p>Warren Bennis named the alternative in 1968, in <em>The Temporary Society</em>: the adhocracy, an organization of temporary teams that form around a problem and dissolve when it is solved. Two years later Alvin Toffler put the word into general circulation in <em>Future Shock</em> and predicted, plainly, that adhocracies would displace bureaucracies as the environment accelerated. That was more than half a century ago. Every serious account of organization since has agreed on the direction of travel: away from the fixed slot, toward the fluid arrangement. Virtually every thought leader in the AI era echoes this point.</p>
+
+  <p>And yet the systems enterprises actually run their people through never moved. HCM platforms chained themselves to the bureaucratic paradigm of position management and stayed there, because the bureaucratic paradigm is what the software was built to administer. And because society at large is slower to make the transition.</p>
+
+  <h2>The industrial compromise, digitized</h2>
+
+  <p>I argued in <a href="/provocations/ai-enterprise">The AI Enterprise</a> that this is the &#8220;industrial compromise&#8221; made durable. At around the turn of the twentieth century, the Industrial Revolution struck a bargain with its predecessor, craft production: give up the whole in exchange for scale. The craftsman who once held an entire product in mind was narrowed into an operator of one step, and the meaning of the work migrated out of the work itself and into the conditions around it &#8212; the wage, the title, the security of the slot.</p>
+
+  <p>Position management is the industrial bargain encoded in the people system of record. Its entire purpose is to make people interchangeable &#8212; to define a slot precisely enough that qualified persons can be identified, recruited, and deployed so that the machine keeps running. That was a rational answer to a real constraint. When expertise was scarce and coordination at scale was hard, interchangeability was how large organizations stayed consistent, fair, and auditable. The platform did not invent the logic. It simply applied it.</p>
+
+  <h2>The unit of work just changed</h2>
+
+  <p>What breaks the model is not a better philosophy. It is a change in what actually performs the work.</p>
+
+  <p>The <a href="/manifesto">Theory A manifesto</a> describes this as the emergence of human-machine dyads: work increasingly done by a person and a machine acting together against an outcome, adapting as conditions change. Position management has no object for that. It can describe a job, a box, and an occupant. It cannot describe a person teamed with an agent, because in the three-object world the machine is not a member of the organization. It is a tool assigned to a slot that still assumes a single human part.</p>
+
+  <blockquote>&#8220;When the thing doing the work no longer fits the only shapes your system of record can hold, the record stops describing reality.&#8221;</blockquote>
+
+  <p>When the thing doing the work no longer fits the only shapes your system of record can hold, the record stops describing reality. It starts describing a fiction the organization agrees to maintain. It makes the organization legible through a lens that is really only useful for regulatory governance.</p>
+
+  <h2>The prognosis is bifurcation, not reinvention</h2>
+
+  <p>Here is where the practical prediction diverges from the tidy one. The tidy prediction is that HCM platforms will be reinvented &#8212; that the slot gives way to the outcome, the position to the engagement, and the software follows. It will, eventually. But it will not happen soon, and the reason was named a century ago.</p>
+
+  <p>In 1922, William Ogburn coined it cultural lag. Material culture &#8212; technology, tools, capability &#8212; advances quickly. Adaptive culture &#8212; values, norms, and above all law &#8212; changes slowly, and the gap between them is a period of maladjustment that a society has to live through. Organizations are societies. The technology of the human-machine dyad is arriving now. The adaptive apparatus around it is not.</p>
+
+  <p>Labor law alone is a century of bureaucratic management encoded into statute. Imagine trying to uncover or defend discrimination without documentation of stable jobs and positions. Classification, headcount, the employer-employee relationship, the very legal existence of &#8220;the position&#8221; &#8212; these are load-bearing fictions of the industrial era, and they will not be rewritten to accommodate the new model in a product cycle. They will take years.</p>
+
+  <p>So the near-term outcome is not one reinvented HCM. It is two. One will manage the employee. The other will manage the worker. Organizations will maintain one system of record to satisfy the regulator &#8212; positions, headcount, the legal shape of the job, everything compliance and labor law still require to be true. And they will maintain a second to reflect what is actually happening: humans and machines teamed against outcomes, forming and dissolving as the work demands. For some period of time, both run at once.</p>
+
+  <p>The org chart will not be reinvented on a vendor&#8217;s roadmap. It will be quietly duplicated. The question that follows is the one worth sitting with: when your two systems disagree &#8212; and they will, constantly &#8212; which one will you actually manage by?</p>
+
+  <p>If human resources relegates itself to managing the employee side of the equation and not the worker side, it is setting itself up for irrelevance.</p>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals/">More Signals &rarr;</a>
+    <a href="/provocations/ai-enterprise" class="provocation-ref">Related: The AI Enterprise Provocation &rarr;</a>
+  </div>
+</article>
+
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body>
+</html>
