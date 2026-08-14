@@ -247,12 +247,6 @@
     @media (max-width: 768px) {
       .p-split { display: none; }
       .p-mobile { display: block; }
-      .founder-feature, .founder-alt .founder-feature { grid-template-columns: 1fr; gap: 2.5rem; }
-      .founder-alt .founder-copy, .founder-alt .founder-portrait-wrap { grid-column: 1; }
-      .founder-alt .founder-portrait-wrap { grid-row: 2; }
-      .founder-portrait-wrap { max-width: 300px; }
-      .founder-bio-layout { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 3rem; padding-top: 2.5rem; }
-      .founder-bio-label { line-height: 1.6; }
       .contact-inner { flex-direction: column; gap: 2.5rem; }
 
       /* Mobile nav */
@@ -311,6 +305,26 @@
     .founder-bio p { font-size: 1rem; line-height: 1.75; color: var(--body-text); margin-bottom: 1.4rem; max-width: none; }
     .founder-bio p:last-child { margin-bottom: 0; }
     .founder-bio p:first-child::first-letter { float: left; font-family: 'Newsreader', Georgia, serif; font-size: 3.6em; line-height: 0.78; padding: 8px 10px 0 0; color: var(--black); }
+
+    /* PEOPLE — responsive. Must follow the rules above to win the cascade. */
+    @media (max-width: 900px) {
+      .founder-feature,
+      .founder-alt .founder-feature { grid-template-columns: 1fr; gap: 2.25rem; }
+      .founder-copy,
+      .founder-alt .founder-copy { grid-column: 1; grid-row: auto; }
+      .founder-portrait-wrap,
+      .founder-alt .founder-portrait-wrap { grid-column: 1; grid-row: auto; max-width: 300px; }
+      .founder-bio-layout { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 3rem; padding-top: 2.5rem; }
+      .founder-bio-label { line-height: 1.6; }
+      .founder-index { margin-bottom: 2rem; }
+      .founder { padding-top: 3rem; margin-top: 3.5rem; }
+    }
+    @media (max-width: 560px) {
+      .founder-portrait-wrap,
+      .founder-alt .founder-portrait-wrap { max-width: 240px; }
+      .founder-statement { font-size: clamp(1.35rem, 6vw, 1.7rem); }
+      .founder-bio p:first-child::first-letter { font-size: 3.1em; padding: 6px 8px 0 0; }
+    }
 
     /* HOW WE WORK */
     #how-we-work { background: var(--off-white); padding: 5rem 0; }
