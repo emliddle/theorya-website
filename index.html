@@ -306,8 +306,9 @@
     .founder-bio p:last-child { margin-bottom: 0; }
     .founder-bio p:first-child::first-letter { float: left; font-family: 'Newsreader', Georgia, serif; font-size: 3.6em; line-height: 0.78; padding: 8px 10px 0 0; color: var(--black); }
 
-    /* WORK WITH US — nested inside People */
-    .people-work { margin-top: 5rem; padding-top: 4rem; border-top: 2px solid var(--black); }
+    /* WORK WITH US — full-bleed band inside the People section */
+    #people { padding-bottom: 0; }
+    .people-work { background: var(--off-white); border-top: 1px solid var(--light-gray); margin-top: 6rem; padding: 6rem 0; }
     .people-work .section-label { margin-bottom: 1.25rem; }
     .people-work h2 { margin-bottom: 2.5rem; }
 
@@ -339,7 +340,6 @@
     .person-role { font-size: 0.75rem; color: var(--mid-gray); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0; font-weight: 500; }
 
     /* CONTACT */
-    #contact { background: var(--off-white); }
     .contact-inner { display: flex; gap: 5rem; flex-wrap: wrap; align-items: flex-start; }
     .contact-copy { flex: 1; min-width: 280px; }
     .contact-form-col { flex: 1; min-width: 280px; padding-top: 0.3rem; }
@@ -735,8 +735,10 @@
       </div>
 
     </div>
+  </div>
 
-    <div class="people-work" id="contact">
+  <div class="people-work" id="contact">
+    <div class="container">
       <p class="section-label">Work With Us</p>
       <h2>Multiple ways to access expert guidance.</h2>
       <div class="contact-inner">
