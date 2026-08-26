@@ -36,12 +36,18 @@
     .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
     .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
     .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .method-note { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--light-gray); text-align: right; }
+    .method-note p { font-family: var(--sans); font-size: 0.78rem; line-height: 1.65; color: var(--mid-gray); max-width: 420px; margin-left: auto; margin-bottom: 0.6rem; }
+    .method-note .method-link { display: inline-block; margin-top: 0.15rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--light-gray); padding-bottom: 1px; }
+    .method-note .method-link:hover { border-bottom-color: var(--black); }
     .provocation-link { display: none; }
     footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
     footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
     footer p { font-size: 0.8rem; color: var(--mid-gray); }
     @media (max-width: 768px) {
+      .method-note { text-align: left; }
+      .method-note p { margin-left: 0; }
       .nav-toggle { display: flex; }
       #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
       #nav-links.open { display: flex; }
@@ -123,6 +129,11 @@
     <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
     <a href="/signals/">More Signals &rarr;</a>
     <span class="provocation-link"></span>
+
+    <div class="method-note">
+      <p>Authored by Emily Liddle and drafted with AI as a thinking partner and adversarial reviewer. The argument and the final judgment are hers.</p>
+      <a class="method-link" href="/#how-we-work">How we work with AI</a>
+    </div>
   </div>
 </article>
 <footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
