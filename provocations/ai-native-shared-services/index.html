@@ -7,7 +7,7 @@
 <meta name="description" content="Why shared services cannot optimize its way into the AI era. A provocation from TheoryA.ai's AI Native Shared Services Collection." />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Georgia', serif; background: #ffffff; color: #000000; line-height: 1.7; font-size: 17px; }
+  body { font-family: 'Georgia', serif; background: #fafafa; color: #1a1a1a; line-height: 1.7; font-size: 17px; }
 
   /* Site nav */
   .site-nav {
@@ -15,65 +15,76 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #e8e8e8;
-    background: #ffffff;
+    border-bottom: 1px solid #e2e0db;
+    background: #fafafa;
     position: sticky;
     top: 0;
     z-index: 100;
   }
   .site-nav-left { display: flex; align-items: center; gap: 32px; }
-  .site-wordmark { font-family: 'Georgia', serif; font-size: 18px; font-weight: 400; letter-spacing: -0.3px; color: #000; text-decoration: none; }
-  .site-collection { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #999; }
+  .site-wordmark { font-family: 'Georgia', serif; font-size: 18px; font-weight: 400; letter-spacing: -0.3px; color: #0a0a0a; text-decoration: none; }
+  .site-collection { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #494949; }
   .site-nav-links { display: flex; align-items: center; gap: 28px; }
-  .site-nav-link { font-family: 'Georgia', serif; font-size: 13px; color: #555; text-decoration: none; letter-spacing: 0.3px; }
-  .site-nav-link:hover { color: #000; }
+  .site-nav-link { font-family: 'Georgia', serif; font-size: 13px; color: #494949; text-decoration: none; letter-spacing: 0.3px; }
+  .site-nav-link:hover { color: #0a0a0a; }
 
   /* Cover */
-  .cover { padding: 96px 48px 80px; border-bottom: 1px solid #000; max-width: 860px; margin: 0 auto; }
-  .collection-tag { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 48px; }
-  .logo-mark { font-family: 'Georgia', serif; font-size: 96px; font-weight: 400; line-height: 1; letter-spacing: -4px; margin-bottom: 48px; display: block; }
-  h1.title { font-family: 'Georgia', serif; font-size: 48px; font-weight: 400; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; color: #000; }
-  .subtitle { font-family: 'Georgia', serif; font-size: 22px; font-style: italic; color: #555; margin-bottom: 32px; font-weight: 400; }
+  .cover { padding: 96px 48px 80px; max-width: 680px; margin: 0 auto; }
+  .metarow { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid #0a0a0a; border-bottom: 1px solid #0a0a0a; padding: 11px 0; margin-bottom: 40px; }
+  .metarow .m-left { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #0a0a0a; }
+  .metarow .m-right { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #494949; }
+  h1.title { font-family: 'Georgia', serif; font-size: 48px; font-weight: 400; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; color: #0a0a0a; }
+  .subtitle { font-family: 'Georgia', serif; font-size: 22px; font-style: italic; color: #494949; margin-bottom: 32px; font-weight: 400; }
   .byline-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-  .byline { font-family: 'Georgia', serif; font-size: 14px; color: #888; letter-spacing: 0.5px; }
-  .pdf-download { font-family: 'Georgia', serif; font-size: 13px; color: #888; text-decoration: none; letter-spacing: 0.5px; border: 1px solid #ccc; padding: 8px 16px; transition: color 0.2s, border-color 0.2s; }
-  .pdf-download:hover { color: #000; border-color: #000; }
+  .byline { font-family: 'Georgia', serif; font-size: 14px; color: #494949; letter-spacing: 0.5px; }
+  .pdf-download { font-family: 'Georgia', serif; font-size: 13px; color: #494949; text-decoration: none; letter-spacing: 0.5px; border: 1px solid #e2e0db; padding: 8px 16px; transition: color 0.2s, border-color 0.2s; }
+  .pdf-download:hover { color: #0a0a0a; border-color: #0a0a0a; }
+  .standfirst { margin-top: 40px; padding-top: 28px; border-top: 1px solid #e2e0db; }
+  .standfirst p { font-family: 'Georgia', serif; font-size: 15px; font-style: italic; line-height: 1.6; color: #494949; margin: 0; }
 
   /* Content */
   .content { max-width: 680px; margin: 0 auto; padding: 72px 48px; }
-  .intro-note { font-family: 'Georgia', serif; font-size: 14px; font-style: italic; color: #888; line-height: 1.7; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid #eee; }
-  .section { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid #ddd; }
+  .section { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid #e2e0db; }
   .section:last-child { border-bottom: none; }
-  h2.section-title { font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 32px; font-weight: 400; }
-  p { margin-bottom: 24px; color: #000; font-size: 17px; line-height: 1.75; }
+  h2.section-title { font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #494949; margin-bottom: 32px; font-weight: 400; }
+  p { margin-bottom: 24px; color: #1a1a1a; font-size: 17px; line-height: 1.75; }
   p:last-child { margin-bottom: 0; }
-  .pullquote { margin: 48px 0; padding: 32px 40px; border-left: 3px solid #000; background: #f8f8f8; }
-  .pullquote p { font-size: 22px; font-style: italic; line-height: 1.5; color: #000; margin: 0; font-weight: 400; }
-  strong.label { font-family: 'Georgia', serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 8px; margin-top: 32px; color: #000; font-weight: 700; }
+  .pullquote { margin: 48px 0; padding: 32px 40px; border-left: 3px solid #0a0a0a; background: #f4f3f0; }
+  .pullquote p { font-size: 22px; font-style: italic; line-height: 1.5; color: #0a0a0a; margin: 0; font-weight: 400; }
+  strong.label { font-family: 'Georgia', serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 8px; margin-top: 32px; color: #0a0a0a; font-weight: 700; }
   .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 15px; }
-  .comparison-table th { background: #000; color: #fff; padding: 14px 20px; text-align: left; font-weight: 400; font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 1px; }
-  .comparison-table td { padding: 14px 20px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.6; font-size: 15px; }
-  .comparison-table tr td:first-child { font-weight: 700; background: #f8f8f8; width: 28%; color: #000; font-size: 13px; letter-spacing: 0.3px; }
+  .comparison-table th { background: #0a0a0a; color: #fafafa; padding: 14px 20px; text-align: left; font-weight: 400; font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 1px; }
+  .comparison-table td { padding: 14px 20px; border-bottom: 1px solid #e2e0db; vertical-align: top; line-height: 1.6; font-size: 15px; }
+  .comparison-table tr td:first-child { font-weight: 700; background: #f4f3f0; width: 28%; color: #0a0a0a; font-size: 13px; letter-spacing: 0.3px; }
   .comparison-table tr:last-child td { border-bottom: none; }
-  .closing-section { margin-top: 72px; padding-top: 48px; border-top: 2px solid #000; }
+  .closing-section { margin-top: 72px; padding-top: 48px; border-top: 2px solid #0a0a0a; }
   .closing-line { font-size: 20px; font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
 
   /* Footer */
-  footer { border-top: 1px solid #000; padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; }
-  .footer-left { font-family: 'Georgia', serif; font-size: 20px; color: #000; }
-  .footer-right { font-family: 'Georgia', serif; font-size: 12px; color: #888; letter-spacing: 2px; text-transform: uppercase; }
+  footer { border-top: 1px solid #0a0a0a; padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-left { font-family: 'Georgia', serif; font-size: 20px; color: #0a0a0a; }
+  .footer-right { font-family: 'Georgia', serif; font-size: 12px; color: #494949; letter-spacing: 2px; text-transform: uppercase; }
 
   @media (max-width: 768px) {
     .site-nav { padding: 16px 24px; }
     .site-collection { display: none; }
     .cover { padding: 64px 24px 56px; }
-    .logo-mark { font-size: 64px; }
     h1.title { font-size: 32px; }
     .subtitle { font-size: 18px; }
     .content { padding: 48px 24px; }
     footer { padding: 24px; flex-direction: column; gap: 12px; }
     .pullquote { padding: 24px; }
     .pullquote p { font-size: 18px; }
+  }
+
+  /* METHOD NOTE */
+  .method-note { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e2e0db; text-align: right; }
+  .method-note p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 1.65; color: #494949; max-width: 420px; margin-left: auto; margin-bottom: 8px; }
+  .method-note .method-link { display: inline-block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 600; color: #0a0a0a; text-decoration: none; border-bottom: 1px solid #e2e0db; padding-bottom: 1px; }
+  .method-note .method-link:hover { border-bottom-color: #0a0a0a; }
+  @media (max-width: 768px) {
+    .method-note { text-align: left; }
+    .method-note p { margin-left: 0; }
   }
 </style>
 </head>
@@ -92,19 +103,22 @@
 </nav>
 
 <div class="cover">
-  <div class="collection-tag">AI Native Shared Services Collection &nbsp;&middot;&nbsp; TheoryA.ai</div>
-  <span class="logo-mark">A.</span>
+  <div class="metarow">
+    <span class="m-left">AI Native Shared Services Collection</span>
+    <span class="m-right">Provocation</span>
+  </div>
   <h1 class="title">The End of the Transaction Factory</h1>
   <p class="subtitle">Why shared services cannot optimize its way into the AI era</p>
   <div class="byline-row">
-    <p class="byline">Jim Scully &nbsp;&middot;&nbsp; TheoryA.ai</p>
+    <p class="byline">Jim Scully &nbsp;&middot;&nbsp; Co-Founder, TheoryA.ai</p>
     <a href="/provocations/ai-native-shared-services.pdf" class="pdf-download" target="_blank" rel="noopener" download>Download PDF &darr;</a>
+  </div>
+  <div class="standfirst">
+    <p>This paper applies Theory A, a management philosophy for organizing agency in an age of abundant intelligence, to shared services. It is part of the AI Native Shared Services Collection.</p>
   </div>
 </div>
 
 <div class="content">
-
-  <p class="intro-note">This paper applies Theory A, a management philosophy for organizing agency in an age of abundant intelligence, to shared services. It is part of the AI Native Shared Services Collection.</p>
 
   <div class="section">
     <div class="pullquote"><p>An operating model is a machine for managing scarcity. When the scarcity inverts, the machine does not merely become suboptimal. It becomes the constraint.</p></div>
@@ -189,6 +203,11 @@
     <p>The question facing every shared services leader today is not whether to adopt AI. Everyone will adopt AI. The question is which side of the fork the adoption serves.</p>
     <p class="closing-line">One side optimizes what already exists. The other asks what shared services should have been all along, if it had been designed for a world of abundant intelligence from the start.</p>
     <p>Only one of those questions has an interesting answer.</p>
+  </div>
+
+  <div class="method-note">
+    <p>Authored by Jim Scully and drafted with AI as a thinking partner and adversarial reviewer. The argument and the final judgment are his.</p>
+    <a class="method-link" href="/#how-we-work">How we work with AI</a>
   </div>
 
 </div>
