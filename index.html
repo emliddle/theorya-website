@@ -127,7 +127,9 @@
     .psvg-wrap {
       position: relative;
       width: 100%;
-      aspect-ratio: 500 / 390;
+      max-width: 430px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1;
     }
     .psvg {
       display: block;
@@ -136,13 +138,12 @@
       overflow: visible;
     }
 
-    /* SVG connections */
-    .psvg .conn {
-      fill: none;
-      transition: stroke 0.5s ease, stroke-width 0.4s ease, stroke-opacity 0.4s ease;
-    }
-    .psvg .p-conn { stroke: rgba(255,255,255,0.6); stroke-width: 2; stroke-opacity: 1; }
-    .psvg .s-conn { stroke: rgba(255,255,255,0.32); stroke-width: 1.35; stroke-opacity: 1; }
+    /* SVG structure */
+    .psvg .ring { fill: none; stroke: rgba(255,255,255,0.28); stroke-width: 1; transition: stroke 0.5s ease, stroke-width 0.4s ease; }
+    .psvg .spoke { fill: none; stroke: rgba(255,255,255,0.42); stroke-width: 1.2; stroke-dasharray: 2 5; stroke-linecap: round; transition: stroke 0.45s ease, stroke-width 0.4s ease; }
+
+    /* Compounding pulses: rings expanding out of the centre through the four principles */
+    .psvg .pulse { fill: none; stroke: #ffffff; stroke-width: 1.2; }
 
     /* Background structure (Form state) */
     .bg-grid line { fill: none; stroke: rgba(255,255,255,0.18); stroke-width: 0.75; opacity: 0; transition: opacity 0.9s ease; }
@@ -151,7 +152,7 @@
     /* SVG nodes */
     .psvg .node-body { fill: #1a1a1a; stroke: rgba(255,255,255,0.8); stroke-width: 1.6; transition: stroke 0.4s, fill 0.4s, stroke-width 0.4s; }
     .psvg .node-halo { fill: none; stroke: rgba(255,255,255,0.34); stroke-width: 1; transition: stroke 0.4s; }
-    .psvg .node-outer { fill: none; stroke: rgba(255,255,255,0.24); stroke-width: 0.75; }
+    .psvg .node-outer { fill: none; stroke: rgba(255,255,255,0.24); stroke-width: 0.75; transition: stroke 0.4s; }
     .psvg .pnode-center .node-body { stroke: #ffffff; stroke-width: 2.2; }
     .psvg .pnode-center .node-halo { stroke: rgba(255,255,255,0.5); }
 
@@ -159,50 +160,46 @@
     .psvg .fgroup { display: none; }
     .psvg .fgroup circle { fill: rgba(255,255,255,0.95); }
 
-    /* Overview: show ambient flow */
+    /* Overview */
     [data-state="-1"] .fg-ambient { display: block; }
-    [data-state="-1"] .fg-ambient circle { fill: rgba(255,255,255,0.65); }
+    [data-state="-1"] .fg-ambient circle { fill: rgba(255,255,255,0.7); }
 
-    /* Abundance (0) */
+    /* Abundance (0) — top */
     [data-state="0"] .fg-abundance { display: block; }
-    [data-state="0"] .c-ab-oc { stroke: #ffffff; stroke-width: 2.5; stroke-opacity: 1; }
-    [data-state="0"] .c-ab-or { stroke: rgba(255,255,255,0.85); stroke-width: 2.2; stroke-opacity: 0.9; }
-    [data-state="0"] .c-ab-fo { stroke: rgba(255,255,255,0.85); stroke-width: 2.2; stroke-opacity: 0.9; }
+    [data-state="0"] .sp-ab { stroke: #ffffff; stroke-width: 1.8; }
+    [data-state="0"] .ring { stroke: rgba(255,255,255,0.42); }
     [data-state="0"] #pn0 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.09); }
     [data-state="0"] #pn0 .node-halo { stroke: rgba(255,255,255,0.65); }
 
-    /* Orchestration (1) */
+    /* Orchestration (1) — left */
     [data-state="1"] .fg-orchestration { display: block; }
-    [data-state="1"] .c-or-oc { stroke: #ffffff; stroke-width: 2.5; stroke-opacity: 1; }
-    [data-state="1"] .c-ab-or { stroke: rgba(255,255,255,0.85); stroke-width: 2.2; stroke-opacity: 0.85; }
-    [data-state="1"] .c-or-co { stroke: rgba(255,255,255,0.7); stroke-width: 1.8; stroke-opacity: 0.8; }
-    [data-state="1"] .c-ab-oc { stroke: rgba(255,255,255,0.5); stroke-opacity: 1; }
+    [data-state="1"] .sp-or { stroke: #ffffff; stroke-width: 1.8; }
+    [data-state="1"] .ring { stroke: rgba(255,255,255,0.55); stroke-width: 1.3; }
     [data-state="1"] #pn1 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.09); }
     [data-state="1"] #pn1 .node-halo { stroke: rgba(255,255,255,0.65); }
 
-    /* Outcome (2) */
+    /* Outcome (2) — right */
     [data-state="2"] .fg-outcome { display: block; }
-    [data-state="2"] .p-conn { stroke: rgba(255,255,255,0.9); stroke-width: 2.6; stroke-opacity: 1; }
-    [data-state="2"] .s-conn { stroke: rgba(255,255,255,0.45); stroke-opacity: 1; }
+    [data-state="2"] .spoke { stroke: rgba(255,255,255,0.7); stroke-width: 1.5; }
+    [data-state="2"] .sp-oc { stroke: #ffffff; stroke-width: 1.8; }
     [data-state="2"] #pn2 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.12); }
     [data-state="2"] #pn2 .node-halo { stroke: rgba(255,255,255,0.75); }
-    [data-state="2"] #pn2 .node-outer { stroke: rgba(255,255,255,0.5); }
 
-    /* Form (3) */
+    /* Form (3) — bottom */
     [data-state="3"] .fg-form { display: block; }
-    [data-state="3"] .p-conn { stroke: rgba(255,255,255,0.9); stroke-width: 2.6; stroke-opacity: 1; }
-    [data-state="3"] .s-conn { stroke: rgba(255,255,255,0.55); stroke-width: 1.6; stroke-opacity: 1; }
+    [data-state="3"] .sp-fo { stroke: #ffffff; stroke-width: 1.8; }
+    [data-state="3"] .ring { stroke: rgba(255,255,255,0.6); stroke-width: 1.4; }
     [data-state="3"] #pn3 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.09); }
     [data-state="3"] #pn3 .node-halo { stroke: rgba(255,255,255,0.65); }
 
-    /* Compounding (4) */
+    /* Compounding (4) — centre */
     [data-state="4"] .fg-compounding { display: block; }
-    [data-state="4"] .c-oc-co { stroke: #ffffff; stroke-width: 2.5; stroke-opacity: 1; }
-    [data-state="4"] .c-or-co { stroke: rgba(255,255,255,0.85); stroke-width: 2.2; stroke-opacity: 0.85; }
-    [data-state="4"] .c-fo-co { stroke: rgba(255,255,255,0.85); stroke-width: 2.2; stroke-opacity: 0.85; }
-    [data-state="4"] .c-ab-oc { stroke: rgba(255,255,255,0.5); stroke-opacity: 1; }
-    [data-state="4"] #pn4 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.09); }
-    [data-state="4"] #pn4 .node-halo { stroke: rgba(255,255,255,0.65); }
+    [data-state="4"] .spoke { stroke: rgba(255,255,255,0.78); stroke-width: 1.6; }
+    [data-state="4"] .ring { stroke: rgba(255,255,255,0.5); }
+    [data-state="4"] .pulse { stroke-width: 1.6; }
+    [data-state="4"] #pn4 .node-body { stroke: #ffffff; stroke-width: 2.6; fill: rgba(160,160,155,0.12); }
+    [data-state="4"] #pn4 .node-halo { stroke: rgba(255,255,255,0.8); }
+    [data-state="4"] #pn4 .node-outer { stroke: rgba(255,255,255,0.55); }
 
     /* Node labels (HTML over SVG) */
     .node-labels { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
@@ -293,7 +290,7 @@
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .psvg .fgroup { display: none !important; }
-      [data-state="-1"] .p-conn { stroke-opacity: 1; }
+      .psvg .pulse { display: none !important; }
       .nlabel, .pd-def { transition: none; }
     }
 
@@ -484,138 +481,120 @@
       <div class="p-viz-col">
         <div class="psvg-wrap" id="psvg-wrap" data-state="-1">
 
-          <!-- SVG network. viewBox 500x390. Nodes: Abundance(370,65), Orchestration(75,185), Outcome(250,205), Form(425,185), Compounding(250,345) -->
-          <svg class="psvg" viewBox="0 0 500 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <!-- Principles system. viewBox 480x480. Ring r155 about centre 240,240.
+               Abundance top (240,85) · Orchestration left (85,240) · Outcome right (395,240)
+               · Form bottom (240,395) · Compounding centre (240,240). -->
+          <svg class="psvg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 
             <!-- Background structural grid (Form state only) -->
             <g class="bg-grid">
-              <line x1="0" y1="125" x2="500" y2="125"/>
-              <line x1="0" y1="250" x2="500" y2="250"/>
-              <line x1="0" y1="375" x2="500" y2="375"/>
-              <line x1="100" y1="0" x2="100" y2="390"/>
-              <line x1="200" y1="0" x2="200" y2="390"/>
-              <line x1="300" y1="0" x2="300" y2="390"/>
-              <line x1="400" y1="0" x2="400" y2="390"/>
+              <line x1="0" y1="120" x2="480" y2="120"/>
+              <line x1="0" y1="240" x2="480" y2="240"/>
+              <line x1="0" y1="360" x2="480" y2="360"/>
+              <line x1="120" y1="0" x2="120" y2="480"/>
+              <line x1="240" y1="0" x2="240" y2="480"/>
+              <line x1="360" y1="0" x2="360" y2="480"/>
             </g>
 
-            <!-- ── Connections ── -->
-            <!-- Primary: to/from Outcome (hub) -->
-            <!-- Abundance → Outcome -->
-            <path class="conn p-conn c-ab-oc" d="M370,65 Q310,110 250,205"/>
-            <!-- Orchestration → Outcome -->
-            <path class="conn p-conn c-or-oc" d="M75,185 Q163,190 250,205"/>
-            <!-- Outcome → Form -->
-            <path class="conn p-conn c-oc-fo" d="M250,205 Q338,190 425,185"/>
-            <!-- Outcome → Compounding -->
-            <path class="conn p-conn c-oc-co" d="M250,205 Q250,275 250,345"/>
+            <!-- Ring joining the four principles -->
+            <circle class="ring" cx="240" cy="240" r="155"/>
 
-            <!-- Secondary: peripheral connections -->
-            <!-- Abundance → Orchestration (long arc) -->
-            <path class="conn s-conn c-ab-or" d="M370,65 Q190,45 75,185"/>
-            <!-- Abundance → Form (short arc) -->
-            <path class="conn s-conn c-ab-fo" d="M370,65 Q415,110 425,185"/>
-            <!-- Orchestration → Compounding -->
-            <path class="conn s-conn c-or-co" d="M75,185 Q95,295 250,345"/>
-            <!-- Form → Compounding -->
-            <path class="conn s-conn c-fo-co" d="M425,185 Q405,295 250,345"/>
+            <!-- Dotted spokes to the centre -->
+            <line class="spoke sp-ab" x1="240" y1="85"  x2="240" y2="240"/>
+            <line class="spoke sp-fo" x1="240" y1="395" x2="240" y2="240"/>
+            <line class="spoke sp-or" x1="85"  y1="240" x2="240" y2="240"/>
+            <line class="spoke sp-oc" x1="395" y1="240" x2="240" y2="240"/>
 
-            <!-- ── Flow particle groups ── -->
-            <!-- Ambient (overview, -1) -->
+            <!-- Compounding: rings expanding out of the centre, always running -->
+            <circle class="pulse" cx="240" cy="240" r="20">
+              <animate attributeName="r" values="20;200" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" values="0.55;0.28;0" dur="9s" repeatCount="indefinite"/>
+            </circle>
+            <circle class="pulse" cx="240" cy="240" r="20">
+              <animate attributeName="r" values="20;200" dur="9s" begin="3s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" values="0.55;0.28;0" dur="9s" begin="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle class="pulse" cx="240" cy="240" r="20">
+              <animate attributeName="r" values="20;200" dur="9s" begin="6s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-opacity" values="0.55;0.28;0" dur="9s" begin="6s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- Flow particle groups -->
             <g class="fgroup fg-ambient">
-              <circle r="2">
-                <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M370,65 Q310,110 250,205"/>
-              </circle>
-              <circle r="1.5">
-                <animateMotion dur="5s" repeatCount="indefinite" begin="2.1s" path="M75,185 Q163,190 250,205"/>
-              </circle>
-              <circle r="1.5">
-                <animateMotion dur="4.5s" repeatCount="indefinite" begin="1s" path="M250,205 Q250,275 250,345"/>
-              </circle>
+              <circle r="1.8"><animateMotion dur="4.5s" repeatCount="indefinite" begin="0s"   path="M240,85 L240,240"/></circle>
+              <circle r="1.8"><animateMotion dur="5.2s" repeatCount="indefinite" begin="1.4s" path="M395,240 L240,240"/></circle>
+              <circle r="1.8"><animateMotion dur="4.8s" repeatCount="indefinite" begin="2.6s" path="M240,395 L240,240"/></circle>
+              <circle r="1.8"><animateMotion dur="5.5s" repeatCount="indefinite" begin="3.4s" path="M85,240 L240,240"/></circle>
             </g>
 
-            <!-- Abundance (0): signals multiply, spread outward from abundance -->
             <g class="fgroup fg-abundance">
-              <circle r="2.2"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M370,65 Q310,110 250,205"/></circle>
-              <circle r="2"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0.6s" path="M370,65 Q310,110 250,205"/></circle>
-              <circle r="1.8"><animateMotion dur="3s" repeatCount="indefinite" begin="0s" path="M370,65 Q190,45 75,185"/></circle>
-              <circle r="1.8"><animateMotion dur="3.5s" repeatCount="indefinite" begin="0.4s" path="M370,65 Q415,110 425,185"/></circle>
-              <circle r="1.5"><animateMotion dur="4s" repeatCount="indefinite" begin="1.2s" path="M370,65 Q310,110 250,205 Q250,275 250,345"/></circle>
+              <circle r="2.2"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"   path="M240,85 L240,240"/></circle>
+              <circle r="2"><animateMotion   dur="3.2s" repeatCount="indefinite" begin="0.9s" path="M240,85 L240,240"/></circle>
+              <circle r="1.6"><animateMotion dur="12s"  repeatCount="indefinite" begin="0s"   path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
+              <circle r="1.6"><animateMotion dur="12s"  repeatCount="indefinite" begin="6s"   path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
             </g>
 
-            <!-- Orchestration (1): coordinated flows, distinct streams -->
             <g class="fgroup fg-orchestration">
-              <circle r="2"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0s" path="M75,185 Q163,190 250,205"/></circle>
-              <circle r="2"><animateMotion dur="3s" repeatCount="indefinite" begin="1.4s" path="M370,65 Q310,110 250,205"/></circle>
-              <circle r="1.8"><animateMotion dur="3.5s" repeatCount="indefinite" begin="0.5s" path="M250,205 Q338,190 425,185"/></circle>
-              <circle r="1.5"><animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M75,185 Q95,295 250,345"/></circle>
-              <circle r="1.5"><animateMotion dur="3.8s" repeatCount="indefinite" begin="0.9s" path="M370,65 Q190,45 75,185"/></circle>
+              <circle r="2"><animateMotion   dur="3.2s" repeatCount="indefinite" begin="0s"   path="M85,240 L240,240"/></circle>
+              <circle r="1.8"><animateMotion dur="10s"  repeatCount="indefinite" begin="0s"   path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
+              <circle r="1.8"><animateMotion dur="10s"  repeatCount="indefinite" begin="3.3s" path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
+              <circle r="1.8"><animateMotion dur="10s"  repeatCount="indefinite" begin="6.6s" path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
             </g>
 
-            <!-- Outcome (2): all flows converge toward center -->
             <g class="fgroup fg-outcome">
-              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0s" path="M370,65 Q310,110 250,205"/></circle>
-              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.7s" path="M75,185 Q163,190 250,205"/></circle>
-              <circle r="2"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0.3s" path="M425,185 Q338,190 250,205"/></circle>
-              <circle r="2"><animateMotion dur="3s" repeatCount="indefinite" begin="1s" path="M250,345 Q250,275 250,205"/></circle>
-              <circle r="1.8"><animateMotion dur="3.5s" repeatCount="indefinite" begin="1.8s" path="M370,65 Q190,45 75,185 Q163,190 250,205"/></circle>
+              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0s"   path="M240,85 L240,240"/></circle>
+              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.5s" path="M85,240 L240,240"/></circle>
+              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1s"   path="M395,240 L240,240"/></circle>
+              <circle r="2.2"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.5s" path="M240,395 L240,240"/></circle>
             </g>
 
-            <!-- Form (3): slower, structural reveal -->
             <g class="fgroup fg-form">
-              <circle r="1.8"><animateMotion dur="5.5s" repeatCount="indefinite" begin="0s" path="M250,205 Q338,190 425,185 Q405,295 250,345 Q95,295 75,185 Q163,190 250,205"/></circle>
-              <circle r="1.5"><animateMotion dur="4.5s" repeatCount="indefinite" begin="2s" path="M370,65 Q310,110 250,205 Q338,190 425,185"/></circle>
-              <circle r="1.5"><animateMotion dur="5s" repeatCount="indefinite" begin="1s" path="M75,185 Q163,190 250,205 Q250,275 250,345"/></circle>
+              <circle r="1.8"><animateMotion dur="16s" repeatCount="indefinite" begin="0s"   path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
+              <circle r="1.5"><animateMotion dur="16s" repeatCount="indefinite" begin="8s"   path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
+              <circle r="1.5"><animateMotion dur="5.5s" repeatCount="indefinite" begin="1s"  path="M240,395 L240,240"/></circle>
             </g>
 
-            <!-- Compounding (4): traces, loops, strengthening -->
             <g class="fgroup fg-compounding">
-              <circle r="2"><animateMotion dur="5s" repeatCount="indefinite" begin="0s" path="M250,205 Q250,275 250,345 Q95,295 75,185 Q163,190 250,205"/></circle>
-              <circle r="2"><animateMotion dur="5.5s" repeatCount="indefinite" begin="2.5s" path="M250,205 Q250,275 250,345 Q405,295 425,185 Q338,190 250,205"/></circle>
-              <circle r="1.5"><animateMotion dur="3.5s" repeatCount="indefinite" begin="1s" path="M250,345 Q250,275 250,205"/></circle>
-              <circle r="1.5"><animateMotion dur="4s" repeatCount="indefinite" begin="0.5s" path="M75,185 Q95,295 250,345"/></circle>
+              <circle r="2"><animateMotion   dur="3.4s" repeatCount="indefinite" begin="0s"   path="M240,240 L240,85"/></circle>
+              <circle r="2"><animateMotion   dur="3.4s" repeatCount="indefinite" begin="0.4s" path="M240,240 L395,240"/></circle>
+              <circle r="2"><animateMotion   dur="3.4s" repeatCount="indefinite" begin="0.8s" path="M240,240 L240,395"/></circle>
+              <circle r="2"><animateMotion   dur="3.4s" repeatCount="indefinite" begin="1.2s" path="M240,240 L85,240"/></circle>
+              <circle r="1.6"><animateMotion dur="11s"  repeatCount="indefinite" begin="0s"   path="M240,85 A155,155 0 1,1 240,395 A155,155 0 1,1 240,85"/></circle>
             </g>
 
-            <!-- ── Nodes ── -->
-            <!-- Abundance (0) at 370,65 -->
+            <!-- Nodes. DOM order is irrelevant here; ids carry the index. -->
             <g class="pnode" id="pn0">
-              <circle class="node-halo" cx="370" cy="65" r="18"/>
-              <circle class="node-body" cx="370" cy="65" r="10"/>
+              <circle class="node-halo" cx="240" cy="85" r="18"/>
+              <circle class="node-body" cx="240" cy="85" r="10"/>
             </g>
-            <!-- Orchestration (1) at 75,185 -->
             <g class="pnode" id="pn1">
-              <circle class="node-halo" cx="75" cy="185" r="18"/>
-              <circle class="node-body" cx="75" cy="185" r="10"/>
+              <circle class="node-halo" cx="85" cy="240" r="18"/>
+              <circle class="node-body" cx="85" cy="240" r="10"/>
             </g>
-            <!-- Outcome (2) at 250,205 — center, larger -->
-            <g class="pnode pnode-center" id="pn2">
-              <circle class="node-outer" cx="250" cy="205" r="34"/>
-              <circle class="node-halo" cx="250" cy="205" r="23"/>
-              <circle class="node-body" cx="250" cy="205" r="13"/>
+            <g class="pnode" id="pn2">
+              <circle class="node-halo" cx="395" cy="240" r="18"/>
+              <circle class="node-body" cx="395" cy="240" r="10"/>
             </g>
-            <!-- Form (3) at 425,185 -->
             <g class="pnode" id="pn3">
-              <circle class="node-halo" cx="425" cy="185" r="18"/>
-              <circle class="node-body" cx="425" cy="185" r="10"/>
+              <circle class="node-halo" cx="240" cy="395" r="18"/>
+              <circle class="node-body" cx="240" cy="395" r="10"/>
             </g>
-            <!-- Compounding (4) at 250,345 -->
-            <g class="pnode" id="pn4">
-              <circle class="node-halo" cx="250" cy="345" r="18"/>
-              <circle class="node-body" cx="250" cy="345" r="10"/>
+            <g class="pnode pnode-center" id="pn4">
+              <circle class="node-outer" cx="240" cy="240" r="36"/>
+              <circle class="node-halo" cx="240" cy="240" r="24"/>
+              <circle class="node-body" cx="240" cy="240" r="14"/>
             </g>
           </svg>
 
-          <!-- Clickable labels (HTML over SVG).
-               Positions as % of viewBox: node x/500, node y/390.
-               Abundance(370/500=74%, 65/390=17%), Orchestration(75/500=15%, 185/390=47%),
-               Outcome(250/500=50%, 205/390=53%), Form(425/500=85%, 185/390=47%),
-               Compounding(250/500=50%, 345/390=88%).
-               Labels offset from node circles so text doesn't overlap. -->
+          <!-- Clickable labels. DOM order must stay 0..4 to match the data array:
+               Abundance, Orchestration, Outcome, Form, Compounding.
+               Positions are % of the square viewBox. -->
           <div class="node-labels" role="group" aria-label="Select a principle">
-            <button class="nlabel" data-index="0" style="left:74%;top:4%" aria-pressed="false">Abundance</button>
-            <button class="nlabel" data-index="1" style="left:15%;top:35%" aria-pressed="false">Orchestration</button>
-            <button class="nlabel nlabel-center" data-index="2" style="left:50%;top:64%" aria-pressed="false">Outcome</button>
-            <button class="nlabel" data-index="3" style="left:85%;top:35%" aria-pressed="false">Form</button>
-            <button class="nlabel" data-index="4" style="left:50%;top:97%" aria-pressed="false">Compounding</button>
+            <button class="nlabel" data-index="0" style="left:50%;top:6%" aria-pressed="false">Abundance</button>
+            <button class="nlabel" data-index="1" style="left:18%;top:42%" aria-pressed="false">Orchestration</button>
+            <button class="nlabel" data-index="2" style="left:82%;top:42%" aria-pressed="false">Outcome</button>
+            <button class="nlabel" data-index="3" style="left:50%;top:94%" aria-pressed="false">Form</button>
+            <button class="nlabel nlabel-center" data-index="4" style="left:50%;top:63%" aria-pressed="false">Compounding</button>
           </div>
         </div>
       </div>
