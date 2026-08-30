@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing the Specs | Signals | TheoryA.ai</title>
+  <meta name="description" content="Every outsourcing decision assumes the doing and the knowing are separable. Boeing tested that assumption for two decades. AI asks us to examine a version of it again." />
+  <meta property="og:title" content="Writing the Specs — TheoryA.ai" />
+  <meta property="og:description" content="Every outsourcing decision assumes the doing and the knowing are separable. Boeing tested that assumption for two decades. AI asks us to examine a version of it again." />
+  <meta property="og:type" content="article" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #fafafa; --body: #1a1a1a; --mid-gray: #494949; --light-gray: #e2e0db; --sans: 'Helvetica Neue', Arial, sans-serif; --serif: Georgia, 'Times New Roman', serif; }
+    body { background: var(--white); color: var(--body); font-family: var(--serif); font-size: 18px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--light-gray); padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); }
+    .site-nav .wordmark { font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .site-nav ul { display: flex; gap: 2rem; list-style: none; }
+    .site-nav ul a { font-size: 0.88rem; color: var(--mid-gray); text-decoration: none; letter-spacing: 0.02em; }
+    .site-nav ul a:hover, .site-nav ul a.active { color: var(--black); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    .signal-intro { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .signal-intro p { font-family: var(--sans); font-size: 0.75rem; color: var(--mid-gray); line-height: 1.6; letter-spacing: 0.02em; border-bottom: 1px solid var(--light-gray); padding-bottom: 1.5rem; }
+    article { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .signal-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.5rem; display: flex; justify-content: space-between; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.75rem; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--black); margin-bottom: 1rem; }
+    .signal-dek { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.6; color: var(--mid-gray); margin-bottom: 1.5rem; }
+    .byline { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-gray); }
+    p { color: var(--body); margin-bottom: 1.4rem; font-weight: 400; }
+    p:last-of-type { margin-bottom: 0; }
+    strong { color: var(--black); }
+    em { font-style: italic; }
+    .dropcap::first-letter { font-size: 3.4em; float: left; line-height: 0.82; padding: 6px 10px 0 0; color: var(--black); }
+    blockquote { margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--black); text-align: center; }
+    .signal-close { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); color: var(--body); }
+    a { color: var(--black); }
+    .signal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .signal-footer p { font-family: var(--sans); font-size: 0.88rem; color: var(--mid-gray); margin-bottom: 1rem; }
+    .signal-footer a { font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .method-note { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--light-gray); text-align: right; }
+    .method-note p { font-family: var(--sans); font-size: 0.78rem; line-height: 1.65; color: var(--mid-gray); max-width: 420px; margin-left: auto; margin-bottom: 0.6rem; }
+    .method-note .method-link { display: inline-block; margin-top: 0.15rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 500; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--light-gray); padding-bottom: 1px; }
+    .method-note .method-link:hover { border-bottom-color: var(--black); }
+    footer { border-top: 1px solid var(--light-gray); padding: 2.5rem 0; font-family: var(--sans); }
+    footer .inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer .wordmark { font-size: 0.9rem; font-weight: 600; color: var(--black); text-decoration: none; }
+    footer p { font-size: 0.8rem; color: var(--mid-gray); }
+    @media (max-width: 768px) {
+      .method-note { text-align: left; }
+      .method-note p { margin-left: 0; }
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--light-gray); flex-direction: column; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid var(--light-gray); }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; }
+      article, .signal-intro { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Writing the Specs",
+    "description": "Every outsourcing decision assumes the doing and the knowing are separable. Boeing tested that assumption for two decades. AI asks us to examine a version of it again.",
+    "author": { "@type": "Person", "name": "Emily Liddle" },
+    "publisher": { "@type": "Organization", "name": "TheoryA.ai", "url": "https://theorya.ai" },
+    "url": "https://theorya.ai/signals/writing-the-specs/",
+    "mainEntityOfPage": "https://theorya.ai/signals/writing-the-specs/",
+    "isPartOf": { "@type": "WebSite", "name": "TheoryA.ai", "url": "https://theorya.ai" }
+  }
+  </script>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="wordmark">TheoryA.ai</a>
+  <ul id="nav-links">
+    <li><a href="/theory">Why Theory A Exists</a></li>
+    <li><a href="/manifesto">Manifesto</a></li>
+    <li><a href="/#works">How We Help</a></li>
+    <li><a href="/signals/" class="active">Signals</a></li>
+    <li><a href="/#people">People</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="signal-intro"><p>Signals are observations through the lens of Theory A. Each explores one aspect of a broader worldview about organizations, intelligence, and human agency.</p></div>
+
+<article>
+  <div class="signal-kicker"><span>TheoryA.ai</span><span>Signal</span></div>
+  <h1>Writing the Specs</h1>
+  <div class="byline">Emily Liddle</div>
+
+  <p class="dropcap">Every outsourcing decision rests on an assumption that rarely gets stated. That the doing and the knowing are separable. That an organization can hand off the work and keep the capacity to judge it.</p>
+
+  <p>In 2001, Boeing structures engineer John Hart-Smith wrote an internal paper warning about the risks of extensive outsourcing. His concern went beyond cost. If Boeing outsourced too much of the work, it risked losing the technical knowledge required to specify, oversee, and evaluate what its suppliers produced.</p>
+
+  <p>That distinction is worth sitting with. The risk wasn&#8217;t simply losing the ability to build something. It was losing enough understanding of the work that you could no longer say precisely what you needed or confidently judge what came back.</p>
+
+  <p>That assumption matters now, because we are beginning to make a similar separation with AI, moving more of the doing somewhere else while assuming the judgment will remain with us. The mechanism is different, but the assumption underneath it may be remarkably similar.</p>
+
+  <p>Boeing gives us a way to see why that matters.</p>
+
+  <p>In 2005, Boeing sold its Wichita commercial aircraft operation, along with facilities in Oklahoma, to an investment group that formed Spirit AeroSystems. Spirit then became Boeing&#8217;s exclusive supplier for much of what Wichita had produced internally. At the same time, Boeing was developing the 787 around an unusually extensive global supplier model, with major sections of the aircraft produced by suppliers around the world and Boeing retaining responsibility for design and final integration.</p>
+
+  <p>The 787 program exposed significant problems in managing and integrating work distributed across that network. Suppliers delivered late or incomplete work, and Boeing sent engineers to suppliers to resolve problems and bring production back on track. What the experience made visible was how much knowledge can live inside the doing. The drawings and specifications matter, but so do the exceptions, the mistakes, the small decisions, and the repeated experience of seeing what happens when something changes. Some knowledge lives in people who have been close enough to the work for long enough to recognize when something does not fit.</p>
+
+  <p>The years that followed brought consequences well beyond schedule and cost. Two 737 MAX crashes in 2018 and 2019 killed 346 people, and the FAA revoked the aircraft&#8217;s airworthiness certificate. In January 2024, a door plug separated from a 737 MAX 9 in flight after being incorrectly installed at the factory.</p>
+
+  <p>Different aircraft, different causes, different investigations. What they share is a pattern of problems becoming visible to someone outside the company before they were caught inside it, and when a regulator revokes a certificate, an external body has taken over a judgment the organization could no longer supply for itself.</p>
+
+  <p>Nearly two decades after selling the Wichita operation, Boeing announced in 2024 that it would bring Spirit AeroSystems back inside the company in a transaction valued at about $8.3 billion including net debt. Boeing described the move in terms of production alignment, safety, quality, and workforce stability. The acquisition was completed in December 2025.</p>
+
+  <p>There were many factors behind the problems Boeing experienced and many reasons for bringing Spirit back inside. Outsourcing does not explain everything that happened at Boeing. The assumption Hart-Smith identified is what deserves attention, and it is the one AI asks us to examine again. Move the execution and keep the judgment.</p>
+
+  <p>There is also an important difference. When work is traditionally outsourced, the experience moves with it. Someone somewhere is still doing the work, encountering the exceptions, making mistakes, seeing what happens next, and developing the judgment that comes from repetition. When AI does more of the work, there may be no person on the other side accumulating that experience.</p>
+
+  <p>That does not mean the experience has to disappear. It means we have to think differently about where it comes from. A person working closely with AI is still learning. They are evaluating what comes back, questioning it, adding context, recognizing patterns, and seeing what changes the outcome. They may no longer be doing every part of the work themselves, but they are developing capability through a different kind of interaction.</p>
+
+  <p>The risk is not simply that AI does more of the work. It is removing the doing without creating another way for the knowing to develop.</p>
+
+  <p>For years, organizations did not have to think very hard about this. People developed judgment because they spent years doing the work. The work itself was the teacher. Now we have to be much more deliberate. If AI takes on more execution, the human experience around that execution needs to change too. People still need enough proximity to understand what they are asking for, recognize what good looks like, catch what does not, and know when the answer deserves to be challenged.</p>
+
+  <p>Writing the specs requires capability, and so does knowing whether what comes back actually meets them. Neither is guaranteed to remain simply because the work still gets done.</p>
+
+  <p>The question for organizations using AI isn&#8217;t whether people need to keep doing everything themselves. It&#8217;s whether the way people now engage with the work continues to build the capability required to judge it.</p>
+
+  <p class="signal-close">Because that capability still has to come from somewhere.</p>
+
+  <div class="signal-footer">
+    <p>This Signal is one perspective in an ongoing body of work. Explore other Signals in the series.</p>
+    <a href="/signals/">More Signals &rarr;</a>
+
+    <div class="method-note">
+      <p>Authored by Emily Liddle and drafted with AI as a thinking partner and adversarial reviewer. The argument and the final judgment are hers.</p>
+      <a class="method-link" href="/#how-we-work">How we work with AI</a>
+    </div>
+  </div>
+</article>
+
+<footer><div class="inner"><a href="/" class="wordmark">TheoryA.ai</a><p>&copy; 2026 TheoryA.ai. All rights reserved.</p></div></footer>
+
+<script>(function(){var t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');if(!t||!l)return;t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');});});}());</script>
+</body>
+</html>
