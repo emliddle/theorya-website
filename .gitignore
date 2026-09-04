@@ -1,6 +1,28 @@
-*.pdf
-*.PDF
+# The repo root is ~/Downloads, which is also where the browser drops
+# everything. So: ignore all top-level entries by default, then allow
+# back only the files and folders that make up theorya.ai.
+
+/*
+
+# Site files at the root
+!.gitignore
+!CNAME
+!_headers
+!index.html
+!robots.txt
+!sitemap.xml
+
+# Site folders
+!images/
+!manifesto/
+!provocations/
+!signals/
+!theory/
+
+# Source documents that may end up inside a site folder but should not ship
 *.docx
 *.xlsx
+*.xlsm
 *.pptx
-website-html/
+*.zip
+.DS_Store
