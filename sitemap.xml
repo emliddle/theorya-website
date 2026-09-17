@@ -40,6 +40,16 @@
 
   <!-- Signals -->
   <url>
+    <loc>https://theorya.ai/signals/outcome-thinking-is-in-your-blood/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://theorya.ai/signals/the-well-belongs-to-no-one/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://theorya.ai/signals/are-you-building-robo-taxis/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
