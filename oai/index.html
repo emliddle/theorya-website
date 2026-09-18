@@ -1,0 +1,173 @@
+<!-- ZONE: PUBLIC -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Organizational Agency Index · TheoryA.ai</title>
+<style>
+  :root{
+    --ink:#171512;
+    --body:#241f19;
+    --muted:#6d675e;
+    --rule:#cfc9be;
+    --soft-rule:#e2ddd3;
+    --panel:#e9e5dd;
+    --bg:#f3f1ec;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:var(--serif);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 32px 96px;}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;
+    max-width:900px;margin:0 auto;padding:24px 32px 16px;border-bottom:1px solid var(--rule);}
+  .wordmark{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--ink);
+    text-decoration:none;}
+  .nav{display:flex;align-items:center;gap:24px;}
+  .nav a{font-family:var(--sans);font-size:11.5px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:1.4px;text-decoration:none;}
+  .nav a:hover{color:var(--ink);}
+  .nav a.current{color:var(--ink);}
+
+  .eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:2px;margin:52px 0 18px;}
+
+  h1{font-family:var(--serif);font-size:43px;font-weight:400;color:var(--ink);
+    letter-spacing:-0.6px;line-height:1.14;margin:0 0 32px;max-width:16em;}
+
+  .lede-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-bottom:40px;}
+  .lede{font-size:20px;line-height:1.6;color:var(--body);margin:0;}
+  .lede-sub{font-size:16px;line-height:1.7;color:var(--muted);margin:0;padding-top:4px;}
+
+  .btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:600;
+    letter-spacing:1.2px;text-transform:uppercase;color:var(--bg);background:var(--ink);
+    padding:15px 30px;text-decoration:none;}
+  .btn:hover{background:#000;}
+
+  hr.sec{border:none;border-top:1px solid var(--rule);margin:56px 0 44px;}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  h2{font-family:var(--serif);font-size:29px;font-weight:400;color:var(--ink);
+    line-height:1.2;margin:0 0 20px;}
+  p{font-size:18px;line-height:1.8;color:var(--body);margin:0 0 22px;}
+  .standfirst{font-size:20px;line-height:1.6;color:var(--body);margin:0 0 20px;}
+
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:8px;}
+  .three-col p{font-size:16px;line-height:1.7;}
+  .lead-in{font-weight:700;color:var(--ink);}
+
+  .study{border-left:3px solid var(--ink);padding:4px 0 4px 26px;margin:12px 0 0;}
+  .study .label{font-family:var(--sans);font-size:11.5px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;}
+  .study p{font-size:16px;line-height:1.7;color:var(--body);margin:0 0 14px;}
+  .study p:last-child{margin-bottom:0;color:var(--muted);}
+
+  .closing{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--ink);
+    border-top:2px solid var(--ink);padding-top:28px;margin-top:52px;margin-bottom:28px;}
+
+  .embed-wrap{margin:36px 0 0;border:1px solid var(--rule);background:#fff;min-height:520px;}
+  gw-session{display:block;width:100%;min-height:520px;}
+
+  .next{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--muted);
+    line-height:1.7;margin:56px 0 0;}
+  .next + .next{margin-top:18px;}
+  .next a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);}
+  .next a:hover{border-bottom-color:var(--ink);}
+
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--sans);font-size:11px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:1.7px;}
+
+  @media (max-width:720px){
+    h1{font-size:32px;}
+    .topbar{flex-direction:column;align-items:flex-start;gap:14px;}
+    .nav{flex-wrap:wrap;gap:16px;}
+    .lede-grid,.two-col,.three-col{grid-template-columns:1fr;gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="wordmark" href="/">TheoryA.ai</a>
+  <nav class="nav">
+    <a href="/theory">Why Theory A Exists</a>
+    <a href="/manifesto">Manifesto</a>
+    <a href="/#works">How We Help</a>
+    <a href="/signals/">Signals</a>
+    <a href="/#people">People</a>
+    <a class="current" href="/oai/">Index</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="eyebrow">Organizational Agency Index</div>
+
+  <h1>The way you divide work between people and AI today shapes what your organization will be capable of tomorrow.</h1>
+
+  <div class="lede-grid">
+    <p class="lede">The assumptions built into that design can expand what's possible for people and AI, or keep you operating within the limits of how work has always been done.</p>
+    <p class="lede-sub">The Organizational Agency Index looks at one AI use case to examine the nature of the work, the roles people and AI play, and the assumptions shaping its design.</p>
+  </div>
+
+  <a class="btn" href="#begin">Begin the Index</a>
+
+  <hr class="sec">
+
+  <div class="two-col">
+    <div>
+      <h2>What to expect</h2>
+      <p class="standfirst">The Index takes about 15 minutes and is a guided conversation.</p>
+      <p>You'll move through a combination of simple choices and conversational questions about one AI use case. Answer based on what you know, and add context when it's helpful.</p>
+    </div>
+    <div>
+      <h2>What you'll receive</h2>
+      <p>At the end, you'll receive an immediate summary and observations based on your responses.</p>
+      <p>If you'd like to go deeper, you'll have the option to provide your email and receive a more detailed, shareable report.</p>
+    </div>
+  </div>
+
+  <hr class="sec">
+
+  <h2>Before you begin</h2>
+
+  <div class="three-col">
+    <p><span class="lead-in">You don't need to be an AI expert.</span> Your use case can be something you're exploring, piloting or already using. You just need to know it well enough to describe how it works.</p>
+    <p><span class="lead-in">You won't need to share proprietary or confidential information.</span> Answer based on what you know about the use case.</p>
+    <p><span class="lead-in">You can remain anonymous.</span> Your name and contact information are not required to complete the Index or see your summary.</p>
+  </div>
+
+  <div class="study">
+    <div class="label">The Organizational Agency Study</div>
+    <p>Your responses contribute to the Organizational Agency Study, TheoryA.ai's ongoing research into how organizations are redesigning work and the roles of people and AI.</p>
+    <p>Individual respondents and organizations are never identified in published research.</p>
+  </div>
+
+  <p class="closing" id="begin">Have your use case in mind? You're ready to begin.</p>
+
+  <div class="embed-wrap">
+    <gw-session host="https://panels.gaugewright.com/d/theo" panels="chat">
+      <gw-chat></gw-chat>
+    </gw-session>
+  </div>
+
+  <p class="next">The Index reads one use case. The Diagnostic translates what it finds into a decision: what can evolve, what has to be rebuilt, and where to act first.</p>
+
+  <p class="next">The questions in the Index come out of a longer argument. <a href="/signals">Read the Signals</a>.</p>
+
+  <footer>
+    <span>TheoryA.ai</span>
+    <span>Organizational Agency Index</span>
+  </footer>
+
+</div>
+
+<script type="module" src="https://embed.gaugewright.com/embed.js"></script>
+
+</body>
+</html>
