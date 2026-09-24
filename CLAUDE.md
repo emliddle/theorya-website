@@ -28,15 +28,14 @@ untracked, and a single `git add -A` once staged 3.5GB of personal material and
 broke the push. That configuration also forced a whitelist-style `.gitignore` that
 ignores everything and allows only named folders back in.
 
-**Migration action:** once the repo lives in a dedicated directory, replace that
-whitelist `.gitignore` with a conventional one. Left as-is, any new top-level
-folder is silently ignored and needs `git add -f`, which is confusing and easy to
-misread as a failed commit.
+The whitelist `.gitignore` was replaced with a conventional one in September 2026.
 
 ### Structure
 
 ```
-index.html          homepage
+index.html          homepage (ends on Work With Us, #contact)
+people/             founders page, linked from the top nav
+llms.txt            summary of the site for AI tools, update when pages are added
 theory/             "Why Theory A Exists"
 manifesto/          "Organizing Agency: The Theory A Manifesto"
 signals/            index + one directory per Signal
@@ -47,7 +46,7 @@ _headers            Cloudflare headers, sets PDF download filenames
 sitemap.xml         every public page, maintained by hand
 robots.txt          points at the sitemap
 CNAME               custom domain
-.gitignore          see migration action above
+.gitignore          conventional; ignores source documents and "Claude outputs/"
 ```
 
 ### Content types
@@ -93,29 +92,40 @@ not be installed in a given environment.
   consulting firm, it is not sharp enough.
 - "Theory A" is always two words, both capitalised. "TheoryA.ai" has no space and a
   lowercase ai. "Collection" is always capitalised.
-- LS-030 prohibits **"transformation"** and **"transform"** as positioning claims.
+- "Transformation" and "transform" are use-with-care in the Language Standard: flag each use and prefer the specific change. "AI Native" has no hyphen.
 
 ## Design tokens
 
-Every page inlines these. They must match exactly.
+Source of truth is the Design Standard (v0.4, long-form and web register). The
+People page carries these; every new or rebuilt page must match them. The homepage
+redesign in these tokens is in progress on the local branch `homepage-redesign` and
+is not live; the live homepage still uses the old tokens until Emily approves it.
 
 ```
---black       #0a0a0a    ink, headings
---body        #1a1a1a    reading text
---mid-gray    #494949    muted text, labels
---light-gray  #e2e0db    hairlines
---white       #fafafa    page background
---off-white   #f4f3f0    tinted section bands
---dark-bg     #1a1a1a    dark sections
---dark-text   #ececea    text on dark
+--ink     #171512    headlines, wordmark, strong rules, dark bands
+--body    #241f19    all reading text
+--muted   #6d675e    eyebrows, labels, bylines, captions, meta
+--rule    #cfc9be    thin dividers
+--soft    #e2ddd3    soft dividers
+--panel   #e9e5dd    table label column
+--paper   #f3f1ec    page background, with a faint paper grain
 ```
 
-Type: Newsreader serif for headings, weights 300, 400 and 600 only, since 500 is not
-loaded. Helvetica Neue sans for body and UI. Signals and provocations use Georgia as
-the serif rather than Newsreader.
+Type: **Georgia** for headlines and all reading text, 18px body, line-height 1.8.
+Helvetica Neue / Arial for labels, eyebrows, nav, and buttons only. No Newsreader,
+no third typeface. Monochrome only, no accent color. Corners 0 to 2px, no shadows.
 
-Known drift: `theory/` and `manifesto/` still set `--mid-gray: #525252`, the old
-too-light value. Everything else is on `#494949`.
+Homepage redesign layout (branch `homepage-redesign`): a three-column grid (section number in the left margin, reading
+column, right margin for Manifesto quotes or indexes). The Principles section and the
+Work With Us close are dark bands (#171512). Do not add "Figure N" labels.
+
+Known drift: index.html, theory/, manifesto/, signals/, provocations/, and oai/ still use the old
+tokens (#fafafa background, Newsreader or Georgia on older values). They are due to be
+migrated to the tokens above.
+
+Homepage copy rule from Emily: no setup-then-reversal constructions ("X is not Y.
+It is Z.", "Theory A is public. The expertise isn't.") and no two to four word
+sentences or fragments. Write the fuller descriptive sentence instead.
 
 ## Publishing a Signal, all three steps
 
@@ -125,6 +135,7 @@ Missing any one of these leaves the library inconsistent.
    swapping the content. Never hand-write the page chrome.
 2. Add a card to `signals/index.html`, newest first.
 3. Add a `<url>` entry to `sitemap.xml`.
+4. Add a line to `llms.txt` under Signals.
 
 Then verify: card count equals directory count, every directory appears in the
 sitemap, and the XML parses.
@@ -188,3 +199,13 @@ GaugeWright contact is Jack Scully.
   and the live page after deploying.
 - Build previews as standalone HTML files she can open, rather than describing visual
   options in words.
+
+## Anchors other pages depend on
+
+Every Signal links to `/#how-we-work`, and every page's nav links to `/#works`. Keep
+both ids on the homepage. The People nav item goes to `/people/`.
+
+## Organizational Agency Index page
+
+`/oai/` stays unlinked from the nav and footer, noindex, and out of the sitemap and
+llms.txt until Emily decides to activate it (held September 2026).

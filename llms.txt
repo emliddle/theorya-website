@@ -1,0 +1,42 @@
+# TheoryA.ai
+
+> TheoryA.ai develops and applies Theory A, a management philosophy of organizational design for the age of AI. Theory A holds that organizations are designed around assumptions, that those assumptions drive structure and structure drives behavior, and that abundant intelligence has made many inherited assumptions obsolete. TheoryA.ai works inside corporate functions: Human Resources, Information Technology, Finance, Procurement, Legal, and the shared services that deliver them. Founded by Emily Liddle and Jim Scully.
+
+Theory A is organized around five principles, each an enduring design question: Abundance (what economic reality are you designing for?), Outcome (what is the organization fundamentally organizing around?), Orchestration (how are different forms of agency designed to work together?), Form (what structures create or constrain agency?), and Compounding (does the system increase or dissipate organizational capability over time?). Theory A distinguishes three forms of agency: human, organizational, and artificial.
+
+TheoryA.ai's work is published in Collections, each authored and governed by an Expert Author, and made conversational through Digital Intelligence, an extension of a specific Expert Author's judgment trained on their Collection. Signals are short public essays. Provocations are longer public arguments, one per Collection.
+
+## Core
+
+- [Home](https://theorya.ai/): What Theory A is, the five principles, and how TheoryA.ai works with organizations
+- [People](https://theorya.ai/people/): Emily Liddle and Jim Scully, co-founders and Expert Authors
+- [Why Theory A Exists](https://theorya.ai/theory): The case for a new theory of organizational design
+- [Organizing Agency: The Theory A Manifesto](https://theorya.ai/manifesto): The full statement of Theory A
+
+## Provocations
+
+- [The End of the Machine Organization](https://theorya.ai/provocations/ai-enterprise/): The AI Enterprise Collection, by Jim Scully
+- [The End of the Transaction Factory](https://theorya.ai/provocations/ai-native-shared-services/): AI Native Shared Services Collection, by Jim Scully
+- [Every AI Decision Is an Agency Decision](https://theorya.ai/provocations/design-for-agency/): Design for Agency Collection, by Emily Liddle
+
+## Signals
+
+- [All Signals](https://theorya.ai/signals/): Index of every Signal
+- [The Well Belongs to No One](https://theorya.ai/signals/the-well-belongs-to-no-one): Jim Scully
+- [Outcome Thinking is in Your Blood](https://theorya.ai/signals/outcome-thinking-is-in-your-blood): Jim Scully
+- [The Assumption Underneath](https://theorya.ai/signals/the-assumption-underneath): Emily Liddle
+- [Changing the Shape](https://theorya.ai/signals/changing-the-shape): Emily Liddle
+- [What Compounds](https://theorya.ai/signals/what-compounds): Emily Liddle
+- [Writing the Specs](https://theorya.ai/signals/writing-the-specs): Emily Liddle
+- [The Byproduct of Work](https://theorya.ai/signals/the-byproduct-of-work): Emily Liddle
+- [The System Doesn't Stay Still](https://theorya.ai/signals/the-system-doesnt-stay-still): Emily Liddle
+- [This Isn't a Trust Problem](https://theorya.ai/signals/this-isnt-a-trust-problem): Emily Liddle
+- [What Judgment Work Costs](https://theorya.ai/signals/what-judgment-work-costs): Emily Liddle
+- [Why We Need a New Theory of Organization Now](https://theorya.ai/signals/why-we-need-a-new-theory-of-organization): Jim Scully
+- [What Comes After Bureaucracy?](https://theorya.ai/signals/what-comes-after-bureaucracy): Jim Scully
+- [Don't Repeat McGregor's Mistake](https://theorya.ai/signals/dont-repeat-mcgregors-mistake): Jim Scully
+- [How AI Inverts HR](https://theorya.ai/signals/how-ai-inverts-hr): Jim Scully
+
+## Optional
+
+- [How we work with AI](https://theorya.ai/#how-we-work): Every Signal is authored by Emily Liddle or Jim Scully and drafted with AI as a thinking partner and adversarial reviewer; the argument and the final judgment are the author's

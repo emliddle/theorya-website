@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!-- ZONE: PUBLIC -->
+<!-- PREVIEW ONLY. People page draft, not deployed. Copy changes are marked for Emily's review. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People | TheoryA.ai</title>
+<meta name="description" content="Emily Liddle and Jim Scully, co-founders of TheoryA.ai and co-authors of the Theory A manifesto and principles, and the Expert Authors of its Collections.">
+<link rel="canonical" href="https://theorya.ai/people/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TheoryA.ai">
+<meta property="og:title" content="People | TheoryA.ai">
+<meta property="og:description" content="Theory A is a management philosophy for designing organizations where human and artificial agency create value together.">
+<meta property="og:url" content="https://theorya.ai/people/">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary of TheoryA.ai">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "AboutPage", "@id": "https://theorya.ai/people/#page", "url": "https://theorya.ai/people/", "name": "People | TheoryA.ai", "about": { "@id": "https://theorya.ai/#org" }, "mainEntity": [ { "@id": "https://theorya.ai/#emily-liddle" }, { "@id": "https://theorya.ai/#jim-scully" } ] },
+    { "@type": "Person", "@id": "https://theorya.ai/#emily-liddle", "name": "Emily Liddle", "jobTitle": "Co-Founder", "worksFor": { "@id": "https://theorya.ai/#org" }, "image": "https://theorya.ai/images/emily-liddle.jpg", "description": "Co-Founder of TheoryA.ai, co-author of the Theory A manifesto and principles, and Expert Author of the Design for Agency Collection." },
+    { "@type": "Person", "@id": "https://theorya.ai/#jim-scully", "name": "Jim Scully", "jobTitle": "Co-Founder", "worksFor": { "@id": "https://theorya.ai/#org" }, "image": "https://theorya.ai/images/jim-scully.jpg", "description": "Co-Founder of TheoryA.ai, co-author of the Theory A manifesto and principles, and Expert Author of The AI Enterprise and AI Native Shared Services Collections." },
+    { "@type": "Organization", "@id": "https://theorya.ai/#org", "name": "TheoryA.ai", "url": "https://theorya.ai/" }
+  ]
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #171512;
+  --body: #241f19;
+  --muted: #6d675e;
+  --rule: #cfc9be;
+  --soft: #e2ddd3;
+  --panel: #e9e5dd;
+  --paper: #f3f1ec;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: 'Helvetica Neue', Arial, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  color: var(--body);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img { max-width: 100%; }
+
+
+/* Header */
+.site-head { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.site-head .in { max-width: 1280px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.wordmark { font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: .01em; }
+.site-head nav ul { display: flex; gap: 28px; list-style: none; }
+.site-head nav a { font-family: var(--sans); font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: .02em; }
+.site-head nav a:hover { color: var(--ink); }
+.nav-toggle { display: none; background: none; border: 1px solid var(--rule); font-family: var(--sans); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 6px 10px; color: var(--ink); cursor: pointer; }
+
+/* Page grid: margin column, reading column, figure column */
+.sec { max-width: 1280px; margin: 0 auto; padding: 72px 32px; display: grid; grid-template-columns: 96px minmax(0, 640px) minmax(300px, 1fr); column-gap: 44px; align-items: start; }
+.sec + .sec, .band + .sec, .sec + .band { border-top: 1px solid var(--rule); }
+.m { grid-column: 1; padding-top: 10px; }
+.c { grid-column: 2; }
+.f { grid-column: 3; max-width: 400px; }
+.num { font-family: var(--sans); font-size: 11.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); display: block; }
+.num em { display: block; font-style: normal; color: var(--ink); font-size: 26px; letter-spacing: 0; font-family: var(--serif); font-weight: 400; margin-bottom: 6px; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: 43px; line-height: 1.12; letter-spacing: -0.6px; color: var(--ink); margin-bottom: 28px; }
+h2 { font-family: var(--serif); font-weight: 400; font-size: 29px; line-height: 1.25; color: var(--ink); margin-bottom: 28px; }
+h3 { font-family: var(--serif); font-weight: 700; font-size: 19px; line-height: 1.4; color: var(--ink); margin-bottom: 12px; }
+p { margin-bottom: 20px; }
+p:last-child { margin-bottom: 0; }
+.standfirst { font-style: italic; font-size: 21px; line-height: 1.6; color: #34302a; margin-bottom: 24px; }
+
+/* Cover */
+.cover { padding-top: 64px; }
+.cover-meta { grid-column: 2 / 4; display: flex; justify-content: space-between; font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin-bottom: 56px; }
+.cover .f { padding-top: 6px; }
+.actions { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; margin-top: 36px; }
+.btn { display: inline-block; background: var(--ink); color: var(--paper); font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: .03em; text-decoration: none; padding: 14px 24px; border: 1px solid var(--ink); }
+.btn:hover { background: transparent; color: var(--ink); }
+.tlink { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.tlink:hover { border-bottom-color: transparent; }
+
+/* ── PRINCIPLES ── */
+    .principles-section {
+      background: var(--dark-bg);
+      padding: 6rem 0;
+      border-top: none;
+    }
+    .principles-section .section-label { color: rgba(255,255,255,0.88); margin-bottom: 1rem; font-weight: 700; }
+    .principles-section h2 { color: var(--white); margin-bottom: 0.6rem; font-weight: 400; }
+    .principles-intro { font-size: 1.05rem; color: rgba(255,255,255,0.72); font-weight: 500; max-width: 600px; margin-bottom: 3rem; line-height: 1.65; }
+
+    /* Desktop split */
+    .p-split {
+      display: grid;
+      grid-template-columns: 58% 42%;
+      gap: 3rem;
+      align-items: center;
+      min-height: 360px;
+    }
+
+    /* SVG wrap */
+    .psvg-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1;
+    }
+    .psvg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* SVG structure */
+    .psvg .ring { fill: none; stroke: rgba(255,255,255,0.28); stroke-width: 1; transition: stroke 0.5s ease, stroke-width 0.4s ease; }
+    .psvg .spoke { fill: none; stroke: rgba(255,255,255,0.42); stroke-width: 1.2; stroke-dasharray: 2 5; stroke-linecap: round; transition: stroke 0.45s ease, stroke-width 0.4s ease; }
+
+    /* Compounding pulses: rings expanding out of the centre through the four principles */
+    .psvg .pulse { fill: none; stroke: #ffffff; stroke-width: 1.2; }
+
+    /* Background structure (Form state) */
+    .bg-grid line { fill: none; stroke: rgba(255,255,255,0.18); stroke-width: 0.75; opacity: 0; transition: opacity 0.9s ease; }
+    [data-state="3"] .bg-grid line { opacity: 1; }
+
+    /* SVG nodes */
+    .psvg .node-body { fill: #171512; stroke: rgba(255,255,255,0.8); stroke-width: 1.6; transition: stroke 0.4s, fill 0.4s, stroke-width 0.4s; }
+    .psvg .node-halo { fill: none; stroke: rgba(255,255,255,0.34); stroke-width: 1; transition: stroke 0.4s; }
+    .psvg .node-outer { fill: none; stroke: rgba(255,255,255,0.24); stroke-width: 0.75; transition: stroke 0.4s; }
+    .psvg .pnode-center .node-body { stroke: #ffffff; stroke-width: 2.2; }
+    .psvg .pnode-center .node-halo { stroke: rgba(255,255,255,0.5); }
+
+    /* Flow particle groups */
+    .psvg .fgroup { display: none; }
+    .psvg .fgroup circle { fill: rgba(255,255,255,0.95); }
+
+    /* Overview */
+    [data-state="-1"] .fg-ambient { display: block; }
+    [data-state="-1"] .fg-ambient circle { fill: rgba(255,255,255,0.7); }
+
+    /* Abundance (0), top */
+    [data-state="0"] .fg-abundance { display: block; }
+    [data-state="0"] .sp-ab { stroke: #ffffff; stroke-width: 1.8; }
+    [data-state="0"] .ring { stroke: rgba(255,255,255,0.42); }
+    [data-state="0"] #pn0 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.09); }
+    [data-state="0"] #pn0 .node-halo { stroke: rgba(255,255,255,0.65); }
+
+    /* Orchestration (1), left */
+    [data-state="1"] .fg-orchestration { display: block; }
+    [data-state="1"] .sp-or { stroke: #ffffff; stroke-width: 1.8; }
+    [data-state="1"] .ring { stroke: rgba(255,255,255,0.55); stroke-width: 1.3; }
+    [data-state="1"] #pn1 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.09); }
+    [data-state="1"] #pn1 .node-halo { stroke: rgba(255,255,255,0.65); }
+
+    /* Outcome (2), right */
+    [data-state="2"] .fg-outcome { display: block; }
+    [data-state="2"] .spoke { stroke: rgba(255,255,255,0.7); stroke-width: 1.5; }
+    [data-state="2"] .sp-oc { stroke: #ffffff; stroke-width: 1.8; }
+    [data-state="2"] #pn2 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.12); }
+    [data-state="2"] #pn2 .node-halo { stroke: rgba(255,255,255,0.75); }
+
+    /* Form (3), bottom */
+    [data-state="3"] .fg-form { display: block; }
+    [data-state="3"] .sp-fo { stroke: #ffffff; stroke-width: 1.8; }
+    [data-state="3"] .ring { stroke: rgba(255,255,255,0.6); stroke-width: 1.4; }
+    [data-state="3"] #pn3 .node-body { stroke: #ffffff; stroke-width: 2.4; fill: rgba(160,160,155,0.09); }
+    [data-state="3"] #pn3 .node-halo { stroke: rgba(255,255,255,0.65); }
+
+    /* Compounding (4), centre */
+    [data-state="4"] .fg-compounding { display: block; }
+    [data-state="4"] .spoke { stroke: rgba(255,255,255,0.78); stroke-width: 1.6; }
+    [data-state="4"] .ring { stroke: rgba(255,255,255,0.5); }
+    [data-state="4"] .pulse { stroke-width: 1.6; }
+    [data-state="4"] #pn4 .node-body { stroke: #ffffff; stroke-width: 2.6; fill: rgba(160,160,155,0.12); }
+    [data-state="4"] #pn4 .node-halo { stroke: rgba(255,255,255,0.8); }
+    [data-state="4"] #pn4 .node-outer { stroke: rgba(255,255,255,0.55); }
+
+    /* Node labels (HTML over SVG) */
+    .node-labels { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+    .nlabel {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-family: var(--sans); font-size: 0.8rem;
+      letter-spacing: 0.07em; text-transform: uppercase; font-weight: 600;
+      color: rgba(255,255,255,0.82); background: none; border: none;
+      cursor: pointer; white-space: nowrap;
+      padding: 14px 10px; pointer-events: all;
+      transition: color 0.3s ease; line-height: 1;
+      border-radius: 2px;
+    }
+    .nlabel:hover { color: #ffffff; }
+    .nlabel:focus-visible { outline: 1px solid #888; outline-offset: 3px; }
+    .nlabel.active { color: #ffffff; font-weight: 700; }
+    .nlabel-center { font-size: 0.84rem; }
+
+    /* Content panel (right side) */
+    .p-content { padding-left: 0.5rem; }
+    .p-overview .ov-heading { font-size: clamp(1rem, 1.6vw, 1.15rem); font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 1.2rem; }
+    .p-overview .ov-body { font-size: 1rem; color: var(--dark-text); line-height: 1.8; margin-bottom: 1rem; max-width: none; font-weight: 500; }
+    .p-overview .ov-body strong { color: var(--white); font-weight: 600; }
+    .p-overview .ov-sub { font-size: 0.84rem; color: rgba(255,255,255,0.62); font-style: italic; line-height: 1.65; margin-top: 1.2rem; }
+    .psvg .pnode { cursor: pointer; }
+    .p-detail { display: none; }
+    .pd-name { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 0.9rem; }
+    .pd-question { font-family: Georgia, serif; font-size: clamp(1.1rem, 2vw, 1.45rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.4; margin-bottom: 1.5rem; letter-spacing: -0.01em; max-width: none; border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem; }
+    .pd-def { font-size: 1.05rem; color: var(--dark-text); line-height: 1.8; font-weight: 500; transition: opacity 0.25s ease; max-width: none; }
+
+    /* SEO / screen reader content */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* Mobile principles */
+    .p-mobile { display: none; padding-top: 2.5rem; }
+    .p-mobile-buttons { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+    .pm-btn {
+      padding: 0.65rem 1.1rem;
+      font-family: var(--sans); font-size: 0.72rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: transparent; border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.82); font-weight: 600; cursor: pointer; transition: all 0.25s ease; border-radius: 1px;
+    }
+    .pm-btn:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+    .pm-btn:focus-visible { outline: 1px solid #888; }
+    .pm-btn.active { color: #fff; border-color: #fff; font-weight: 700; }
+    .p-mobile-content .m-name { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 0.75rem; }
+    .p-mobile-content .m-question { font-size: 1.05rem; font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 1.25rem; max-width: none; }
+    .p-mobile-content .m-def { font-size: 0.92rem; color: var(--dark-text); line-height: 1.75; max-width: none; font-weight: 500; }
+    .p-mobile-content p { max-width: none; }
+
+    
+.principles-section { --dark-bg: #171512; --white: #f3f1ec; --dark-text: #e2ddd3; color: var(--dark-text); background: var(--dark-bg); }
+.principles-section .sec { padding-top: 88px; padding-bottom: 88px; }
+.principles-section h2 { font-size: 29px; }
+.principles-section .num { color: rgba(243,241,236,.72); }
+.principles-section .num em { color: var(--white); }
+.band-grid .cw { grid-column: 2 / 4; }
+.p-mobile { display: none; padding-top: 2.5rem; }
+
+/* Manifesto quote */
+.mq { border-top: 1px solid var(--ink); padding-top: 14px; }
+.mq-label { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.mq-text { font-style: italic; font-size: 24px; line-height: 1.45; color: var(--ink); margin-bottom: 16px; }
+.mq-src { font-size: 15px; font-style: italic; color: var(--muted); }
+.mq-src a { color: var(--muted); text-underline-offset: 3px; }
+.mq-src a:hover { color: var(--ink); }
+.btn-outline { background: transparent; color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+/* Marginal pull-quote */
+.pull { font-style: italic; font-size: 24px; line-height: 1.45; color: var(--ink); border-left: 3px solid var(--ink); padding-left: 20px; }
+
+/* Signs */
+.signs { list-style: none; border-top: 1px solid var(--rule); margin-bottom: 32px; }
+.signs li { padding: 16px 0; border-bottom: 1px solid var(--soft); }
+.verdict { font-size: 24px; line-height: 1.45; color: var(--ink); font-style: italic; border-top: 2px solid var(--ink); padding-top: 16px; margin-top: 8px; }
+
+/* Principles */
+dl.principles { border-top: 1px solid var(--rule); }
+dl.principles > div { padding: 28px 0; border-bottom: 1px solid var(--soft); scroll-margin-top: 90px; }
+dl.principles dt { font-family: var(--sans); font-size: 11.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+dl.principles .q { font-style: italic; font-size: 22px; line-height: 1.45; color: var(--ink); margin-bottom: 12px; }
+.sticky { position: sticky; top: 96px; }
+
+/* Collections index */
+.index-list { list-style: none; border-top: 1px solid var(--ink); }
+.index-list li { border-bottom: 1px solid var(--soft); padding: 14px 0; }
+.index-list .k { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); display: block; }
+.index-list a { font-size: 18px; line-height: 1.4; color: var(--ink); text-decoration: none; display: block; margin: 4px 0 2px; }
+.index-list a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.index-list .by { font-size: 14px; font-style: italic; color: var(--muted); }
+.block { border-top: 1px solid var(--rule); padding-top: 32px; margin-top: 40px; }
+.label { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.closing { font-style: italic; font-size: 24px; line-height: 1.45; color: var(--ink); border-top: 2px solid var(--ink); padding-top: 18px; margin-top: 48px; margin-bottom: 16px; }
+
+/* Signals list */
+.sig-list { list-style: none; border-top: 1px solid var(--ink); }
+.sig-list li { display: flex; justify-content: space-between; gap: 24px; align-items: baseline; border-bottom: 1px solid var(--soft); padding: 16px 0; }
+.sig-list a { font-size: 21px; line-height: 1.35; color: var(--ink); text-decoration: none; }
+.sig-list a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.sig-list span { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+/* People */
+.founder { padding-top: 8px; }
+.founder + .founder { border-top: 1px solid var(--rule); margin-top: 72px; padding-top: 72px; }
+.person-name { font-size: 29px; line-height: 1.2; color: var(--ink); margin-bottom: 4px; }
+.person-role { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+.statement { font-style: italic; font-size: 24px; line-height: 1.45; color: var(--ink); border-left: 3px solid var(--ink); padding-left: 20px; margin-bottom: 32px; }
+.bio p:first-child::first-letter { float: left; font-size: 64px; line-height: .8; padding: 8px 10px 0 0; color: var(--ink); }
+.portrait { display: block; width: 100%; max-width: 300px; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; filter: grayscale(100%) contrast(1.02); }
+.portrait-cap { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); margin-top: 10px; line-height: 1.8; }
+
+/* Start */
+.step { border-top: 1px solid var(--rule); padding: 26px 0; }
+.step:last-of-type { border-bottom: 1px solid var(--rule); }
+.soon { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); margin-left: 8px; white-space: nowrap; }
+.note { font-style: italic; color: var(--muted); font-size: 16px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--rule); }
+footer .in { max-width: 1280px; margin: 0 auto; padding: 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+footer ul { display: flex; gap: 22px; list-style: none; flex-wrap: wrap; }
+footer a, footer p { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--ink); }
+
+
+/* Dark closing band */
+.dark { background: #171512; color: #e2ddd3; }
+.dark h2, .dark h3 { color: #f3f1ec; }
+.dark .num { color: rgba(243,241,236,.72); }
+.dark .num em { color: #f3f1ec; }
+.dark .step { border-color: rgba(243,241,236,.22); }
+.dark .soon, .dark .note { color: rgba(243,241,236,.72); }
+.dark .btn { background: #f3f1ec; color: #171512; border-color: #f3f1ec; }
+.dark .btn:hover { background: transparent; color: #f3f1ec; }
+.dark .btn-outline { background: transparent; color: #f3f1ec; }
+.dark .btn-outline:hover { background: #f3f1ec; color: #171512; }
+.dark .sec { padding-top: 88px; padding-bottom: 96px; }
+footer { background: #171512; border-top: 1px solid rgba(243,241,236,.18); }
+footer .wordmark { color: #f3f1ec; }
+footer a, footer p { color: rgba(243,241,236,.66); }
+footer a:hover { color: #f3f1ec; }
+
+/* Responsive: these must follow the base rules to win the cascade */
+@media (max-width: 1080px) {
+  .sec { grid-template-columns: minmax(0, 640px) minmax(260px, 1fr); padding: 80px 32px; }
+  .m { grid-column: 1 / -1; padding: 0 0 18px; }
+  .num em { display: inline; font-size: 11.5px; font-family: var(--sans); font-weight: 600; letter-spacing: 2px; color: var(--muted); margin: 0 8px 0 0; }
+  .c { grid-column: 1; }
+  .f { grid-column: 2; }
+  .cover-meta { grid-column: 1 / -1; }
+}
+@media (max-width: 860px) {
+  .sec { grid-template-columns: minmax(0, 1fr); padding: 56px 16px; }
+  .c, .f, .m { grid-column: 1; }
+  .f { margin-top: 44px; max-width: 420px; }
+  .sticky { position: static; }
+  .site-head .in { padding: 14px 16px; }
+  .nav-toggle { display: block; }
+  .site-head nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--rule); }
+  .site-head nav.open { display: block; }
+  .site-head nav ul { flex-direction: column; gap: 0; }
+  .site-head nav a { display: block; padding: 14px 16px; border-top: 1px solid var(--soft); font-size: 14px; }
+  h1 { font-size: 34px; }
+  h2 { font-size: 25px; }
+  .cover { padding-top: 40px; }
+  .cover-meta { margin-bottom: 36px; }
+  .cover-meta span + span { display: none; }
+  .sig-list li { flex-direction: column; gap: 4px; }
+  footer .in { padding: 28px 16px; }
+}
+@media (max-width: 1080px) { .band-grid .cw { grid-column: 1 / -1; } }
+@media (max-width: 768px) { .p-split { display: none; } .p-mobile { display: block; } }
+@media (prefers-reduced-motion: reduce) { .psvg .fgroup, .psvg .pulse { display: none !important; } .nlabel, .pd-def { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="in">
+    <a href="/" class="wordmark">TheoryA.ai</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/theory">Why Theory A Exists</a></li>
+        <li><a href="/manifesto">Manifesto</a></li>
+        <li><a href="/#works">How We Help</a></li>
+        <li><a href="/signals/">Signals</a></li>
+        <li><a href="/people/" aria-current="page">People</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- PEOPLE -->
+<section class="sec cover" id="people" aria-labelledby="h-people">
+  <div class="m"><span class="num">People</span></div>
+  <div class="c">
+    <h1 id="h-people">The two people building Theory A and the Collections that carry it.</h1>
+  </div>
+
+  <div class="m" style="padding-top:48px"><p class="portrait-cap">Agency<br>Systems<br>Practice</p></div>
+  <div class="c founder" style="padding-top:48px">
+    <p class="person-name">Emily Liddle</p>
+    <p class="person-role">Co-Founder, TheoryA.ai</p>
+    <p class="statement">Organizational agency is a capacity an organization has to be deliberately designed to create, and leaders who ask for it without changing the design rarely see it arrive.</p>
+    <div class="bio">
+      <p>I began my career in politics because I was troubled by how little agency most people felt over the systems that shaped their lives, and holding office was never the goal. That question eventually pulled me toward technology and the workplace, where I have spent more than two decades helping organizations respond to fundamental shifts in how work gets done and value is created.</p>
+      <p>I have built new markets, consulting practices, methodologies, and client offerings across the Americas, Europe, and the Pacific, working repeatedly at moments of transition where emerging ideas needed to move into practice. The ideas I care most about are the ones that reach how an organization actually operates day to day, because that is where change either holds or fades.</p>
+      <p>At TheoryA.ai, I am the architect of the firm's model, including Digital Intelligence, the Collections structure, and the advisory approach that brings Theory A to life. I am co-author of the Theory A manifesto and principles and the creator of the Design for Agency Collection.</p>
+      <p>Outside of this work, I am a certified sommelier with a long-held dream of one day opening a small, carefully curated wine shop. It is a dream about curation, judgment, and the belief that the best things do not need to be complicated to be extraordinary.</p>
+    </div>
+  </div>
+  <div class="f" style="padding-top:48px"><img class="portrait" src="/images/emily-liddle.jpg" alt="Emily Liddle" width="300" height="375"></div>
+
+  <div class="m" style="padding-top:72px"><p class="portrait-cap">Experience<br>Perspective<br>Practice</p></div>
+  <div class="c founder" style="padding-top:72px">
+    <p class="person-name">Jim Scully</p>
+    <p class="person-role">Co-Founder, TheoryA.ai</p>
+    <p class="statement">The organizations that create the most value with AI will not simply automate existing work. They will redesign the enterprise around what intelligence now makes possible.</p>
+    <div class="bio">
+      <p>I have been watching technology reshape work since before keyboards existed. Across nearly five decades, I have had a front-row seat to every major wave: mainframes, personal computers, client-server systems, enterprise platforms, the internet, cloud, automation, analytics, and now AI. That vantage point has convinced me that what is happening now is not simply the biggest technology transformation in workplace history. It is as significant as all prior transformations combined.</p>
+      <p>My work begins from a simple premise: AI transformation is not a technology implementation. It is a redesign of how work is organized, how decisions are made, and how human and artificial agency work together. I help leaders understand those deeper implications and design organizations capable of acting on them.</p>
+      <p>I am the creator of The AI Enterprise and AI Native Shared Services Collections, and co-author of the Theory A manifesto and principles.</p>
+      <p>When I am not thinking about the future of organizations, I am building one of a different kind. My backyard farm is a work in progress toward full sustainability, and it keeps me honest about what it actually takes to design a system that compounds over time.</p>
+    </div>
+  </div>
+  <div class="f" style="padding-top:72px"><img class="portrait" src="/images/jim-scully.jpg" alt="Jim Scully" width="300" height="375"></div>
+</section>
+
+
+<section class="dark" id="start" aria-labelledby="h-end">
+  <div class="sec">
+    <div class="m"><span class="num">Work With Us</span></div>
+    <div class="c">
+      <h2 id="h-end">If the questions behind Theory A are live in your organization, we would like to hear about it.</h2>
+      <p class="note">We are taking a small number of advisory conversations.</p>
+      <div class="actions" style="margin-top:24px">
+        <a href="https://calendar.app.google/pd5wYiNNdfzvs7iEA" class="btn" target="_blank" rel="noopener">Book a Conversation</a>
+        <a href="/#contact" class="btn btn-outline">How to Start</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="in">
+    <a href="/" class="wordmark">TheoryA.ai</a>
+    <ul>
+      <li><a href="/theory">Why Theory A Exists</a></li>
+      <li><a href="/manifesto">Manifesto</a></li>
+      <li><a href="/signals/">Signals</a></li>
+      <li><a href="/people/">People</a></li>
+    </ul>
+    <p>&copy; 2026 TheoryA.ai</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Nav toggle
+  var t = document.getElementById('nav-toggle'), n = document.getElementById('site-nav');
+  t.addEventListener('click', function () {
+    var o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o ? 'true' : 'false');
+  });
+  n.addEventListener('click', function (e) { if (e.target.tagName === 'A') { n.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); } });
+
+
+})();
+</script>
+</body>
+</html>
