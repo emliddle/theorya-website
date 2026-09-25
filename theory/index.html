@@ -258,11 +258,6 @@
     @media (max-width: 760px) {
       .theory-grid { grid-template-columns: 1fr; gap: 1rem; }
       .closing-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .site-nav ul { gap: 1.2rem; }
-      .site-nav ul a { font-size: 0.78rem; }
-    }
-    @media (max-width: 500px) {
-      .site-nav ul li:not(:last-child):not(:first-child) { display: none; }
     }
 
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -272,19 +267,38 @@
       .theory-col.selected .theory-icon svg { animation: none; }
       .theory-col, .theory-col * { transition: none; }
     }
+
+    /* Mobile menu: identical to the homepage */
+    .nav-toggle { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 15px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: #0a0a0a; transition: transform 0.25s ease, opacity 0.2s ease; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fafafa; border-bottom: 1px solid #e2e0db; flex-direction: column; gap: 0; padding: 0.5rem 0; z-index: 99; }
+      #nav-links.open { display: flex; }
+      #nav-links li { border-top: 1px solid #e2e0db; }
+      #nav-links li:first-child { border-top: none; }
+      #nav-links a { display: block; padding: 1rem 2rem; font-size: 0.9rem; color: #494949; }
+      #nav-links a:hover, #nav-links a.active { color: #0a0a0a; }
+    }
   </style>
 </head>
 <body>
 
 <nav class="site-nav">
   <a href="/" class="wordmark">TheoryA.ai</a>
-  <ul>
+  <ul id="nav-links">
     <li><a href="/theory" class="active">Why Theory A Exists</a></li>
     <li><a href="/manifesto">Manifesto</a></li>
     <li><a href="/#works">How We Help</a></li>
     <li><a href="/signals/">Signals</a></li>
     <li><a href="/people/">People</a></li>
   </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -612,5 +626,19 @@
 }());
 </script>
 
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle'), links = document.getElementById('nav-links');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open menu'); });
+  });
+})();
+</script>
 </body>
 </html>
