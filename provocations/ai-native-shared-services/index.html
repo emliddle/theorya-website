@@ -1,222 +1,289 @@
 <!DOCTYPE html>
+<!-- Zone: PUBLIC | AI Native Shared Services Collection | TheoryA.ai -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The End of the Transaction Factory &#8212; TheoryA.ai</title>
+<title>The End of the Transaction Factory · TheoryA.ai</title>
 <meta name="description" content="Why shared services cannot optimize its way into the AI era. A provocation from TheoryA.ai's AI Native Shared Services Collection." />
+<meta property="og:title" content="The End of the Transaction Factory · TheoryA.ai" />
+<meta property="og:description" content="Why shared services cannot optimize its way into the AI era." />
+<meta property="og:type" content="article" />
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Georgia', serif; background: #fafafa; color: #1a1a1a; line-height: 1.7; font-size: 17px; }
+:root {
+  --bg: #fafafa;
+  --ink: #0a0a0a;
+  --body: #1a1a1a;
+  --muted: #494949;
+  --rule: #e2e0db;
+  --rule-soft: #ebe9e4;
+  --panel: #f4f3f0;
+  --serif: 'Georgia', 'Times New Roman', serif;
+  --sans: 'Helvetica Neue', Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { font-family: var(--serif); background: var(--bg); color: var(--body); line-height: 1.8; font-size: 18px; -webkit-font-smoothing: antialiased; }
 
-  /* Site nav */
-  .site-nav {
-    padding: 20px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e2e0db;
-    background: #fafafa;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .site-nav-left { display: flex; align-items: center; gap: 32px; }
-  .site-wordmark { font-family: 'Georgia', serif; font-size: 18px; font-weight: 400; letter-spacing: -0.3px; color: #0a0a0a; text-decoration: none; }
-  .site-collection { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #494949; }
-  .site-nav-links { display: flex; align-items: center; gap: 28px; }
-  .site-nav-link { font-family: 'Georgia', serif; font-size: 13px; color: #494949; text-decoration: none; letter-spacing: 0.3px; }
-  .site-nav-link:hover { color: #0a0a0a; }
+.wrap { max-width: 664px; margin: 0 auto; padding: 0 24px; }
 
-  /* Cover */
-  .cover { padding: 96px 48px 80px; max-width: 680px; margin: 0 auto; }
-  .metarow { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid #0a0a0a; border-bottom: 1px solid #0a0a0a; padding: 11px 0; margin-bottom: 40px; }
-  .metarow .m-left { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #0a0a0a; }
-  .metarow .m-right { font-family: 'Georgia', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #494949; }
-  h1.title { font-family: 'Georgia', serif; font-size: 48px; font-weight: 400; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; color: #0a0a0a; }
-  .subtitle { font-family: 'Georgia', serif; font-size: 22px; font-style: italic; color: #494949; margin-bottom: 32px; font-weight: 400; }
-  .byline-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-  .byline { font-family: 'Georgia', serif; font-size: 14px; color: #494949; letter-spacing: 0.5px; }
-  .pdf-download { font-family: 'Georgia', serif; font-size: 13px; color: #494949; text-decoration: none; letter-spacing: 0.5px; border: 1px solid #e2e0db; padding: 8px 16px; transition: color 0.2s, border-color 0.2s; }
-  .pdf-download:hover { color: #0a0a0a; border-color: #0a0a0a; }
-  .standfirst { margin-top: 40px; padding-top: 28px; border-top: 1px solid #e2e0db; }
-  .standfirst p { font-family: 'Georgia', serif; font-size: 15px; font-style: italic; line-height: 1.6; color: #494949; margin: 0; }
+/* site nav */
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--rule); }
+.site-nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
+.site-nav-left { display: flex; align-items: center; gap: 20px; }
+.site-wordmark { font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0.3px; color: var(--ink); text-decoration: none; }
+.site-collection { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+.site-nav-links { display: flex; gap: 28px; }
+.site-nav-link { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.3px; color: var(--muted); text-decoration: none; }
+.site-nav-link:hover { color: var(--ink); }
 
-  /* Content */
-  .content { max-width: 680px; margin: 0 auto; padding: 72px 48px; }
-  .section { margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid #e2e0db; }
-  .section:last-child { border-bottom: none; }
-  h2.section-title { font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #494949; margin-bottom: 32px; font-weight: 400; }
-  p { margin-bottom: 24px; color: #1a1a1a; font-size: 17px; line-height: 1.75; }
-  p:last-child { margin-bottom: 0; }
-  .pullquote { margin: 48px 0; padding: 32px 40px; border-left: 3px solid #0a0a0a; background: #f4f3f0; }
-  .pullquote p { font-size: 22px; font-style: italic; line-height: 1.5; color: #0a0a0a; margin: 0; font-weight: 400; }
-  strong.label { font-family: 'Georgia', serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 8px; margin-top: 32px; color: #0a0a0a; font-weight: 700; }
-  .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 15px; }
-  .comparison-table th { background: #0a0a0a; color: #fafafa; padding: 14px 20px; text-align: left; font-weight: 400; font-family: 'Georgia', serif; font-size: 13px; letter-spacing: 1px; }
-  .comparison-table td { padding: 14px 20px; border-bottom: 1px solid #e2e0db; vertical-align: top; line-height: 1.6; font-size: 15px; }
-  .comparison-table tr td:first-child { font-weight: 700; background: #f4f3f0; width: 28%; color: #0a0a0a; font-size: 13px; letter-spacing: 0.3px; }
-  .comparison-table tr:last-child td { border-bottom: none; }
-  .closing-section { margin-top: 72px; padding-top: 48px; border-top: 2px solid #0a0a0a; }
-  .closing-line { font-size: 20px; font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
+/* cover */
+.cover { padding-top: 72px; padding-bottom: 8px; }
+.metarow { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 11px 0; margin-bottom: 40px; }
+.metarow .m-left { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--ink); }
+.metarow .m-right { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: var(--muted); }
+h1.title { font-family: var(--serif); font-size: 43px; font-weight: 400; line-height: 1.12; letter-spacing: -0.6px; color: var(--ink); margin-bottom: 18px; }
+.subtitle { font-family: var(--serif); font-size: 21px; font-style: italic; line-height: 1.4; color: var(--muted); margin-bottom: 28px; }
+.byline { font-family: var(--sans); font-size: 11.5px; font-weight: 400; letter-spacing: 1.15px; text-transform: uppercase; color: var(--muted); }
+.byline-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.byline-row .byline { margin: 0; }
+.pdf-download { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; border: 1px solid var(--rule); padding: 9px 16px; transition: color 0.2s, border-color 0.2s; }
+.pdf-download:hover { color: var(--ink); border-color: var(--ink); }
+.standfirst { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--rule); }
+.standfirst p { font-family: var(--serif); font-size: 15px; font-style: italic; line-height: 1.6; color: var(--muted); }
 
-  /* Footer */
-  footer { border-top: 1px solid #0a0a0a; padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; }
-  .footer-left { font-family: 'Georgia', serif; font-size: 20px; color: #0a0a0a; }
-  .footer-right { font-family: 'Georgia', serif; font-size: 12px; color: #494949; letter-spacing: 2px; text-transform: uppercase; }
+/* content */
+.content { padding-top: 8px; padding-bottom: 8px; }
+.section { padding: 52px 0; border-top: 1px solid var(--rule); }
+.lede { padding-top: 40px; border-top: none; }
 
-  @media (max-width: 768px) {
-    .site-nav { padding: 16px 24px; }
-    .site-collection { display: none; }
-    .cover { padding: 64px 24px 56px; }
-    h1.title { font-size: 32px; }
-    .subtitle { font-size: 18px; }
-    .content { padding: 48px 24px; }
-    footer { padding: 24px; flex-direction: column; gap: 12px; }
-    .pullquote { padding: 24px; }
-    .pullquote p { font-size: 18px; }
-    .comparison-table th, .comparison-table td { padding: 10px 11px; font-size: 13px; }
-    .comparison-table th { letter-spacing: 0.5px; }
-    .comparison-table { table-layout: fixed; overflow-wrap: anywhere; }
-  }
+.sec-head { margin-bottom: 26px; }
+.sec-num { font-family: var(--sans); font-size: 11.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 12px; }
+h2.sec-title { font-family: var(--serif); font-size: 29px; font-weight: 400; line-height: 1.2; letter-spacing: -0.4px; color: var(--ink); }
 
-  /* METHOD NOTE */
-  .method-note { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e2e0db; text-align: right; }
-  .method-note p { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 1.65; color: #494949; max-width: 420px; margin-left: auto; margin-bottom: 8px; }
-  .method-note .method-link { display: inline-block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; font-weight: 600; color: #0a0a0a; text-decoration: none; border-bottom: 1px solid #e2e0db; padding-bottom: 1px; }
-  .method-note .method-link:hover { border-bottom-color: #0a0a0a; }
-  @media (max-width: 768px) {
-    .method-note { text-align: left; }
-    .method-note p { margin-left: 0; }
-  }
+p { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: var(--body); margin-bottom: 22px; }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 700; color: var(--ink); }
+
+.dropcap::first-letter { float: left; font-family: var(--serif); font-size: 64px; line-height: 50px; font-weight: 400; color: var(--ink); padding-right: 9px; margin-top: 5px; }
+
+.label { font-family: var(--serif); font-weight: 700; font-size: 19px; line-height: 1.4; color: var(--ink); display: block; margin: 32px 0 6px; }
+
+.pullquote { margin: 42px 0; padding-left: 28px; border-left: 3px solid var(--ink); }
+.pullquote p { font-family: var(--serif); font-size: 24px; font-style: italic; line-height: 1.45; color: var(--ink); margin: 0; }
+
+.ctable { width: 100%; border-collapse: collapse; margin: 38px 0; }
+.ctable th { background: var(--ink); color: var(--bg); text-align: left; padding: 12px 16px; font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; }
+.ctable td { padding: 13px 16px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; font-family: var(--serif); font-size: 15px; line-height: 1.55; color: var(--body); }
+.ctable td:first-child { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.4px; text-transform: uppercase; color: var(--ink); background: var(--panel); width: 26%; }
+.ctable tr:last-child td { border-bottom: none; }
+
+.final-line { font-family: var(--serif); font-size: 23px; font-style: italic; line-height: 1.5; color: var(--ink); margin-top: 38px; padding-top: 30px; border-top: 2px solid var(--ink); }
+
+footer { border-top: 1px solid var(--rule); margin-top: 8px; }
+footer .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 64px; }
+.footer-left { font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0.3px; color: var(--ink); }
+.footer-right { font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+
+@media (max-width: 620px) {
+  body { font-size: 17px; }
+  .site-collection { display: none; }
+  h1.title { font-size: 33px; }
+  .subtitle { font-size: 19px; }
+  h2.sec-title { font-size: 24px; }
+  .pullquote p { font-size: 20px; }
+  .ctable th, .ctable td { padding: 10px 11px; font-size: 13px; }
+  footer .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+@media print {
+  :root { --bg: #ffffff; }
+  body { font-size: 11pt; background: #fff; }
+  .pdf-download { display: none; }
+  @page { margin: 0.7in 0.8in; }
+  .wrap { max-width: 100%; padding: 0; }
+  .site-nav { display: none; }
+  .cover { padding-top: 30px; }
+  .metarow { margin-bottom: 30px; }
+  h1.title { font-size: 30pt; }
+  .subtitle { font-size: 15pt; }
+  .section { padding: 26px 0; break-inside: auto; }
+  .lede { padding-top: 26px; }
+  .sec-head { break-after: avoid; }
+  h2.sec-title { font-size: 19pt; break-after: avoid; }
+  p { font-size: 11pt; margin-bottom: 12px; }
+  .label { break-after: avoid; }
+  .label + p { break-before: avoid; }
+  .pullquote { margin: 24px 0; break-inside: avoid; }
+  .pullquote p { font-size: 15pt; }
+  .ctable { break-inside: avoid; }
+  footer .wrap { padding-bottom: 0; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+
+/* METHOD NOTE */
+.method-note { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule-soft); text-align: right; }
+.method-note p { font-family: var(--sans); font-size: 13px; line-height: 1.65; color: var(--muted); max-width: 420px; margin-left: auto; margin-bottom: 8px; }
+.method-note .method-link { display: inline-block; font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+.method-note .method-link:hover { border-bottom-color: var(--ink); }
+@media (max-width: 768px) {
+  .method-note { text-align: left; }
+  .method-note p { margin-left: 0; }
+}
 </style>
 </head>
 <body>
 
 <nav class="site-nav">
-  <div class="site-nav-left">
-    <a href="/" class="site-wordmark">TheoryA.ai</a>
-    <span class="site-collection">AI Native Shared Services Collection</span>
-  </div>
-  <div class="site-nav-links">
-    <a href="/signals/" class="site-nav-link">Signals</a>
-    <a href="/provocations/ai-native-shared-services.pdf" class="site-nav-link" target="_blank" rel="noopener">Download PDF</a>
+  <div class="wrap">
+    <div class="site-nav-left">
+      <a href="/" class="site-wordmark">TheoryA.ai</a>
+      <span class="site-collection">AI Native Shared Services Collection</span>
+    </div>
+    <div class="site-nav-links">
+      <a href="/signals/" class="site-nav-link">Signals</a>
+      <a href="/provocations/ai-native-shared-services.pdf" class="site-nav-link" target="_blank" rel="noopener">Download PDF</a>
+    </div>
   </div>
 </nav>
 
 <div class="cover">
-  <div class="metarow">
-    <span class="m-left">AI Native Shared Services Collection</span>
-    <span class="m-right">Provocation</span>
-  </div>
-  <h1 class="title">The End of the Transaction Factory</h1>
-  <p class="subtitle">Why shared services cannot optimize its way into the AI era</p>
-  <div class="byline-row">
-    <p class="byline">Jim Scully &nbsp;&middot;&nbsp; Co-Founder, TheoryA.ai</p>
-    <a href="/provocations/ai-native-shared-services.pdf" class="pdf-download" target="_blank" rel="noopener" download="TheoryA.ai - The End of the Transaction Factory.pdf">Download PDF &darr;</a>
-  </div>
-  <div class="standfirst">
-    <p>This paper applies Theory A, a management philosophy for organizing agency in an age of abundant intelligence, to shared services. It is part of the AI Native Shared Services Collection.</p>
+  <div class="wrap">
+    <div class="metarow">
+      <span class="m-left">AI Native Shared Services Collection</span>
+      <span class="m-right">Provocation</span>
+    </div>
+    <h1 class="title">The End of the Transaction Factory</h1>
+    <p class="subtitle">Why shared services cannot optimize its way into the AI era</p>
+    <div class="byline-row">
+      <p class="byline">Jim Scully &nbsp;·&nbsp; Co-Founder, TheoryA.ai</p>
+      <a href="/provocations/ai-native-shared-services.pdf" class="pdf-download" target="_blank" rel="noopener" download="TheoryA.ai - The End of the Transaction Factory.pdf">Download PDF &darr;</a>
+    </div>
+    <div class="standfirst">
+      <p>This paper applies Theory A, a management philosophy for organizing agency in an age of abundant intelligence, to shared services. It is part of the AI Native Shared Services Collection.</p>
+    </div>
   </div>
 </div>
 
 <div class="content">
+  <div class="wrap">
 
-  <div class="section">
-    <div class="pullquote"><p>An operating model is a machine for managing scarcity. When the scarcity inverts, the machine does not merely become suboptimal. It becomes the constraint.</p></div>
-    <p>For thirty years, shared services ran on a single economic engine: the same work, performed by cheaper labor, somewhere else. That engine is failing. Not because it was badly built. Because AI has changed the scarcity it was built to manage.</p>
-    <p>Knowledge retrieval, drafting, case preparation, routing, translation, routine analysis, first-line decision support. These are becoming abundant. The price of routine cognitive work is collapsing toward the cost of computation. And with it collapses the arbitrage that funds the legacy model.</p>
-    <p>This is not a technology problem. It is an organizational design problem. And the response most shared services organizations are choosing, AI inside the legacy model, will not solve it.</p>
-  </div>
+    <div class="section lede">
+      <div class="pullquote"><p>An operating model is a machine for managing scarcity. When the scarcity inverts, the machine does not merely become suboptimal. It becomes the constraint.</p></div>
+      <p class="dropcap">For thirty years, shared services ran on a single economic engine: the same work, performed by cheaper labor, somewhere else. That engine is failing. Not because it was badly built. Because AI has changed the scarcity it was built to manage.</p>
+      <p>Knowledge retrieval, drafting, case preparation, routing, translation, routine analysis, first-line decision support. These are becoming abundant. The price of routine cognitive work is collapsing toward the cost of computation. And with it collapses the arbitrage that funds the legacy model.</p>
+      <p>This is not a technology problem. It is an organizational design problem. And the response most shared services organizations are choosing, AI inside the legacy model, will not solve it.</p>
+    </div>
 
-  <div class="section">
-    <h2 class="section-title">The Scarcity Inversion</h2>
-    <p>Shared services was a rational architecture for a specific operating environment. Expertise was scarce, uneven, trapped in individual experience and email threads. The design response was exactly right: consolidate common work, specialize labor, segment demand into tiers, standardize processes, automate the repetitive, concentrate capacity where scale and labor cost could be managed.</p>
-    <p>The model was a machine for managing scarce human intelligence. That scarcity is now gone.</p>
-    <p>Consider what has become abundant in the last three years: knowledge retrieval and policy search. Plain-language explanation and summarization. Translation. Document drafting. Case classification and routing. Workflow initiation. First-line eligibility checks and decision support. This is, almost line for line, the work of Tier 0 and Tier 1, and much of Tier 2.</p>
-    <p>And consider what has become scarce: context, trust, judgment, governance, legitimacy, data quality, policy logic, service design. Every mechanism of the legacy model economizes on the thing that is no longer scarce. None of them manages the things that now are.</p>
-    <p>Tiers ration expert attention. But expert attention embedded in policy logic no longer needs rationing. Process standardization protects consistency from unskilled variation. But consistency can now live in standardized constraints while paths personalize. Deflection pushed demand to cheaper channels. But resolution is now cheaper than deflection.</p>
-    <div class="pullquote"><p>When the scarcity changes, the model does not merely underperform. It actively prevents the thing it claims to enable.</p></div>
-  </div>
+    <div class="section">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">The Scarcity Inversion</h2>
+      </div>
+      <p>Shared services was a rational architecture for a specific operating environment. Expertise was scarce, uneven, trapped in individual experience and email threads. The design response was exactly right: consolidate common work, specialize labor, segment demand into tiers, standardize processes, automate the repetitive, concentrate capacity where scale and labor cost could be managed.</p>
+      <p>The model was a machine for managing scarce human intelligence. That scarcity is now gone.</p>
+      <p>Consider what has become abundant in the last three years: knowledge retrieval and policy search. Plain-language explanation and summarization. Translation. Document drafting. Case classification and routing. Workflow initiation. First-line eligibility checks and decision support. This is, almost line for line, the work of Tier 0 and Tier 1, and much of Tier 2.</p>
+      <p>And consider what has become scarce: context, trust, judgment, governance, legitimacy, data quality, policy logic, service design. Every mechanism of the legacy model economizes on the thing that is no longer scarce. None of them manages the things that now are.</p>
+      <p>Tiers ration expert attention. But expert attention embedded in policy logic no longer needs rationing. Process standardization protects consistency from unskilled variation. But consistency can now live in standardized constraints while paths personalize. Deflection pushed demand to cheaper channels. But resolution is now cheaper than deflection.</p>
+      <div class="pullquote"><p>When the scarcity changes, the model does not merely underperform. It actively prevents the thing it claims to enable.</p></div>
+    </div>
 
-  <div class="section">
-    <h2 class="section-title">The Fork</h2>
-    <p>Every shared services leader now faces a choice. The two paths use the same technology, which is why they are so easily confused in strategy decks and board updates.</p>
-    <p>The first path: AI inside the legacy model. Copilots in the towers, a chatbot on the portal, automation in the back office. The same operating model, run faster and cheaper. This path is measurable in familiar currency. It requires no structural change. It delivers real gains for several quarters.</p>
-    <p>The second path: redesign from the ground up. Not &#8220;which of our tasks can AI do?&#8221; but &#8220;if abundant intelligence had existed when shared services was invented, what would we have built?&#8221;</p>
-    <p>The first path is the natural choice. It is also a trap.</p>
-    <table class="comparison-table">
+    <div class="section">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">The Fork</h2>
+      </div>
+      <p>Every shared services leader now faces a choice. The two paths use the same technology, which is why they are so easily confused in strategy decks and board updates.</p>
+      <p>The first path: AI inside the legacy model. Copilots in the towers, a chatbot on the portal, automation in the back office. The same operating model, run faster and cheaper. This path is measurable in familiar currency. It requires no structural change. It delivers real gains for several quarters.</p>
+      <p>The second path: redesign from the ground up. Not &#8220;which of our tasks can AI do?&#8221; but &#8220;if abundant intelligence had existed when shared services was invented, what would we have built?&#8221;</p>
+      <p>The first path is the natural choice. It is also a trap.</p>
+      <table class="ctable">
       <thead><tr><th></th><th>AI for efficiency</th><th>AI-native redesign</th></tr></thead>
       <tbody>
-        <tr><td>Starting question</td><td>Which of our tasks can AI do?</td><td>What must be true, and what system makes it true?</td></tr>
-        <tr><td>Unit of accountability</td><td>The ticket, the SLA, the handle time</td><td>The service outcome and its truth state</td></tr>
-        <tr><td>Service structure</td><td>Tiers retained. AI becomes smarter Tier 0 content.</td><td>Autonomy and risk segmentation. One interaction resolves what tiers passed upward.</td></tr>
-        <tr><td>Consistency mechanism</td><td>Standardized process paths</td><td>Standardized constraints. Personalized paths. Governance as architecture.</td></tr>
-        <tr><td>View of demand</td><td>Workload to deflect to cheaper channels</td><td>Signal to interpret and demand to prevent at the source</td></tr>
-        <tr><td>Trajectory</td><td>Early gains, then plateau</td><td>Compounding capability</td></tr>
+      <tr><td>Starting question</td><td>Which of our tasks can AI do?</td><td>What must be true, and what system makes it true?</td></tr>
+      <tr><td>Unit of accountability</td><td>The ticket, the SLA, the handle time</td><td>The service outcome and its truth state</td></tr>
+      <tr><td>Service structure</td><td>Tiers retained. AI becomes smarter Tier 0 content.</td><td>Autonomy and risk segmentation. One interaction resolves what tiers passed upward.</td></tr>
+      <tr><td>Consistency mechanism</td><td>Standardized process paths</td><td>Standardized constraints. Personalized paths. Governance as architecture.</td></tr>
+      <tr><td>View of demand</td><td>Workload to deflect to cheaper channels</td><td>Signal to interpret and demand to prevent at the source</td></tr>
+      <tr><td>Trajectory</td><td>Early gains, then plateau</td><td>Compounding capability</td></tr>
       </tbody>
-    </table>
-    <p>Read down the efficiency column and one pattern emerges: every row keeps the legacy model&#8217;s assumptions intact and inserts AI beneath them. The AI-native column replaces the assumptions themselves. No sequence of efficiency gains adds up to that. Optimization of the old model is not a path to the new one.</p>
-  </div>
+      </table>
+      <p>Read down the efficiency column and one pattern emerges: every row keeps the legacy model&#8217;s assumptions intact and inserts AI beneath them. The AI-native column replaces the assumptions themselves. No sequence of efficiency gains adds up to that. Optimization of the old model is not a path to the new one.</p>
+    </div>
 
-  <div class="section">
-    <h2 class="section-title">Three Clocks Running</h2>
-    <p>The efficiency strategy feels safe because it changes nothing structural. It is not safe. Three clocks are already running, and the efficiency path accelerates all of them.</p>
-    <strong class="label">The arbitrage clock.</strong>
-    <p>Arbitrage is a depleting asset. Every advance in AI shrinks the labor base the arbitrage is priced on. CFOs and clients will reprice accordingly, benchmark by benchmark, contract by contract. A shared services organization whose value proposition is labor cost gap multiplied by volume is optimizing a declining asset. Its own vendors, racing to automate the same work, will capture the difference first.</p>
-    <strong class="label">The talent clock.</strong>
-    <p>A transformation framed as headcount reduction tells the workforce that AI&#8217;s purpose is to replace them. The best people, the ones with judgment, the future experts, leave first. Meanwhile AI absorbs the routine casework that once trained novices into experts. If nothing replaces that apprenticeship, the pipeline of judgment quietly dies. The legacy model destroys the very scarcity the new model runs on, precisely when it matters most.</p>
-    <strong class="label">The disintermediation clock.</strong>
-    <p>If shared services does not provide the enterprise&#8217;s shared intelligence infrastructure, every function and business unit will build its own. Employees will route around a front door that only deflects, toward shadow AI channels with no governance. The enterprise ends up with fragmented intelligence delivery, inconsistent policy answers at machine speed, and no institution accountable for any of it. Shared services exists because fragmented service delivery was ungovernable. Fragmented intelligence delivery is worse.</p>
-    <div class="pullquote"><p>Choosing efficiency is not preserving optionality. It is spending it.</p></div>
-  </div>
+    <div class="section">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">Three Clocks Running</h2>
+      </div>
+      <p>The efficiency strategy feels safe because it changes nothing structural. It is not safe. Three clocks are already running, and the efficiency path accelerates all of them.</p>
+      <span class="label">The arbitrage clock.</span>
+      <p>Arbitrage is a depleting asset. Every advance in AI shrinks the labor base the arbitrage is priced on. CFOs and clients will reprice accordingly, benchmark by benchmark, contract by contract. A shared services organization whose value proposition is labor cost gap multiplied by volume is optimizing a declining asset. Its own vendors, racing to automate the same work, will capture the difference first.</p>
+      <span class="label">The talent clock.</span>
+      <p>A transformation framed as headcount reduction tells the workforce that AI&#8217;s purpose is to replace them. The best people, the ones with judgment, the future experts, leave first. Meanwhile AI absorbs the routine casework that once trained novices into experts. If nothing replaces that apprenticeship, the pipeline of judgment quietly dies. The legacy model destroys the very scarcity the new model runs on, precisely when it matters most.</p>
+      <span class="label">The disintermediation clock.</span>
+      <p>If shared services does not provide the enterprise&#8217;s shared intelligence infrastructure, every function and business unit will build its own. Employees will route around a front door that only deflects, toward shadow AI channels with no governance. The enterprise ends up with fragmented intelligence delivery, inconsistent policy answers at machine speed, and no institution accountable for any of it. Shared services exists because fragmented service delivery was ungovernable. Fragmented intelligence delivery is worse.</p>
+      <div class="pullquote"><p>Choosing efficiency is not preserving optionality. It is spending it.</p></div>
+    </div>
 
-  <div class="section">
-    <h2 class="section-title">What the Alternative Actually Is</h2>
-    <p>A coherent replacement exists. It can be stated in three substitutions.</p>
-    <table class="comparison-table">
+    <div class="section">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">What the Alternative Actually Is</h2>
+      </div>
+      <p>A coherent replacement exists. It can be stated in three substitutions.</p>
+      <table class="ctable">
       <thead><tr><th></th><th>Legacy model</th><th>AI-native model</th></tr></thead>
       <tbody>
-        <tr><td>Accountability</td><td>SLAs and service catalogs</td><td>Service outcomes with truth states. Conditions either hold or they do not.</td></tr>
-        <tr><td>Structure</td><td>Tiered support: Tier 0 through 3</td><td>Autonomy and risk segmentation. Work classified by how much autonomy the system may exercise given the risk of the case.</td></tr>
-        <tr><td>Consistency</td><td>Standardized process paths</td><td>Standardized constraints. The boundaries are standardized. The path personalizes. Governance becomes architecture, not friction.</td></tr>
+      <tr><td>Accountability</td><td>SLAs and service catalogs</td><td>Service outcomes with truth states. Conditions either hold or they do not.</td></tr>
+      <tr><td>Structure</td><td>Tiered support: Tier 0 through 3</td><td>Autonomy and risk segmentation. Work classified by how much autonomy the system may exercise given the risk of the case.</td></tr>
+      <tr><td>Consistency</td><td>Standardized process paths</td><td>Standardized constraints. The boundaries are standardized. The path personalizes. Governance becomes architecture, not friction.</td></tr>
       </tbody>
-    </table>
-    <p>Around these substitutions sits a different view of what shared services is for: not centralizing transaction execution, but providing the shared intelligence, policy logic, orchestration, governance, and human expertise that let work happen safely and consistently anywhere in the enterprise.</p>
-    <p>The roles change accordingly. Case processors become service stewards, supervising a human-AI system, measured on escalation quality and judgment. Centers convert from labor-concentration sites to expertise, governance, and learning hubs. Agent operations becomes a formal discipline: agents designed, tested, monitored, tuned, governed, and retired like the workforce they are.</p>
-  </div>
+      </table>
+      <p>Around these substitutions sits a different view of what shared services is for: not centralizing transaction execution, but providing the shared intelligence, policy logic, orchestration, governance, and human expertise that let work happen safely and consistently anywhere in the enterprise.</p>
+      <p>The roles change accordingly. Case processors become service stewards, supervising a human-AI system, measured on escalation quality and judgment. Centers convert from labor-concentration sites to expertise, governance, and learning hubs. Agent operations becomes a formal discipline: agents designed, tested, monitored, tuned, governed, and retired like the workforce they are.</p>
+    </div>
 
-  <div class="section">
-    <h2 class="section-title">Why Shared Services, and Why First</h2>
-    <p>Every enterprise serious about AI eventually confronts the same question: where can a fundamentally different operating model be proven without betting the company?</p>
-    <p>Innovation labs fail this test because they own nothing real. Enterprise-wide transformation fails it because the blast radius is unbounded. Shared services passes it uniquely.</p>
-    <p>Shared services already has customers: employees, managers, functions, business units. It already has products: service lines, journeys, data services. It already has demand flows: cases, transactions, inquiries, escalations. It already has governance: service councils, controls, cost models, operating rhythms. And it carries production accountability of the most unforgiving kind. Payroll must run. Employees must onboard. Records must survive audit.</p>
-    <p>It is bounded enough to govern, real enough to prove anything, and measurable enough to convince a skeptical CFO.</p>
-    <p>The business case extends beyond shared services itself. Inside the unit, the returns are outcome achievement, waste elimination, and response latency. Beyond the unit, the return is option value: a proven AI-native shared services function delivers validated roles, governance patterns, agent operations, measurement frames, and management practices that de-risk the transformation of everything else.</p>
-    <div class="pullquote"><p>The highest return on AI-native shared services is not the transactions it automates. It is the enterprise it teaches to operate differently.</p></div>
-  </div>
+    <div class="section">
+      <div class="sec-head">
+        <span class="sec-num">05</span>
+        <h2 class="sec-title">Why Shared Services, and Why First</h2>
+      </div>
+      <p>Every enterprise serious about AI eventually confronts the same question: where can a fundamentally different operating model be proven without betting the company?</p>
+      <p>Innovation labs fail this test because they own nothing real. Enterprise-wide transformation fails it because the blast radius is unbounded. Shared services passes it uniquely.</p>
+      <p>Shared services already has customers: employees, managers, functions, business units. It already has products: service lines, journeys, data services. It already has demand flows: cases, transactions, inquiries, escalations. It already has governance: service councils, controls, cost models, operating rhythms. And it carries production accountability of the most unforgiving kind. Payroll must run. Employees must onboard. Records must survive audit.</p>
+      <p>It is bounded enough to govern, real enough to prove anything, and measurable enough to convince a skeptical CFO.</p>
+      <p>The business case extends beyond shared services itself. Inside the unit, the returns are outcome achievement, waste elimination, and response latency. Beyond the unit, the return is option value: a proven AI-native shared services function delivers validated roles, governance patterns, agent operations, measurement frames, and management practices that de-risk the transformation of everything else.</p>
+      <div class="pullquote"><p>The highest return on AI-native shared services is not the transactions it automates. It is the enterprise it teaches to operate differently.</p></div>
+    </div>
 
-  <div class="closing-section">
-    <h2 class="section-title">The Closing Provocation</h2>
-    <p>AI does not make shared services obsolete. It makes the traditional rationale for shared services obsolete.</p>
-    <p>The model built to manage scarce labor cannot manage abundant intelligence. No volume of technology deployed inside it will change that. The structure, not the software, sets the ceiling.</p>
-    <p>Three clocks are running. Organizational readiness takes longer to build than AI capability. And the organizations that wait for the technology to mature before redesigning the vessel will discover, when the capability arrives, that they have nowhere to put it.</p>
-    <p>Theory A argues that organizations were designed around constraints that AI removes. Shared services is the clearest proof of that argument in the enterprise, and the most powerful place to begin designing differently.</p>
-    <p>The question facing every shared services leader today is not whether to adopt AI. Everyone will adopt AI. The question is which side of the fork the adoption serves.</p>
-    <p class="closing-line">One side optimizes what already exists. The other asks what shared services should have been all along, if it had been designed for a world of abundant intelligence from the start.</p>
-    <p>Only one of those questions has an interesting answer.</p>
-  </div>
+    <div class="section">
+      <div class="sec-head">
+        <span class="sec-num">06</span>
+        <h2 class="sec-title">The Closing Provocation</h2>
+      </div>
+      <p>AI does not make shared services obsolete. It makes the traditional rationale for shared services obsolete.</p>
+      <p>The model built to manage scarce labor cannot manage abundant intelligence. No volume of technology deployed inside it will change that. The structure, not the software, sets the ceiling.</p>
+      <p>Three clocks are running. Organizational readiness takes longer to build than AI capability. And the organizations that wait for the technology to mature before redesigning the vessel will discover, when the capability arrives, that they have nowhere to put it.</p>
+      <p>Theory A argues that organizations were designed around constraints that AI removes. Shared services is the clearest proof of that argument in the enterprise, and the most powerful place to begin designing differently.</p>
+      <p>The question facing every shared services leader today is not whether to adopt AI. Everyone will adopt AI. The question is which side of the fork the adoption serves.</p>
+      <p class="final-line">One side optimizes what already exists. The other asks what shared services should have been all along, if it had been designed for a world of abundant intelligence from the start.</p>
+      <p>Only one of those questions has an interesting answer.</p>
+    </div>
+
 
   <div class="method-note">
     <p>Authored by Jim Scully and drafted with AI as a thinking partner and adversarial reviewer. The argument and the final judgment are his.</p>
     <a class="method-link" href="/#how-we-work">How we work with AI</a>
   </div>
-
+  </div>
 </div>
 
 <footer>
-  <span class="footer-left">TheoryA.ai</span>
-  <span class="footer-right">AI Native Shared Services Collection &nbsp;&middot;&nbsp; theorya.ai</span>
+  <div class="wrap">
+    <span class="footer-left">TheoryA.ai</span>
+    <span class="footer-right">AI Native Shared Services Collection &nbsp;·&nbsp; theorya.ai</span>
+  </div>
 </footer>
 
 </body>
