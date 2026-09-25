@@ -79,7 +79,9 @@ not be installed in a given environment.
 ### Standing rules
 
 - **No em dashes** in Emily's writing or on site pages, including this file. Use
-  commas or full stops.
+  commas or full stops. Not applied retroactively to Jim's existing published
+  pieces (Language Standard 3.2): leave em dashes already in his work, including
+  page titles, as they are.
 - **No dates** on Signals. No byline dates, no version numbers. A dated piece starts
   ageing the day after it publishes.
 - **Method note** on every Signal and provocation:
